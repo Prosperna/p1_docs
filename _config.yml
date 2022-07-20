@@ -3,7 +3,7 @@
 
 title: Aviator
 description: Jekyll template for API documentation.
-url: https://docs.prosperna.com
+url: https://prosperna.github.io
 google_analytics_key:
 permalink: pretty
 baseurl: /
