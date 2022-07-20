@@ -6,7 +6,7 @@ description: Jekyll template for API documentation.
 url: https://docs.prosperna.com
 google_analytics_key:
 permalink: pretty
-baseurl: /p1_docs
+baseurl: /
 
 # -----
 # Build
