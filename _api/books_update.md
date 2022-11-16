@@ -2,7 +2,7 @@
 title: /books/:id
 position_number: 1.4
 type: put
-description: Update Book
+description: Update Books
 parameters:
   - name: title
     content: The title for the book

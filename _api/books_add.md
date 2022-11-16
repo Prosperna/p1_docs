@@ -9,7 +9,7 @@ parameters:
   - name: score
     content: The book's score between 0 and 5
 content_markdown: |-
-  The book will automatically be added to your reading list
+  The books will automatically be added to your reading list
   {: .success}
 
   Adds a book to your collection.
@@ -42,5 +42,3 @@ right_code_blocks:
     title: Error
     language: json
 ---
-
-
