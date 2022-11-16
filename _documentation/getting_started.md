@@ -5,7 +5,7 @@ parameters:
   - name:
     content:
 content_markdown: |-
-  Welcome to our API.
+  Welcome to our ProspernaOne API
 
   This API document is designed for those interested in developing for our platform.
 
