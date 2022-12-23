@@ -1,43 +1,64 @@
 ---
-title: /test1
-position_number: 1.1
-type: post
-description: Create Products
+title: /test
+position_number: 1.0
+type: get
+description: List all books
 parameters:
-  - name: title
-    content: The title for the book
-  - name: score
-    content: The book's score between 0 and 5
+  - name: offset
+    content: Offset the results by this amount
+  - name: limit
+    content: Limit the number of books returned
 content_markdown: |-
-  The books will automatically be added to your reading list
-  {: .success}
+  This call will return a maximum of 100 books
+  {: .info }
 
-  Adds a book to your collection.
+  Lists all the photos you have access to. You can paginate by using the parameters listed above.
 left_code_blocks:
   - code_block: |-
-      $.post("http://api.myapp.com/books/", {
-        "token": "YOUR_APP_KEY",
-        "title": "The Book Thief",
-        "score": 4.3
-      }, function(data) {
+      $.get("http://api.myapp.com/books/", { "token": "YOUR_APP_KEY"}, function(data) {
         alert(data);
       });
     title: jQuery
     language: javascript
-right_code_blocks:
   - code_block: |-
-      {
-        "id": 3,
-        "title": "The Book Thief",
-        "score": 4.3,
-        "dateAdded": "5/1/2015"
+      r = requests.get("http://api.myapp.com/books/", token="YOUR_APP_KEY")
+      print r.text
+    title: Python
+    language: python
+  - code_block: |-
+      var request = require("request");
+      request("http://api.myapp.com/books?token=YOUR_APP_KEY", function (error, response, body) {
+      if (!error && response.statusCode == 200) {
+        console.log(body);
       }
+    title: Node.js
+    language: javascript
+  - code_block: |-
+      curl http://sampleapi.readme.com/orders?key=YOUR_APP_KEY
+    title: Curl
+    language: bash
+right_code_blocks:
+  - code_block: |2-
+      [
+        {
+          "id": 1,
+          "title": "The Hunger Games",
+          "score": 4.5,
+          "dateAdded": "12/12/2013"
+        },
+        {
+          "id": 1,
+          "title": "The Hunger Games",
+          "score": 4.7,
+          "dateAdded": "15/12/2013"
+        },
+      ]
     title: Response
     language: json
-  - code_block: |-
+  - code_block: |2-
       {
         "error": true,
-        "message": "Invalid score"
+        "message": "Invalid offset"
       }
     title: Error
     language: json
