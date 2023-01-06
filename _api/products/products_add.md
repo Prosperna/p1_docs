@@ -1,6 +1,6 @@
 ---
 title: /products
-position_number: 1.1
+position_number: 2.1
 type: post
 description: Create Products
 parameters:
@@ -15,7 +15,7 @@ content_markdown: |-
   Adds a book to your collection.
 left_code_blocks:
   - code_block: |-
-      $.post("http://api.myapp.com/books/", {
+      $.post("http://api.myapp.com/products/", {
         "token": "YOUR_APP_KEY",
         "title": "The Book Thief",
         "score": 4.3
@@ -24,6 +24,41 @@ left_code_blocks:
       });
     title: jQuery
     language: javascript
+  - code_block: |-
+      var request = require('request');
+      var options = {
+        'method': 'POST',
+        'url': 'http://api.myapp.com/products',
+        'headers': {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          "token": "YOUR_APP_KEY",
+          "title": "The Book Thief",
+          "score": 4.3
+        })
+      };
+      request(options, function (error, response) {
+        if (error) throw new Error(error);
+        console.log(response.body);
+      });
+    title: NodeJS
+    language: javascript
+  - code_block: |-
+      $client = new Client();
+      $headers = [
+        'Content-Type' => 'application/json'
+      ];
+      $body = '{
+        "token": "YOUR_APP_KEY",
+        "title": "The Book Thief",
+        "score": 4.3
+      }';
+      $request = new Request('POST', 'http://api.myapp.com/products', $headers, $body);
+      $res = $client->sendAsync($request)->wait();
+      echo $res->getBody();
+    title: PHP - Guzzle
+    language: php
 right_code_blocks:
   - code_block: |-
       {

@@ -1,6 +1,6 @@
 ---
 title: 
-position_number: 2.0
+position_number:
 parameters:
   - name:
     content:
