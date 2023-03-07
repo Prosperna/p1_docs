@@ -1,6 +1,8 @@
 ---
 title: /products
 position_number: 1.0
+type: get
+description: List all Products
 parameters:
   - name:
     content:
