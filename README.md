@@ -1,6 +1,6 @@
-# Aviator
+# Prosperna
 
-API documentation template for Jekyll. Browse through a [live demo](https://tangerine-lemon.cloudvent.net/).
+API documentation for Prosperna. Browse through a [live demo](https://docs.prosperna.com/).
 Start documenting your API with this configurable theme.
 
 ![Aviator template screenshot](images/_screenshot.png)
@@ -13,14 +13,14 @@ Find more templates, themes and step-by-step Jekyll tutorials at [CloudCannon Ac
 
 ## Features
 
-* Three column layout
-* Fully responsive
-* Full text search
-* Pre-styled components
-* Auto-generated navigation based on category
-* Optimised for editing in [CloudCannon](http://cloudcannon.com/)
-* SEO tags
-* Google Analytics
+- Three column layout
+- Fully responsive
+- Full text search
+- Pre-styled components
+- Auto-generated navigation based on category
+- Optimised for editing in [CloudCannon](http://cloudcannon.com/)
+- SEO tags
+- Google Analytics
 
 ## Setup
 
@@ -33,15 +33,15 @@ Aviator was built with [Jekyll](http://jekyllrb.com/) version 3.7.2, but should 
 
 Install the dependencies with [Bundler](http://bundler.io/):
 
-~~~bash
+```bash
 $ bundle install
-~~~
+```
 
 Run `jekyll` commands through Bundler to ensure you're using the right versions:
 
-~~~bash
+```bash
 $ bundle exec jekyll serve
-~~~
+```
 
 ## Editing
 
@@ -49,10 +49,10 @@ Aviator is already optimised for adding, updating and removing documentation pag
 
 ### Usage
 
-* Each section is a different collection, this helps organise your content.
-* Set the order of the collections with the position_number field in collection configuration in `_config.yml`.
-* Set the order of the documents inside a collection by setting the position_number in front matter.
+- Each section is a different collection, this helps organise your content.
+- Set the order of the collections with the position_number field in collection configuration in `_config.yml`.
+- Set the order of the documents inside a collection by setting the position_number in front matter.
 
 ### Search
 
-* Add `excluded_in_search: true` to any documentation page's front matter to exclude that page in the search results.
+- Add `excluded_in_search: true` to any documentation page's front matter to exclude that page in the search results.

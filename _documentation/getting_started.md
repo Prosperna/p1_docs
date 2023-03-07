@@ -5,11 +5,12 @@ parameters:
   - name:
     content:
 content_markdown: |-
-  Welcome to our ProspernaOne API
+Welcome to the Getting Started guide for Prosperna API Documentation!
 
-  This API document is designed for those interested in developing for our platform.
 
-  This API is still under development and will evolve.
+Prosperna is an all-in-one eCommerce platform for Philippine businesses. We are on a mission to empower 100,000 Philippine MSMEs with simple and affordable eCommerce software. In fact, we are super passionate about helping Philippine MSMEs we're giving you a free account forever!
+
+This guide will help you get started with the Prosperna API documentation.
 
   You'll succeed if you do this.
   {: .success }
