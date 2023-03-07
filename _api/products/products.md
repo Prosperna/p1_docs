@@ -1,6 +1,6 @@
 ---
-title: 
-position_number:
+title: /products
+position_number: 1.0
 parameters:
   - name:
     content:
