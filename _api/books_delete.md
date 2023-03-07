@@ -1,6 +1,6 @@
 ---
 title: /books/:id
-position_number: 1.5
+position_number: 2.5
 type: delete
 description: Deletes a book
 parameters:
@@ -38,4 +38,3 @@ right_code_blocks:
     title: Error
     language: json
 ---
-
