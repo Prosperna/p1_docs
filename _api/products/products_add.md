@@ -6,11 +6,6 @@ description: Save/Update Product
 parameters:
   - name: product_id
     content: Product id
-content_markdown: |-
-  The books will automatically be added to your reading list
-  {: .success}
-
-  Adds a book to your collection.
 left_code_blocks:
   - code_block: |-
       var axios = require('axios');
