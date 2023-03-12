@@ -13,8 +13,7 @@ left_code_blocks:
 
       var config = {
         method: 'get',
-        url: 'api.prosperna.com/v1/products/:product_id',
-        data : data
+        url: 'api.prosperna.com/v1/products/:product_id'
       };
 
       axios(config)

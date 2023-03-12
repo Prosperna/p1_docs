@@ -113,6 +113,20 @@
 						</li>
 					
 						<li>
+							<a href="/#apiproductsproducts_delete">
+								/v1/products/:product_id
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apiproductsproducts_publish_unpublish">
+								/v1/products/status
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+						<li>
 							<a href="/#apicategoriescategories_add">
 								/products/categories
 								<span class="endpoint post"></span>
@@ -199,6 +213,23 @@
 					
 						,
 						
+						"api-products-products-delete": {
+							"id": "api-products-products-delete",
+							"title": "/v1/products/:product_id",
+							"category": "api",
+							"description": "Delete single product",
+		  				"type": "post",
+							"url": "http://localhost:4001/#apiproductsproducts_delete",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
 						"api-products-products-get-single": {
 							"id": "api-products-products-get-single",
 							"title": "/v1/products/:product_id",
@@ -223,6 +254,23 @@
 							"description": "Pre create product",
 		  				"type": "post",
 							"url": "http://localhost:4001/#apiproductsproducts_pre_create",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-products-products-publish-unpublish": {
+							"id": "api-products-products-publish-unpublish",
+							"title": "/v1/products/status",
+							"category": "api",
+							"description": "Publish or unpublish products, accepts array of product id",
+		  				"type": "post",
+							"url": "http://localhost:4001/#apiproductsproducts_publish_unpublish",
 							"content": ""
 						}
 						

@@ -1,19 +1,19 @@
 ---
-title: /v1/products/pre-create
-position_number: 1.2
+title: /v1/products/:product_id
+position_number: 1.4
 type: post
-description: Pre create product
+description: Delete single product
 parameters:
-  - name: product_type
-    content: Type of product either 'physical' or 'digital'.
+  - name: product id
+    content: Product id.
 left_code_blocks:
   - code_block: |-
       var axios = require('axios');
       var data = '';
 
       var config = {
-        method: 'post',
-        url: 'api.prosperna.com/v1/products/pre-create?product_type=physical'
+        method: 'delete',
+        url: 'api.prosperna.com/v1/products/:product_id'
       };
 
       axios(config)
@@ -28,12 +28,9 @@ left_code_blocks:
 right_code_blocks:
   - code_block: |-
       {
-          "data": {
-              "id": "640da6e972daff1949be2a16",
-              "product_type": "physical"
-          },
-          "message": "Product pre created.",
-          "statusCode": 201
+          "data": true,
+          "message": "Product successfully deleted.",
+          "statusCode": 200
       }
     title: Response
     language: json
