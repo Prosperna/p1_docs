@@ -16,7 +16,7 @@ left_code_blocks:
       var config = {
         method: 'post',
         url: 'api.prosperna.com/v1/products/status?action=publish',
-        data: ["640db09e72daff1949be2a23"]
+        data: data
       };
 
       axios(config)

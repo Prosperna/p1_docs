@@ -134,6 +134,13 @@
 						</li>
 					
 						<li>
+							<a href="#apiproductsproducts_quantity">
+								/v1/products/stock-quantity?store_id=
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
 							<a href="#apicategoriescategories_add">
 								/products/categories
 								<span class="endpoint post"></span>
@@ -1049,7 +1056,7 @@
 <span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">post</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">api.prosperna.com/v1/products/status?action=publish</span><span class="dl">'</span><span class="p">,</span>
-  <span class="na">data</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">640db09e72daff1949be2a23</span><span class="dl">"</span><span class="p">]</span>
+  <span class="na">data</span><span class="p">:</span> <span class="nx">data</span>
 <span class="p">};</span>
 
 <span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
@@ -1152,6 +1159,87 @@
         </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="apiproductsproducts_quantity">
+						/v1/products/stock-quantity?store_id=
+						
+							<span class="endpoint get"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_api/products/products_quantity.md">Edit</a>
+				</h3>
+				
+					<p class="description">Decrease the product quantity and product variant combination quantity</p>
+				
+
+				
+						<h6>Parameters</h6>
+						<dl>
+								
+										<dt>store_id</dt>
+										<dd>Merchant store id</dd>
+								
+						</dl>
+				
+
+				
+
+
+				
+						
+								
+
+
+<div title="NodeJS" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">([</span>
+  <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">product_id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">63e4f4fabf61b3a5047d9da4</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">purchased_quantity</span><span class="dl">"</span><span class="p">:</span> <span class="mi">9</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">purchased_quantity</span><span class="dl">"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">product_variant_combination_id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">63e64f99ca104a61440fd50b</span><span class="dl">"</span>
+  <span class="p">}</span>
+<span class="p">]);</span>
+
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">post</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">api.prosperna.com/v1/products/stock-quantity?store_id=639749a5cb1db88617891bf0</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">data</span> <span class="p">:</span> <span class="nx">data</span>
+<span class="p">};</span>
+
+<span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Inventory successfully updated."</span><span class="p">,</span><span class="w">
     </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
