@@ -6,7 +6,7 @@ description: ProspernaOne API documentation
 url: https://docs.prosperna.com
 google_analytics_key:
 permalink: pretty
-baseurl:
+baseurl: /p1_docs
 
 # -----
 # Build
@@ -18,7 +18,7 @@ collections:
     title: Documentation
     position_number: 1
   api:
-    title: APIs
+    title: API
     position_number: 2
 plugins:
   - jekyll-sitemap
@@ -50,6 +50,7 @@ types:
   - put
   - delete
   - post
+  -
 
 languages:
   bash: Bash
