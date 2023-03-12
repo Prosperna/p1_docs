@@ -28,8 +28,8 @@ left_code_blocks:
 right_code_blocks:
   - code_block: |-
       {
-          "data": true,
-          "message": "Product successfully deleted.",
+          "data": null,
+          "message": "Successfully updated product.",
           "statusCode": 200
       }
     title: Response
