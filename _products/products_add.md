@@ -2,22 +2,23 @@
 title: /products
 position_number: 1.1
 type: post
-description: Create Book
-parameters:
-  - name: title
-    content: The title for the book
-  - name: score
-    content: The book's score between 0 and 5
+description: Create Product
 content_markdown: |-
-  The products will automatically be added to your reading list
-  {: .success}
+  | Parameters         | Data Type | Required | Description                        |
+  |--------------------|-----------|----------|------------------------------------|
+  | name               | string    | Yes      | Name of the Product                |
+  | slug               | string    | Yes      | Path of the Product                |
+  | description        | text      | No       | Product long description           |
+  | short_description  | text      | No       | Product short description          |
+  | brand              | string    | No       | Product brand                      |
 
-  Adds a book to your collection.
+
+  Adds a products to your inventory.
 left_code_blocks:
   - code_block: |-
       $.post("http://api.myapp.com/products/", {
         "token": "YOUR_APP_KEY",
-        "title": "The Book Thief",
+        "title": "The Product Thief",
         "score": 4.3
       }, function(data) {
         alert(data);
@@ -28,9 +29,16 @@ right_code_blocks:
   - code_block: |-
       {
         "id": 3,
-        "title": "The Book Thief",
+        "title": "The Product Thief",
         "score": 4.3,
         "dateAdded": "5/1/2015"
+      }
+    title: Request
+    language: json
+  - code_block: |-
+      {
+        "error": true,
+        "message": "Invalid score"
       }
     title: Response
     language: json
