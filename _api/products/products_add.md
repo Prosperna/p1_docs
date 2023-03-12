@@ -1,8 +1,8 @@
 ---
 title: /products
-position_number: 1.2
-type: post
-description: Create Products
+position_number: 1.3
+type: put
+description: Save/Update Product
 parameters:
   - name: title
     content: The title for the book
