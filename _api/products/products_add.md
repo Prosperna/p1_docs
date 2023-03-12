@@ -1,6 +1,6 @@
 ---
 title: /products
-position_number: 2.1
+position_number: 1.2
 type: post
 description: Create Products
 parameters:

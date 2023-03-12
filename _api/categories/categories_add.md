@@ -1,6 +1,6 @@
 ---
 title: /products/categories
-position_number: 2.2
+position_number: 2.0
 type: post
 description: Create Categories
 parameters:

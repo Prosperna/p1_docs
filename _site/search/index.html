@@ -85,30 +85,16 @@
 					
 					
 						<li>
-							<a href="/#apibooksbooks">
-								Books
-								
-							</a>
-						</li>
-					
-						<li>
 							<a href="/#apiproductsproducts">
-								/products
+								/v1/products/merchant-listing
 								<span class="endpoint get"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="/#apibooksbooks_list">
-								/books
+							<a href="/#apiproductsproducts_get_single">
+								/v1/products/:product_id
 								<span class="endpoint get"></span>
-							</a>
-						</li>
-					
-						<li>
-							<a href="/#apibooksbooks_add">
-								/books
-								<span class="endpoint post"></span>
 							</a>
 						</li>
 					
@@ -123,27 +109,6 @@
 							<a href="/#apicategoriescategories_add">
 								/products/categories
 								<span class="endpoint post"></span>
-							</a>
-						</li>
-					
-						<li>
-							<a href="/#apibooksbooks_get">
-								/books/:id
-								<span class="endpoint get"></span>
-							</a>
-						</li>
-					
-						<li>
-							<a href="/#apibooksbooks_update">
-								/books/:id
-								<span class="endpoint put"></span>
-							</a>
-						</li>
-					
-						<li>
-							<a href="/#apibooksbooks_delete">
-								/books/:id
-								<span class="endpoint delete"></span>
 							</a>
 						</li>
 					
@@ -176,108 +141,6 @@
 					
 						
 						
-						"api-books-books": {
-							"id": "api-books-books",
-							"title": "Books",
-							"category": "api",
-							"description": "",
-		  				"type": "",
-							"url": "http://localhost:4001/#apibooksbooks",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-books-books-add": {
-							"id": "api-books-books-add",
-							"title": "/books",
-							"category": "api",
-							"description": "Create Book",
-		  				"type": "post",
-							"url": "http://localhost:4001/#apibooksbooks_add",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-books-books-delete": {
-							"id": "api-books-books-delete",
-							"title": "/books/:id",
-							"category": "api",
-							"description": "Deletes a book",
-		  				"type": "delete",
-							"url": "http://localhost:4001/#apibooksbooks_delete",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-books-books-get": {
-							"id": "api-books-books-get",
-							"title": "/books/:id",
-							"category": "api",
-							"description": "Get Book",
-		  				"type": "get",
-							"url": "http://localhost:4001/#apibooksbooks_get",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-books-books-list": {
-							"id": "api-books-books-list",
-							"title": "/books",
-							"category": "api",
-							"description": "List all books",
-		  				"type": "get",
-							"url": "http://localhost:4001/#apibooksbooks_list",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-books-books-update": {
-							"id": "api-books-books-update",
-							"title": "/books/:id",
-							"category": "api",
-							"description": "Update Books",
-		  				"type": "put",
-							"url": "http://localhost:4001/#apibooksbooks_update",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
 						"api-categories-categories-add": {
 							"id": "api-categories-categories-add",
 							"title": "/products/categories",
@@ -297,9 +160,9 @@
 						
 						"api-products-products": {
 							"id": "api-products-products",
-							"title": "/products",
+							"title": "/v1/products/merchant-listing",
 							"category": "api",
-							"description": "List all Products",
+							"description": "Get all Products",
 		  				"type": "get",
 							"url": "http://localhost:4001/#apiproductsproducts",
 							"content": ""
@@ -319,6 +182,23 @@
 							"description": "Create Products",
 		  				"type": "post",
 							"url": "http://localhost:4001/#apiproductsproducts_add",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-products-products-get-single": {
+							"id": "api-products-products-get-single",
+							"title": "/v1/products/:product_id",
+							"category": "api",
+							"description": "Get single product",
+		  				"type": "get",
+							"url": "http://localhost:4001/#apiproductsproducts_get_single",
 							"content": ""
 						}
 						
