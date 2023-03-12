@@ -1,7 +1,7 @@
 ---
 title: /v1/products/:product_id
 position_number: 1.4
-type: post
+type: delete
 description: Delete single product
 parameters:
   - name: product id

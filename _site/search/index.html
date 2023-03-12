@@ -107,7 +107,7 @@
 					
 						<li>
 							<a href="/#apiproductsproducts_add">
-								/products
+								/v1/products/:product_id
 								<span class="endpoint put"></span>
 							</a>
 						</li>
@@ -115,7 +115,7 @@
 						<li>
 							<a href="/#apiproductsproducts_delete">
 								/v1/products/:product_id
-								<span class="endpoint post"></span>
+								<span class="endpoint delete"></span>
 							</a>
 						</li>
 					
@@ -212,7 +212,7 @@
 						
 						"api-products-products-add": {
 							"id": "api-products-products-add",
-							"title": "/products",
+							"title": "/v1/products/:product_id",
 							"category": "api",
 							"description": "Save/Update Product",
 		  				"type": "put",
@@ -232,7 +232,7 @@
 							"title": "/v1/products/:product_id",
 							"category": "api",
 							"description": "Delete single product",
-		  				"type": "post",
+		  				"type": "delete",
 							"url": "http://localhost:4001/#apiproductsproducts_delete",
 							"content": ""
 						}
