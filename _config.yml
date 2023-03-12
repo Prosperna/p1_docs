@@ -18,8 +18,11 @@ collections:
     title: Documentation
     position_number: 1
   api:
-    title: API
+    title: APIs
     position_number: 2
+  products:
+    title: Products
+    position_number: 3
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
@@ -50,7 +53,6 @@ types:
   - put
   - delete
   - post
-  -
 
 languages:
   bash: Bash
