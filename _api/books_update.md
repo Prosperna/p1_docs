@@ -1,8 +1,8 @@
 ---
-title: /books/:id
+title: /orders/:id
 position_number: 2.4
 type: put
-description: Update Books
+description: Update orders
 parameters:
   - name: title
     content: The title for the book
@@ -13,7 +13,7 @@ content_markdown: |-
 left_code_blocks:
   - code_block: |-
       $.ajax({
-        "url": "http://api.myapp.com/books/3",
+        "url": "http://api.myapp.com/orders/3",
         "type": "PUT",
         "data": {
           "token": "YOUR_APP_KEY",
