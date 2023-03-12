@@ -1,19 +1,24 @@
 ---
-title: /books/:id
-position_number: 2.3
-type: get
-description: Get Book
+title: /orders/:id
+position_number: 2.5
+type: delete
+description: Deletes a book
 parameters:
   - name:
     content:
 content_markdown: |-
-  Returns a specific book from your collection
+  Deletes a book in your collection.
 left_code_blocks:
   - code_block: |-
-      $.get("http://api.myapp.com/books/3", {
-        token: "YOUR_APP_KEY",
-      }, function(data) {
-        alert(data);
+      $.ajax({
+        "url": "http://api.myapp.com/orders/3",
+        "type": "DELETE",
+        "data": {
+          "token": "YOUR_APP_KEY"
+        },
+        "success": function(data) {
+          alert(data);
+        }
       });
     title: jQuery
     language: javascript
@@ -21,9 +26,7 @@ right_code_blocks:
   - code_block: |2-
       {
         "id": 3,
-        "title": "The Book Thief",
-        "score": 4.3,
-        "dateAdded": "5/1/2015"
+        "status": "deleted"
       }
     title: Response
     language: json

@@ -1,5 +1,5 @@
 ---
-title: /books
+title: /orders
 position_number: 2.1
 type: post
 description: Create Book
@@ -9,13 +9,13 @@ parameters:
   - name: score
     content: The book's score between 0 and 5
 content_markdown: |-
-  The books will automatically be added to your reading list
+  The orders will automatically be added to your reading list
   {: .success}
 
   Adds a book to your collection.
 left_code_blocks:
   - code_block: |-
-      $.post("http://api.myapp.com/books/", {
+      $.post("http://api.myapp.com/orders/", {
         "token": "YOUR_APP_KEY",
         "title": "The Book Thief",
         "score": 4.3
