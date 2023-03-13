@@ -1,40 +1,40 @@
 ---
-title: /orders
-position_number: 2.0
+title: /products
+position_number: 1.0
 type: get
-description: List all orders
+description: List all products
 parameters:
   - name: offset
     content: Offset the results by this amount
   - name: limit
-    content: Limit the number of orders returned
+    content: Limit the number of products returned
 content_markdown: |-
-  This call will return a maximum of 100 orders
+  This call will return a maximum of 100 products
   {: .info }
 
   Lists all the photos you have access to. You can paginate by using the parameters listed above.
 left_code_blocks:
   - code_block: |-
-      $.get("http://api.myapp.com/orders/", { "token": "YOUR_APP_KEY"}, function(data) {
+      $.get("http://api.myapp.com/products/", { "token": "YOUR_APP_KEY"}, function(data) {
         alert(data);
       });
     title: jQuery
     language: javascript
   - code_block: |-
-      r = requests.get("http://api.myapp.com/orders/", token="YOUR_APP_KEY")
+      r = requests.get("http://api.myapp.com/products/", token="YOUR_APP_KEY")
       print r.text
     title: Python
     language: python
   - code_block: |-
       var request = require("request");
-      request("http://api.myapp.com/orders?token=YOUR_APP_KEY", function (error, response, body) {
+      request("http://api.myapp.com/products?token=YOUR_APP_KEY", function (error, response, body) {
       if (!error && response.statusCode == 200) {
         console.log(body);
       }
     title: Node.js
     language: javascript
   - code_block: |-
-      curl http://sampleapi.readme.com/orders?key=YOUR_APP_KEY
+      curl http://sampleapi.readme.com/products?key=YOUR_APP_KEY
     title: Curl
     language: bash
 right_code_blocks:

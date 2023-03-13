@@ -1,6 +1,6 @@
 ---
-title: /products/:id
-position_number: 1.3
+title: /orders/:id
+position_number: 2.3
 type: get
 description: Get Book
 parameters:
@@ -10,7 +10,7 @@ content_markdown: |-
   Returns a specific book from your collection
 left_code_blocks:
   - code_block: |-
-      $.get("http://api.myapp.com/products/3", {
+      $.get("http://api.myapp.com/orders/3", {
         token: "YOUR_APP_KEY",
       }, function(data) {
         alert(data);

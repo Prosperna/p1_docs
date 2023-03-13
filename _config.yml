@@ -10,7 +10,7 @@ baseurl: /p1_docs
 
 # -----
 # Build
-
+background-color: #3468D0
 timezone: Etc/UTC
 
 collections:
@@ -20,6 +20,9 @@ collections:
   api:
     title: APIs
     position_number: 2
+  products:
+    title: Products
+    position_number: 3
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag

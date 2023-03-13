@@ -1,24 +1,20 @@
 ---
 title: /orders/:id
-position_number: 2.4
-type: put
-description: Update orders
+position_number: 2.5
+type: delete
+description: Deletes a book
 parameters:
-  - name: title
-    content: The title for the book
-  - name: score
-    content: The book's score between 0 and 5
+  - name:
+    content:
 content_markdown: |-
-  Update an existing book in your collection.
+  Deletes a book in your collection.
 left_code_blocks:
   - code_block: |-
       $.ajax({
         "url": "http://api.myapp.com/orders/3",
-        "type": "PUT",
+        "type": "DELETE",
         "data": {
-          "token": "YOUR_APP_KEY",
-          "score": 5.0,
-          "title": "The Book Stealer"
+          "token": "YOUR_APP_KEY"
         },
         "success": function(data) {
           alert(data);
@@ -30,9 +26,7 @@ right_code_blocks:
   - code_block: |2-
       {
         "id": 3,
-        "title": "The Book Stealer",
-        "score": 5,
-        "dateAdded": "5/1/2015"
+        "status": "deleted"
       }
     title: Response
     language: json
