@@ -121,18 +121,10 @@ left_code_blocks:
 right_code_blocks:
   - code_block: |-
       {
-        "id": 3,
-        "title": "The Book Thief",
-        "score": 4.3,
-        "dateAdded": "5/1/2015"
+          "data": null,
+          "message": "Successfully updated product.",
+          "statusCode": 200
       }
     title: Response
-    language: json
-  - code_block: |-
-      {
-        "error": true,
-        "message": "Invalid score"
-      }
-    title: Error
     language: json
 ---
