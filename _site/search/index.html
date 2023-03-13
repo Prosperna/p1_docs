@@ -84,65 +84,68 @@
 				<ul>
 					
 					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>Products</h6>
+				<ul>
+					
+					
 						<li>
-							<a href="/#apiproductsproducts">
+							<a href="/#productsproducts_get">
 								/v1/products/merchant-listing
 								<span class="endpoint get"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="/#apiproductsproducts_get_single">
+							<a href="/#productsproducts_get_single">
 								/v1/products/:product_id
 								<span class="endpoint get"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="/#apiproductsproducts_pre_create">
+							<a href="/#productsproducts_pre_create">
 								/v1/products/pre-create
 								<span class="endpoint post"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="/#apiproductsproducts_add">
+							<a href="/#productsproducts_add">
 								/v1/products/:product_id
 								<span class="endpoint put"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="/#apiproductsproducts_delete">
+							<a href="/#productsproducts_delete">
 								/v1/products/:product_id
 								<span class="endpoint delete"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="/#apiproductsproducts_publish_unpublish">
-								/v1/products/status
-								<span class="endpoint post"></span>
-							</a>
-						</li>
-					
-						<li>
-							<a href="/#apiproductsproducts_storage">
+							<a href="/#productsproducts_storage">
 								/v1/products/storage
 								<span class="endpoint get"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="/#apiproductsproducts_quantity">
+							<a href="/#productsproducts_quantity">
 								/v1/products/stock-quantity?store_id=
-								<span class="endpoint get"></span>
+								<span class="endpoint post"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="/#apicategoriescategories_add">
-								/products/categories
+							<a href="/#productsproducts_publish_unpublish">
+								/v1/products/status
 								<span class="endpoint post"></span>
 							</a>
 						</li>
@@ -172,164 +175,11 @@
 	window.data = {
 		
 			
-				
-					
-						
-						
-						"api-categories-categories-add": {
-							"id": "api-categories-categories-add",
-							"title": "/products/categories",
-							"category": "api",
-							"description": "Create Categories",
-		  				"type": "post",
-							"url": "http://localhost:4001/#apicategoriescategories_add",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-products-products": {
-							"id": "api-products-products",
-							"title": "/v1/products/merchant-listing",
-							"category": "api",
-							"description": "Get all Products",
-		  				"type": "get",
-							"url": "http://localhost:4001/#apiproductsproducts",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-products-products-add": {
-							"id": "api-products-products-add",
-							"title": "/v1/products/:product_id",
-							"category": "api",
-							"description": "Save/Update Product",
-		  				"type": "put",
-							"url": "http://localhost:4001/#apiproductsproducts_add",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-products-products-delete": {
-							"id": "api-products-products-delete",
-							"title": "/v1/products/:product_id",
-							"category": "api",
-							"description": "Delete single product",
-		  				"type": "delete",
-							"url": "http://localhost:4001/#apiproductsproducts_delete",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-products-products-get-single": {
-							"id": "api-products-products-get-single",
-							"title": "/v1/products/:product_id",
-							"category": "api",
-							"description": "Get single product",
-		  				"type": "get",
-							"url": "http://localhost:4001/#apiproductsproducts_get_single",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-products-products-pre-create": {
-							"id": "api-products-products-pre-create",
-							"title": "/v1/products/pre-create",
-							"category": "api",
-							"description": "Pre create product",
-		  				"type": "post",
-							"url": "http://localhost:4001/#apiproductsproducts_pre_create",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-products-products-publish-unpublish": {
-							"id": "api-products-products-publish-unpublish",
-							"title": "/v1/products/status",
-							"category": "api",
-							"description": "Publish or unpublish products, accepts array of product id",
-		  				"type": "post",
-							"url": "http://localhost:4001/#apiproductsproducts_publish_unpublish",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-products-products-quantity": {
-							"id": "api-products-products-quantity",
-							"title": "/v1/products/stock-quantity?store_id=",
-							"category": "api",
-							"description": "Decrease the product quantity and product variant combination quantity",
-		  				"type": "get",
-							"url": "http://localhost:4001/#apiproductsproducts_quantity",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-products-products-storage": {
-							"id": "api-products-products-storage",
-							"title": "/v1/products/storage",
-							"category": "api",
-							"description": "Storage breakdown for product usage",
-		  				"type": "get",
-							"url": "http://localhost:4001/#apiproductsproducts_storage",
-							"content": ""
-						}
-						
-					
-				
-			
 		
 			
 				
 					
-						,
+						
 						
 						"documentation-authentication": {
 							"id": "documentation-authentication",
@@ -379,6 +229,144 @@
 				
 			
 		
+			
+		
+			
+				
+					
+						,
+						
+						"products-products-add": {
+							"id": "products-products-add",
+							"title": "/v1/products/:product_id",
+							"category": "products",
+							"description": "Save/Update Product",
+		  				"type": "put",
+							"url": "http://localhost:4001/#productsproducts_add",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"products-products-delete": {
+							"id": "products-products-delete",
+							"title": "/v1/products/:product_id",
+							"category": "products",
+							"description": "Delete single product",
+		  				"type": "delete",
+							"url": "http://localhost:4001/#productsproducts_delete",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"products-products-get": {
+							"id": "products-products-get",
+							"title": "/v1/products/merchant-listing",
+							"category": "products",
+							"description": "Get all Products",
+		  				"type": "get",
+							"url": "http://localhost:4001/#productsproducts_get",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"products-products-get-single": {
+							"id": "products-products-get-single",
+							"title": "/v1/products/:product_id",
+							"category": "products",
+							"description": "Get single product",
+		  				"type": "get",
+							"url": "http://localhost:4001/#productsproducts_get_single",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"products-products-pre-create": {
+							"id": "products-products-pre-create",
+							"title": "/v1/products/pre-create",
+							"category": "products",
+							"description": "Pre create product",
+		  				"type": "post",
+							"url": "http://localhost:4001/#productsproducts_pre_create",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"products-products-publish-unpublish": {
+							"id": "products-products-publish-unpublish",
+							"title": "/v1/products/status",
+							"category": "products",
+							"description": "Publish or unpublish products, accepts array of product id",
+		  				"type": "post",
+							"url": "http://localhost:4001/#productsproducts_publish_unpublish",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"products-products-quantity": {
+							"id": "products-products-quantity",
+							"title": "/v1/products/stock-quantity?store_id=",
+							"category": "products",
+							"description": "Decrease the product quantity and product variant combination quantity",
+		  				"type": "post",
+							"url": "http://localhost:4001/#productsproducts_quantity",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"products-products-storage": {
+							"id": "products-products-storage",
+							"title": "/v1/products/storage",
+							"category": "products",
+							"description": "Storage breakdown for product usage",
+		  				"type": "get",
+							"url": "http://localhost:4001/#productsproducts_storage",
+							"content": ""
+						}
+						
+					
+				
 			
 		
 	};

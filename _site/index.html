@@ -84,65 +84,68 @@
 				<ul>
 					
 					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>Products</h6>
+				<ul>
+					
+					
 						<li>
-							<a href="#apiproductsproducts">
+							<a href="#productsproducts_get">
 								/v1/products/merchant-listing
 								<span class="endpoint get"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="#apiproductsproducts_get_single">
+							<a href="#productsproducts_get_single">
 								/v1/products/:product_id
 								<span class="endpoint get"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="#apiproductsproducts_pre_create">
+							<a href="#productsproducts_pre_create">
 								/v1/products/pre-create
 								<span class="endpoint post"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="#apiproductsproducts_add">
+							<a href="#productsproducts_add">
 								/v1/products/:product_id
 								<span class="endpoint put"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="#apiproductsproducts_delete">
+							<a href="#productsproducts_delete">
 								/v1/products/:product_id
 								<span class="endpoint delete"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="#apiproductsproducts_publish_unpublish">
-								/v1/products/status
-								<span class="endpoint post"></span>
-							</a>
-						</li>
-					
-						<li>
-							<a href="#apiproductsproducts_storage">
+							<a href="#productsproducts_storage">
 								/v1/products/storage
 								<span class="endpoint get"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="#apiproductsproducts_quantity">
+							<a href="#productsproducts_quantity">
 								/v1/products/stock-quantity?store_id=
-								<span class="endpoint get"></span>
+								<span class="endpoint post"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="#apicategoriescategories_add">
-								/products/categories
+							<a href="#productsproducts_publish_unpublish">
+								/v1/products/status
 								<span class="endpoint post"></span>
 							</a>
 						</li>
@@ -192,6 +195,7 @@
 <p class="warning">Something may not happen if you try and do this.</p>
 
 <p class="error">Something bad will happen if you do this.</p>
+<p><a href="https://god.gw.postman.com/run-collection/22726848-d4428d72-2968-4fef-8ccb-4ce88e7177c9?action=collection%2Ffork&amp;collection-url=entityId%3D22726848-d4428d72-2968-4fef-8ccb-4ce88e7177c9%26entityType%3Dcollection%26workspaceId%3Df139785f-cdb6-4a6d-b3c1-77d3e522e4a2"><img src="https://run.pstmn.io/button.svg" alt="Run in Postman" /></a></p>
 
 
 				
@@ -227,7 +231,7 @@
 								
 
 
-<div title="JQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">$</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">http://api.myapp.com/books/</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">token</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">YOUR_APP_KEY</span><span class="dl">"</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+<div title="JQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">$</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">http://api.myapp.com/orders/</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">token</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">YOUR_APP_KEY</span><span class="dl">"</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
    <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
  <span class="p">});</span>
 </code></pre></div></div>
@@ -236,7 +240,7 @@
 								
 
 
-<div title="Curl" class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> curl http://api.myapp.com/books?token<span class="o">=</span>YOUR_APP_KEY
+<div title="Curl" class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> curl http://api.myapp.com/orders?token<span class="o">=</span>YOUR_APP_KEY
 </code></pre></div></div>
 
 						
@@ -312,16 +316,19 @@
 
 	
 	
+
+	
+	
 		<section class="doc-content">
 			<section class="left-docs">
 				<h3>
-					<a id="apiproductsproducts">
+					<a id="productsproducts_get">
 						/v1/products/merchant-listing
 						
 							<span class="endpoint get"></span>
 						
 					</a>
-					<a class="editor-link" href="cloudcannon:collections/_api/products/products.md">Edit</a>
+					<a class="editor-link" href="cloudcannon:collections/_products/products_get.md">Edit</a>
 				</h3>
 				
 					<p class="description">Get all Products</p>
@@ -530,29 +537,38 @@
 		<section class="doc-content">
 			<section class="left-docs">
 				<h3>
-					<a id="apiproductsproducts_get_single">
+					<a id="productsproducts_get_single">
 						/v1/products/:product_id
 						
 							<span class="endpoint get"></span>
 						
 					</a>
-					<a class="editor-link" href="cloudcannon:collections/_api/products/products_get_single.md">Edit</a>
+					<a class="editor-link" href="cloudcannon:collections/_products/products_get_single.md">Edit</a>
 				</h3>
 				
 					<p class="description">Get single product</p>
 				
 
 				
-						<h6>Parameters</h6>
-						<dl>
-								
-										<dt>product_id</dt>
-										<dd>product id</dd>
-								
-						</dl>
-				
 
-				
+				<table>
+  <thead>
+    <tr>
+      <th><strong>Parameters</strong></th>
+      <th>Data Type</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>product_id</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Product id</td>
+    </tr>
+  </tbody>
+</table>
 
 
 				
@@ -753,29 +769,38 @@
 		<section class="doc-content">
 			<section class="left-docs">
 				<h3>
-					<a id="apiproductsproducts_pre_create">
+					<a id="productsproducts_pre_create">
 						/v1/products/pre-create
 						
 							<span class="endpoint post"></span>
 						
 					</a>
-					<a class="editor-link" href="cloudcannon:collections/_api/products/products_pre_create.md">Edit</a>
+					<a class="editor-link" href="cloudcannon:collections/_products/products_pre_create.md">Edit</a>
 				</h3>
 				
 					<p class="description">Pre create product</p>
 				
 
 				
-						<h6>Parameters</h6>
-						<dl>
-								
-										<dt>product_type</dt>
-										<dd>Type of product either 'physical' or 'digital'.</dd>
-								
-						</dl>
-				
 
-				
+				<table>
+  <thead>
+    <tr>
+      <th>Query Parameters</th>
+      <th>Data Type</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>product_type</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Type of product either ‘physical’ or ‘digital’.</td>
+    </tr>
+  </tbody>
+</table>
 
 
 				
@@ -827,29 +852,208 @@
 		<section class="doc-content">
 			<section class="left-docs">
 				<h3>
-					<a id="apiproductsproducts_add">
+					<a id="productsproducts_add">
 						/v1/products/:product_id
 						
 							<span class="endpoint put"></span>
 						
 					</a>
-					<a class="editor-link" href="cloudcannon:collections/_api/products/products_add.md">Edit</a>
+					<a class="editor-link" href="cloudcannon:collections/_products/products_add.md">Edit</a>
 				</h3>
 				
 					<p class="description">Save/Update Product</p>
 				
 
 				
-						<h6>Parameters</h6>
-						<dl>
-								
-										<dt>product_id</dt>
-										<dd>Product id</dd>
-								
-						</dl>
-				
 
-				
+				<table>
+  <thead>
+    <tr>
+      <th><strong><em>Parameters</em></strong></th>
+      <th><strong><em>Data Type</em></strong></th>
+      <th><strong><em>Required</em></strong></th>
+      <th><strong><em>Description</em></strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>product_id</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Product id</td>
+    </tr>
+    <tr>
+      <td><strong><em>Request Body</em></strong></td>
+      <td><strong><em>Data Type</em></strong></td>
+      <td><strong><em>Required</em></strong></td>
+      <td><strong><em>Description</em></strong></td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td>product_specification.name</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Product name</td>
+    </tr>
+    <tr>
+      <td>product_specification.slug</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Product slug (without url)</td>
+    </tr>
+    <tr>
+      <td>product_specification.short_description</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Product short description</td>
+    </tr>
+    <tr>
+      <td>product_specification.long_description</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Product long description</td>
+    </tr>
+    <tr>
+      <td>product_specification.brand</td>
+      <td>string</td>
+      <td>No</td>
+      <td>Product brand</td>
+    </tr>
+    <tr>
+      <td>product_specification.images</td>
+      <td>array</td>
+      <td>Yes</td>
+      <td>Product images/thumbnails.</td>
+    </tr>
+    <tr>
+      <td>product_state.is_always_instock</td>
+      <td>boolean</td>
+      <td>Yes</td>
+      <td><strong>PAID FEATURE</strong> Boolean value for is always instock feature.</td>
+    </tr>
+    <tr>
+      <td>product_state.is_hide_stock</td>
+      <td>boolean</td>
+      <td>Yes</td>
+      <td><strong>PAID FEATURE</strong> Boolean value for is always hiding stock.</td>
+    </tr>
+    <tr>
+      <td>product_state.is_product_has_variants</td>
+      <td>boolean</td>
+      <td>Yes</td>
+      <td>Boolean value to set if product has variants.</td>
+    </tr>
+    <tr>
+      <td>product_categories</td>
+      <td>array</td>
+      <td>Yes</td>
+      <td>Array of categories id for a given product.</td>
+    </tr>
+    <tr>
+      <td>product_variant_types</td>
+      <td>array</td>
+      <td>Yes, <em>if is_product_has_variants is set to <strong>true</strong> else</em> No.</td>
+      <td>Array of product variant types.</td>
+    </tr>
+    <tr>
+      <td>product_variants_combinations</td>
+      <td>array</td>
+      <td>Yes, <em>if is_product_has_variants is set to <strong>true</strong> else</em> No.</td>
+      <td>Array of variant combinations.</td>
+    </tr>
+    <tr>
+      <td>product_addons</td>
+      <td>object</td>
+      <td>No</td>
+      <td><strong>PAID FEATURE</strong> Product addons, object containing the addon limit and array of addons ids.</td>
+    </tr>
+    <tr>
+      <td>product_price.regular_price</td>
+      <td>number</td>
+      <td>Yes, <em>if is_product_has_variants is set to <strong>false</strong> else</em> No.</td>
+      <td>Product regular price.</td>
+    </tr>
+    <tr>
+      <td>product_price.sale_price</td>
+      <td>number</td>
+      <td>No</td>
+      <td>Product regular price.</td>
+    </tr>
+    <tr>
+      <td>product_price.stock_quantity</td>
+      <td>number</td>
+      <td>Yes, <em>if is_product_has_variants is set to <strong>false</strong> else</em> No.</td>
+      <td>Product stock quantity.</td>
+    </tr>
+    <tr>
+      <td>product_price.margin</td>
+      <td>number</td>
+      <td>No</td>
+      <td>Product sale price.</td>
+    </tr>
+    <tr>
+      <td>product_price.unit_cost</td>
+      <td>number</td>
+      <td>No</td>
+      <td>Product sale price.</td>
+    </tr>
+    <tr>
+      <td>product_measurements.product_size.height</td>
+      <td>number</td>
+      <td>Yes, <em>if is_product_has_variants is set to <strong>false</strong> else</em> No.</td>
+      <td>Product height.</td>
+    </tr>
+    <tr>
+      <td>product_measurements.product_size.width</td>
+      <td>number</td>
+      <td>Yes, <em>if is_product_has_variants is set to <strong>false</strong> else</em> No.</td>
+      <td>Product width.</td>
+    </tr>
+    <tr>
+      <td>product_measurements.product_size.length</td>
+      <td>number</td>
+      <td>Yes, <em>if is_product_has_variants is set to <strong>false</strong> else</em> No.</td>
+      <td>Product length.</td>
+    </tr>
+    <tr>
+      <td>product_measurements.product_size.unit</td>
+      <td><code class="language-plaintext highlighter-rouge">['mm', 'cm', 'in', 'm']</code></td>
+      <td>Yes, <em>if is_product_has_variants is set to <strong>false</strong> else</em> No.</td>
+      <td>Product size unit.</td>
+    </tr>
+    <tr>
+      <td>product_measurements.product_weight.weight</td>
+      <td>number</td>
+      <td>Yes, <em>if is_product_has_variants is set to <strong>false</strong> else</em> No.</td>
+      <td>Product weight.</td>
+    </tr>
+    <tr>
+      <td>product_measurements.product_weight.unit</td>
+      <td><code class="language-plaintext highlighter-rouge">['g', 'kg', 'lb', 'ml', 'l', 'Oz']</code></td>
+      <td>Yes, <em>if is_product_has_variants is set to <strong>false</strong> else</em> No.</td>
+      <td>Product weight unit.</td>
+    </tr>
+    <tr>
+      <td>product_seo.primary.title</td>
+      <td>string</td>
+      <td>No</td>
+      <td><strong>PAID FEATURE</strong> SEO title.</td>
+    </tr>
+    <tr>
+      <td>product_seo.primary.description</td>
+      <td>string</td>
+      <td>No</td>
+      <td><strong>PAID FEATURE</strong> SEO description.</td>
+    </tr>
+    <tr>
+      <td>product_seo.primary.url</td>
+      <td>string</td>
+      <td>No</td>
+      <td><strong>PAID FEATURE</strong> SEO url.</td>
+    </tr>
+  </tbody>
+</table>
 
 
 				
@@ -880,7 +1084,7 @@
   <span class="p">},</span>
   <span class="na">product_price</span><span class="p">:</span> <span class="p">{</span>
     <span class="na">regular_price</span><span class="p">:</span> <span class="mi">900</span><span class="p">,</span>
-    <span class="na">price</span><span class="p">:</span> <span class="mi">900</span><span class="p">,</span>
+    <span class="na">margin</span><span class="p">:</span> <span class="mi">56</span><span class="p">,</span>
     <span class="na">sale_price</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
     <span class="na">unit_cost</span><span class="p">:</span> <span class="mi">56</span><span class="p">,</span>
     <span class="na">stock_quantity</span><span class="p">:</span> <span class="mi">56</span><span class="p">,</span>
@@ -969,29 +1173,38 @@
 		<section class="doc-content">
 			<section class="left-docs">
 				<h3>
-					<a id="apiproductsproducts_delete">
+					<a id="productsproducts_delete">
 						/v1/products/:product_id
 						
 							<span class="endpoint delete"></span>
 						
 					</a>
-					<a class="editor-link" href="cloudcannon:collections/_api/products/products_delete.md">Edit</a>
+					<a class="editor-link" href="cloudcannon:collections/_products/products_delete.md">Edit</a>
 				</h3>
 				
 					<p class="description">Delete single product</p>
 				
 
 				
-						<h6>Parameters</h6>
-						<dl>
-								
-										<dt>product id</dt>
-										<dd>Product id.</dd>
-								
-						</dl>
-				
 
-				
+				<table>
+  <thead>
+    <tr>
+      <th>Parameters</th>
+      <th>Data Type</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>product_id</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Product id</td>
+    </tr>
+  </tbody>
+</table>
 
 
 				
@@ -1040,91 +1253,13 @@
 		<section class="doc-content">
 			<section class="left-docs">
 				<h3>
-					<a id="apiproductsproducts_publish_unpublish">
-						/v1/products/status
-						
-							<span class="endpoint post"></span>
-						
-					</a>
-					<a class="editor-link" href="cloudcannon:collections/_api/products/products_publish_unpublish.md">Edit</a>
-				</h3>
-				
-					<p class="description">Publish or unpublish products, accepts array of product id</p>
-				
-
-				
-						<h6>Parameters</h6>
-						<dl>
-								
-										<dt>action</dt>
-										<dd>publish or unpublish</dd>
-								
-						</dl>
-				
-
-				
-
-
-				
-						
-								
-
-
-<div title="NodeJS" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">([</span>
-  <span class="dl">"</span><span class="s2">639584fdde9e74b0a80d1606</span><span class="dl">"</span>
-<span class="p">]);</span>
-
-<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">post</span><span class="dl">'</span><span class="p">,</span>
-  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">api.prosperna.com/v1/products/status?action=publish</span><span class="dl">'</span><span class="p">,</span>
-  <span class="na">data</span><span class="p">:</span> <span class="nx">data</span>
-<span class="p">};</span>
-
-<span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
-<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
-<span class="p">})</span>
-<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre></div></div>
-
-								
-						
-			</section>
-			
-					<section class="right-code">
-						
-								
-
-
-<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"publishedProducts"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"storePlan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PLUS"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"eligibleProductsToPublish"</span><span class="p">:</span><span class="w"> </span><span class="s2">"40"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"published"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-
-						
-				</section>
-			
-		</section>
-	
-		<section class="doc-content">
-			<section class="left-docs">
-				<h3>
-					<a id="apiproductsproducts_storage">
+					<a id="productsproducts_storage">
 						/v1/products/storage
 						
 							<span class="endpoint get"></span>
 						
 					</a>
-					<a class="editor-link" href="cloudcannon:collections/_api/products/products_storage.md">Edit</a>
+					<a class="editor-link" href="cloudcannon:collections/_products/products_storage.md">Edit</a>
 				</h3>
 				
 					<p class="description">Storage breakdown for product usage</p>
@@ -1193,29 +1328,71 @@
 		<section class="doc-content">
 			<section class="left-docs">
 				<h3>
-					<a id="apiproductsproducts_quantity">
+					<a id="productsproducts_quantity">
 						/v1/products/stock-quantity?store_id=
 						
-							<span class="endpoint get"></span>
+							<span class="endpoint post"></span>
 						
 					</a>
-					<a class="editor-link" href="cloudcannon:collections/_api/products/products_quantity.md">Edit</a>
+					<a class="editor-link" href="cloudcannon:collections/_products/products_quantity.md">Edit</a>
 				</h3>
 				
 					<p class="description">Decrease the product quantity and product variant combination quantity</p>
 				
 
 				
-						<h6>Parameters</h6>
-						<dl>
-								
-										<dt>store_id</dt>
-										<dd>Merchant store id</dd>
-								
-						</dl>
-				
 
-				
+				<table>
+  <thead>
+    <tr>
+      <th><strong><em>Request body</em></strong></th>
+      <th><strong><em>Data Type</em></strong></th>
+      <th><strong><em>Required</em></strong></th>
+      <th><strong><em>Description</em></strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>array</td>
+      <td>Yes</td>
+      <td>Array of objects with the product id/variant combinationation id and the quantity that will be deducted.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Example request body.
+
+  [
+      {
+        "product_id": "63e4f4fabf61b3a5047d9da4",
+        "purchased_quantity": 9
+      },
+      {
+        "purchased_quantity": 5,
+        "product_variant_combination_id": "63e64f99ca104a61440fd50b"
+      }
+  ]
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong><em>Query Parameters</em></strong></th>
+      <th><strong><em>Data Type</em></strong></th>
+      <th><strong><em>Required</em></strong></th>
+      <th><strong><em>Description</em></strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>store_id</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Merchant store id</td>
+    </tr>
+  </tbody>
+</table>
 
 
 				
@@ -1274,34 +1451,62 @@
 		<section class="doc-content">
 			<section class="left-docs">
 				<h3>
-					<a id="apicategoriescategories_add">
-						/products/categories
+					<a id="productsproducts_publish_unpublish">
+						/v1/products/status
 						
 							<span class="endpoint post"></span>
 						
 					</a>
-					<a class="editor-link" href="cloudcannon:collections/_api/categories/categories_add.md">Edit</a>
+					<a class="editor-link" href="cloudcannon:collections/_products/products_publish_unpublish.md">Edit</a>
 				</h3>
 				
-					<p class="description">Create Categories</p>
+					<p class="description">Publish or unpublish products, accepts array of product id</p>
 				
 
 				
-						<h6>Parameters</h6>
-						<dl>
-								
-										<dt>title</dt>
-										<dd>The title for the book</dd>
-								
-										<dt>score</dt>
-										<dd>The book's score between 0 and 5</dd>
-								
-						</dl>
-				
 
-				<p class="success">The books will automatically be added to your reading list</p>
+				<table>
+  <thead>
+    <tr>
+      <th><strong><em>Request body</em></strong></th>
+      <th><strong><em>Data Type</em></strong></th>
+      <th><strong><em>Required</em></strong></th>
+      <th><strong><em>Description</em></strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>array</td>
+      <td>Yes</td>
+      <td>Array of product ids.</td>
+    </tr>
+  </tbody>
+</table>
 
-<p>Adds a book to your collection.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Example request body.
+
+  ["63e4f4fabf61b3a5047d9da4", "63e64f99ca104a61440fd50b"]
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong><em>Query Parameters</em></strong></th>
+      <th><strong><em>Data Type</em></strong></th>
+      <th><strong><em>Required</em></strong></th>
+      <th><strong><em>Description</em></strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>action</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>publish or unpublish</td>
+    </tr>
+  </tbody>
+</table>
 
 
 				
@@ -1309,54 +1514,24 @@
 								
 
 
-<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">"</span><span class="s2">http://api.myapp.com/products/</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
-  <span class="dl">"</span><span class="s2">token</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">YOUR_APP_KEY</span><span class="dl">"</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">title</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">The Book Thief</span><span class="dl">"</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">score</span><span class="dl">"</span><span class="p">:</span> <span class="mf">4.3</span>
-<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre></div></div>
+<div title="NodeJS" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">([</span>
+  <span class="dl">"</span><span class="s2">639584fdde9e74b0a80d1606</span><span class="dl">"</span>
+<span class="p">]);</span>
 
-								
-								
-
-
-<div title="NodeJS" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">request</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="dl">'</span><span class="s1">method</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
-  <span class="dl">'</span><span class="s1">url</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">http://api.myapp.com/products</span><span class="dl">'</span><span class="p">,</span>
-  <span class="dl">'</span><span class="s1">headers</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
-    <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span>
-  <span class="p">},</span>
-  <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-    <span class="dl">"</span><span class="s2">token</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">YOUR_APP_KEY</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">title</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">The Book Thief</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">score</span><span class="dl">"</span><span class="p">:</span> <span class="mf">4.3</span>
-  <span class="p">})</span>
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">post</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">api.prosperna.com/v1/products/status?action=publish</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">data</span><span class="p">:</span> <span class="nx">data</span>
 <span class="p">};</span>
-<span class="nx">request</span><span class="p">(</span><span class="nx">options</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+
+<span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
 <span class="p">});</span>
-</code></pre></div></div>
-
-								
-								
-
-
-<div title="PHP - Guzzle" class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Client</span><span class="p">();</span>
-<span class="nv">$headers</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span>
-<span class="p">];</span>
-<span class="nv">$body</span> <span class="o">=</span> <span class="s1">'{
-  "token": "YOUR_APP_KEY",
-  "title": "The Book Thief",
-  "score": 4.3
-}'</span><span class="p">;</span>
-<span class="nv">$request</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Request</span><span class="p">(</span><span class="s1">'POST'</span><span class="p">,</span> <span class="s1">'http://api.myapp.com/products'</span><span class="p">,</span> <span class="nv">$headers</span><span class="p">,</span> <span class="nv">$body</span><span class="p">);</span>
-<span class="nv">$res</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">sendAsync</span><span class="p">(</span><span class="nv">$request</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">wait</span><span class="p">();</span>
-<span class="k">echo</span> <span class="nv">$res</span><span class="o">-&gt;</span><span class="nf">getBody</span><span class="p">();</span>
 </code></pre></div></div>
 
 								
@@ -1369,20 +1544,13 @@
 
 
 <div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Book Thief"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.3</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"dateAdded"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5/1/2015"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-
-						
-								
-
-
-<div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid score"</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"publishedProducts"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"storePlan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PLUS"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"eligibleProductsToPublish"</span><span class="p">:</span><span class="w"> </span><span class="s2">"40"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"published"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 

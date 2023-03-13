@@ -1,6 +1,6 @@
 ---
 title: /v1/products/storage
-position_number: 1.6
+position_number: 1.5
 type: get
 description: Storage breakdown for product usage
 left_code_blocks:

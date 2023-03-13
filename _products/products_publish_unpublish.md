@@ -1,11 +1,24 @@
 ---
 title: /v1/products/status
-position_number: 1.5
+position_number: 1.7
 type: post
 description: Publish or unpublish products, accepts array of product id
-parameters:
-  - name: action
-    content: publish or unpublish
+
+content_markdown: |-
+  | ***Request body***         | ***Data Type*** | ***Required*** | ***Description***                        |
+  |--------------------|-----------|----------|------------------------------------|
+  |                | array    | Yes      | Array of product ids. |
+
+  ```
+    Example request body.
+
+    ["63e4f4fabf61b3a5047d9da4", "63e64f99ca104a61440fd50b"]
+  ``` 
+
+  | ***Query Parameters***         | ***Data Type*** | ***Required*** | ***Description***                        |
+  |--------------------|-----------|----------|------------------------------------|
+  |  action               | string    | Yes      | publish or unpublish           |
+
 left_code_blocks:
   - code_block: |-
       var axios = require('axios');

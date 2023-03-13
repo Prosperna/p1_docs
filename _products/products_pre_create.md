@@ -3,9 +3,10 @@ title: /v1/products/pre-create
 position_number: 1.2
 type: post
 description: Pre create product
-parameters:
-  - name: product_type
-    content: Type of product either 'physical' or 'digital'.
+content_markdown: |-
+  | Query Parameters         | Data Type | Required | Description                        |
+  |--------------------|-----------|----------|------------------------------------|
+  | product_type               | string    | Yes      | Type of product either 'physical' or 'digital'.            |
 left_code_blocks:
   - code_block: |-
       var axios = require('axios');

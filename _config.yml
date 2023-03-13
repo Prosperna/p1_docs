@@ -20,6 +20,9 @@ collections:
   api:
     title: APIs
     position_number: 2
+  products:
+    title: Products
+    position_number: 3
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag

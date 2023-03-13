@@ -1,11 +1,33 @@
 ---
 title: /v1/products/stock-quantity?store_id=
-position_number: 1.7
-type: get
+position_number: 1.6
+type: post
 description: Decrease the product quantity and product variant combination quantity
-parameters:
-  - name: store_id
-    content: Merchant store id
+
+content_markdown: |-
+  | ***Request body***         | ***Data Type*** | ***Required*** | ***Description***                        |
+  |--------------------|-----------|----------|------------------------------------|
+  |                | array    | Yes      | Array of objects with the product id/variant combinationation id and the quantity that will be deducted. |
+
+  ```
+    Example request body.
+
+    [
+        {
+          "product_id": "63e4f4fabf61b3a5047d9da4",
+          "purchased_quantity": 9
+        },
+        {
+          "purchased_quantity": 5,
+          "product_variant_combination_id": "63e64f99ca104a61440fd50b"
+        }
+    ]
+  ``` 
+
+  | ***Query Parameters***         | ***Data Type*** | ***Required*** | ***Description***                        |
+  |--------------------|-----------|----------|------------------------------------|
+  | store_id               | string    | Yes      | Merchant store id            |
+
 left_code_blocks:
   - code_block: |-
       var axios = require('axios');

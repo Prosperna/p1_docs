@@ -3,9 +3,11 @@ title: /v1/products/:product_id
 position_number: 1.1
 type: get
 description: Get single product
-parameters:
-  - name: product_id
-    content: product id
+content_markdown: |-
+  | **Parameters**         | Data Type | Required | Description                        |
+  |--------------------|-----------|----------|------------------------------------|
+  |         product_id       | string    | Yes      | Product id                |
+
 left_code_blocks:
   - code_block: |-
       var axios = require('axios');
