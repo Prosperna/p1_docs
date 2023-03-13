@@ -855,25 +855,61 @@
 					<a class="editor-link" href="cloudcannon:collections/_products/products_add.md">Edit</a>
 				</h3>
 				
-					<p class="description">Create Book</p>
+					<p class="description">Create Product</p>
 				
 
 				
-						<h6>Parameters</h6>
-						<dl>
-								
-										<dt>title</dt>
-										<dd>The title for the book</dd>
-								
-										<dt>score</dt>
-										<dd>The book's score between 0 and 5</dd>
-								
-						</dl>
-				
 
-				<p class="success">The products will automatically be added to your reading list</p>
+				<table>
+  <thead>
+    <tr>
+      <th>Parameters</th>
+      <th>Data Type</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>name</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Name of the Product</td>
+    </tr>
+    <tr>
+      <td>slug</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Path of the Product</td>
+    </tr>
+    <tr>
+      <td>description</td>
+      <td>text</td>
+      <td>No</td>
+      <td>Product long description</td>
+    </tr>
+    <tr>
+      <td>short_description</td>
+      <td>text</td>
+      <td>No</td>
+      <td>Product short description</td>
+    </tr>
+    <tr>
+      <td>brand</td>
+      <td>string</td>
+      <td>No</td>
+      <td>Product brand</td>
+    </tr>
+    <tr>
+      <td>product_measurements</td>
+      <td>array</td>
+      <td>No</td>
+      <td>available values: <code class="language-plaintext highlighter-rouge">['cm', 'mm', 'in', 'm' ]</code></td>
+    </tr>
+  </tbody>
+</table>
 
-<p>Adds a book to your collection.</p>
+<p>Adds a products to your inventory.</p>
 
 
 				
@@ -881,13 +917,242 @@
 								
 
 
-<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">"</span><span class="s2">http://api.myapp.com/products/</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
-  <span class="dl">"</span><span class="s2">token</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">YOUR_APP_KEY</span><span class="dl">"</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">title</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">The Book Thief</span><span class="dl">"</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">score</span><span class="dl">"</span><span class="p">:</span> <span class="mf">4.3</span>
-<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-<span class="p">});</span>
+<div title="NodeJs" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">request</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">username</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">your_username</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">password</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">your_password</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">auth</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Basic </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">Buffer</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nx">username</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">:</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">password</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="dl">'</span><span class="s1">base64</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">http://localhost:4000/v1/products</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">Authorization</span><span class="p">:</span> <span class="nx">auth</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="na">body</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">product_specification</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">another name here</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">slug</span><span class="p">:</span> <span class="dl">'</span><span class="s1">davide_unique_slugl3</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">description</span><span class="p">:</span> <span class="dl">'</span><span class="s1">product_description</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">short_description</span><span class="p">:</span> <span class="dl">'</span><span class="s1">short description</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">brand</span><span class="p">:</span> <span class="dl">'</span><span class="s1">product_brand</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">images</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="na">file_name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">newccc.jpeg</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">image</span><span class="p">:</span> <span class="dl">'</span><span class="s1">data:image/jpeg;base64</span><span class="dl">'</span><span class="p">,</span>
+        <span class="p">},</span>
+      <span class="p">],</span>
+    <span class="p">},</span>
+    <span class="na">product_state</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">is_always_instock</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="na">is_hide_stock</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="na">product_measurements</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">product_size</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">height</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>
+        <span class="na">width</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>
+        <span class="na">length</span><span class="p">:</span> <span class="mi">62</span><span class="p">,</span>
+        <span class="na">unit</span><span class="p">:</span> <span class="dl">'</span><span class="s1">cm</span><span class="dl">'</span><span class="p">,</span>
+      <span class="p">},</span>
+      <span class="na">product_weight</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">weight</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>
+        <span class="na">unit</span><span class="p">:</span> <span class="dl">'</span><span class="s1">l</span><span class="dl">'</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="na">product_variants_combinations</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="na">combination_name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Large Chocolate</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">stock_quantity</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="na">price</span><span class="p">:</span> <span class="mf">12.3</span><span class="p">,</span>
+        <span class="na">variant_combinations</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">{</span>
+            <span class="na">selected_variant_option_id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">6389ec5665561a16ca6c096a</span><span class="dl">'</span><span class="p">,</span>
+            <span class="na">variant_type_id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">6389ec5665561a16ca6c0969</span><span class="dl">'</span><span class="p">,</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="na">selected_variant_option_id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">638997c9f3c4c4080d6d4c15</span><span class="dl">'</span><span class="p">,</span>
+            <span class="na">variant_type_id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">638997c9f3c4c4080d6d4c14</span><span class="dl">'</span><span class="p">,</span>
+          <span class="p">},</span>
+        <span class="p">],</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="na">combination_name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Large Cheese</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">stock_quantity</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="na">price</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="na">variant_combinations</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">{</span>
+            <span class="na">selected_variant_option_id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">6389ec5665561a16ca6c096b</span><span class="dl">'</span><span class="p">,</span>
+            <span class="na">variant_type_id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">6389ec5665561a16ca6c0969</span><span class="dl">'</span><span class="p">,</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="na">selected_variant_option_id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">638997c9f3c4c4080d6d4c15</span><span class="dl">'</span><span class="p">,</span>
+            <span class="na">variant_type_id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">638997c9f3c4c4080d6d4c14</span><span class="dl">'</span><span class="p">,</span>
+          <span class="p">},</span>
+        <span class="p">],</span>
+      <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="na">product_addons</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">addOn_limit</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="na">addOn_list</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">6386a7d04d734f58b587f131</span><span class="dl">'</span><span class="p">],</span>
+    <span class="p">},</span>
+    <span class="na">product_price</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">regular_price</span><span class="p">:</span> <span class="mi">1522</span><span class="p">,</span>
+      <span class="na">sale_price</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="na">price_display</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Buy one take one</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">margin</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>
+      <span class="na">unit_cost</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="na">store_locations</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="na">stock_quantity</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="na">store_location_id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">636bab233ea4455a9486ad5b</span><span class="dl">'</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="na">product_categories</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">6386a2b04d734f58b587f0f8</span><span class="dl">'</span><span class="p">],</span>
+    <span class="na">product_seo</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">primary</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">seo_title</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">description</span><span class="p">:</span> <span class="dl">'</span><span class="s1">seo description</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">http://localhost:3000</span><span class="dl">'</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">},</span>
+  <span class="p">},</span>
+  <span class="na">json</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="nx">rp</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre></div></div>
+
+								
+								
+
+
+<div title="Python" class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">base64</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">username</span> <span class="o">=</span> <span class="s">'your_username'</span>
+<span class="n">password</span> <span class="o">=</span> <span class="s">'your_password'</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">'https://your_api_endpoint.com/v1/products'</span>
+
+<span class="c1"># Encode the username and password in base64
+</span><span class="n">auth_string</span> <span class="o">=</span> <span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s">:</span><span class="si">{</span><span class="n">password</span><span class="si">}</span><span class="s">"</span>
+<span class="n">encoded_auth_string</span> <span class="o">=</span> <span class="n">base64</span><span class="p">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">auth_string</span><span class="p">.</span><span class="n">encode</span><span class="p">()).</span><span class="n">decode</span><span class="p">()</span>
+
+<span class="c1"># Set the Authorization and Content-Type headers
+</span><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'Authorization'</span><span class="p">:</span> <span class="sa">f</span><span class="s">'Basic </span><span class="si">{</span><span class="n">encoded_auth_string</span><span class="si">}</span><span class="s">'</span><span class="p">,</span>
+    <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/json'</span>
+<span class="p">}</span>
+
+<span class="c1"># Define the payload
+</span><span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"product_specification"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">"name"</span><span class="p">:</span> <span class="s">"another name here"</span><span class="p">,</span>
+        <span class="s">"slug"</span><span class="p">:</span> <span class="s">"davide_unique_slugl3"</span><span class="p">,</span>
+        <span class="s">"description"</span><span class="p">:</span> <span class="s">"product_description"</span><span class="p">,</span>
+        <span class="s">"short_description"</span><span class="p">:</span> <span class="s">"short description"</span><span class="p">,</span>
+        <span class="s">"brand"</span><span class="p">:</span> <span class="s">"product_brand"</span><span class="p">,</span>
+        <span class="s">"images"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s">"file_name"</span><span class="p">:</span> <span class="s">"newccc.jpeg"</span><span class="p">,</span>
+                <span class="s">"image"</span><span class="p">:</span> <span class="s">"data:image/jpeg;base64"</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="s">"product_state"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">"is_always_instock"</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+        <span class="s">"is_hide_stock"</span><span class="p">:</span> <span class="bp">True</span>
+    <span class="p">},</span>
+    <span class="s">"product_measurements"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">"product_size"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">"height"</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>
+            <span class="s">"width"</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>
+            <span class="s">"length"</span><span class="p">:</span> <span class="mi">62</span><span class="p">,</span>
+            <span class="s">"unit"</span><span class="p">:</span> <span class="s">"cm"</span>
+        <span class="p">},</span>
+        <span class="s">"product_weight"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">"weight"</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>
+            <span class="s">"unit"</span><span class="p">:</span> <span class="s">"l"</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s">"product_variants_combinations"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s">"combination_name"</span><span class="p">:</span> <span class="s">"Large Chocolate"</span><span class="p">,</span>
+            <span class="s">"stock_quantity"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+            <span class="s">"price"</span><span class="p">:</span> <span class="mf">12.3</span><span class="p">,</span>
+            <span class="s">"variant_combinations"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s">"selected_variant_option_id"</span><span class="p">:</span> <span class="s">"6389ec5665561a16ca6c096a"</span><span class="p">,</span>
+                    <span class="s">"variant_type_id"</span><span class="p">:</span> <span class="s">"6389ec5665561a16ca6c0969"</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s">"selected_variant_option_id"</span><span class="p">:</span> <span class="s">"638997c9f3c4c4080d6d4c15"</span><span class="p">,</span>
+                    <span class="s">"variant_type_id"</span><span class="p">:</span> <span class="s">"638997c9f3c4c4080d6d4c14"</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s">"combination_name"</span><span class="p">:</span> <span class="s">"Large Cheese"</span><span class="p">,</span>
+            <span class="s">"stock_quantity"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+            <span class="s">"price"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+            <span class="s">"variant_combinations"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s">"selected_variant_option_id"</span><span class="p">:</span> <span class="s">"6389ec5665561a16ca6c096b"</span><span class="p">,</span>
+                    <span class="s">"variant_type_id"</span><span class="p">:</span> <span class="s">"6389ec5665561a16ca6c0969"</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s">"selected_variant_option_id"</span><span class="p">:</span> <span class="s">"638997c9f3c4c4080d6d4c15"</span><span class="p">,</span>
+                    <span class="s">"variant_type_id"</span><span class="p">:</span> <span class="s">"638997c9f3c4c4080d6d4c14"</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s">"product_addons"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">"addOn_limit"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s">"addOn_list"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s">"6386a7d04d734f58b587f131"</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="s">"product_price"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">"regular_price"</span><span class="p">:</span> <span class="mi">1522</span><span class="p">,</span>
+        <span class="s">"sale_price"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s">"price_display"</span><span class="p">:</span> <span class="s">"Buy one take one"</span><span class="p">,</span>
+        <span class="s">"margin"</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>
+        <span class="s">"unit_cost"</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">},</span>
+    <span class="s">"store_locations"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s">"stock_quantity"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="s">"store_location_id"</span><span class="p">:</span> <span class="s">"636bab233ea4455a9486ad5b"</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s">"product_categories"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s">"6386a2b04d734f58b587f0f8"</span>
+    <span class="p">],</span>
+    <span class="s">"product_seo"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">"primary"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">"title"</span><span class="p">:</span> <span class="s">"seo_title"</span><span class="p">,</span>
+            <span class="s">"description"</span><span class="p">:</span> <span class="s">"seo description"</span><span class="p">,</span>
+            <span class="s">"url"</span><span class="p">:</span> <span class="s">"http://localhost:3000"</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1"># Convert the payload to a JSON string
+</span><span class="n">json_payload</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+
+<span class="c1"># Make a POST request with the headers and JSON payload
+</span><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">json_payload</span><span class="p">)</span>
+
+<span class="c1"># Print the response
+</span><span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
 </code></pre></div></div>
 
 								
@@ -899,11 +1164,21 @@
 								
 
 
-<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+<div title="Request" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Book Thief"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Product Thief"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.3</span><span class="p">,</span><span class="w">
   </span><span class="nl">"dateAdded"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5/1/2015"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid score"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
