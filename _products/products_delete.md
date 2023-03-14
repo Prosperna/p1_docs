@@ -1,40 +1,39 @@
 ---
-title: /products/:id
-position_number: 1.5
+title: /v1/products/:product_id
+position_number: 1.4
 type: delete
-description: Deletes a book
-parameters:
-  - name:
-    content:
+description: Delete single product
 content_markdown: |-
-  Deletes a book in your collection.
+  | Parameters         | Data Type | Required | Description                        |
+  |--------------------|-----------|----------|------------------------------------|
+  | product_id               | string    | Yes      | Product id                |
+
 left_code_blocks:
   - code_block: |-
-      $.ajax({
-        "url": "http://api.myapp.com/products/3",
-        "type": "DELETE",
-        "data": {
-          "token": "YOUR_APP_KEY"
-        },
-        "success": function(data) {
-          alert(data);
-        }
+      var axios = require('axios');
+      var data = '';
+
+      var config = {
+        method: 'delete',
+        url: 'api.prosperna.com/v1/products/:product_id'
+      };
+
+      axios(config)
+      .then(function (response) {
+        console.log(JSON.stringify(response.data));
+      })
+      .catch(function (error) {
+        console.log(error);
       });
-    title: jQuery
+    title: NodeJS
     language: javascript
 right_code_blocks:
-  - code_block: |2-
+  - code_block: |-
       {
-        "id": 3,
-        "status": "deleted"
+          "data": null,
+          "message": "Successfully updated product.",
+          "statusCode": 200
       }
     title: Response
-    language: json
-  - code_block: |2-
-      {
-        "error": true,
-        "message": "Book doesn't exist"
-      }
-    title: Error
     language: json
 ---

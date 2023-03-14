@@ -85,34 +85,6 @@
 					
 					
 						<li>
-							<a href="/#apibooksbooks">
-								Books
-								
-							</a>
-						</li>
-					
-						<li>
-							<a href="/#apibooksbooks_get">
-								/products/:id
-								<span class="endpoint get"></span>
-							</a>
-						</li>
-					
-						<li>
-							<a href="/#apibooksbooks_delete">
-								/products/:id
-								<span class="endpoint delete"></span>
-							</a>
-						</li>
-					
-						<li>
-							<a href="/#apibooksbooks_list">
-								/orders
-								<span class="endpoint get"></span>
-							</a>
-						</li>
-					
-						<li>
 							<a href="/#apiproductsproducts">
 								Products
 								
@@ -120,58 +92,9 @@
 						</li>
 					
 						<li>
-							<a href="/#apiordersorders_list">
-								/orders
-								<span class="endpoint get"></span>
-							</a>
-						</li>
-					
-						<li>
-							<a href="/#apiordersorders_add">
-								/orders
-								<span class="endpoint post"></span>
-							</a>
-						</li>
-					
-						<li>
-							<a href="/#apibooksbooks_add">
-								/orders
-								<span class="endpoint post"></span>
-							</a>
-						</li>
-					
-						<li>
 							<a href="/#apiproductsproducts_add">
 								/products
 								<span class="endpoint post"></span>
-							</a>
-						</li>
-					
-						<li>
-							<a href="/#apiordersorders_get">
-								/orders/:id
-								<span class="endpoint get"></span>
-							</a>
-						</li>
-					
-						<li>
-							<a href="/#apibooksbooks_update">
-								/orders/:id
-								<span class="endpoint put"></span>
-							</a>
-						</li>
-					
-						<li>
-							<a href="/#apiordersorders_update">
-								/orders/:id
-								<span class="endpoint put"></span>
-							</a>
-						</li>
-					
-						<li>
-							<a href="/#apiordersorders_delete">
-								/orders/:id
-								<span class="endpoint delete"></span>
 							</a>
 						</li>
 					
@@ -186,37 +109,58 @@
 					
 					
 						<li>
-							<a href="/#productsproducts_list">
-								/products
+							<a href="/#productsproducts_get">
+								/v1/products/merchant-listing
 								<span class="endpoint get"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="/#productsproducts_add">
-								/products
+							<a href="/#productsproducts_get_single">
+								/v1/products/:product_id
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#productsproducts_pre_create">
+								/v1/products/pre-create
 								<span class="endpoint post"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="/#productsproducts_get">
-								/products/:id
-								<span class="endpoint get"></span>
+							<a href="/#productsproducts_add">
+								/v1/products/:product_id
+								<span class="endpoint put"></span>
 							</a>
 						</li>
 					
 						<li>
 							<a href="/#productsproducts_delete">
-								/products/:id
+								/v1/products/:product_id
 								<span class="endpoint delete"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="/#productsproducts_update">
-								/products/:id
-								<span class="endpoint put"></span>
+							<a href="/#productsproducts_storage">
+								/v1/products/storage
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#productsproducts_quantity">
+								/v1/products/stock-quantity?store_id=
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#productsproducts_publish_unpublish">
+								/v1/products/status
+								<span class="endpoint post"></span>
 							</a>
 						</li>
 					
@@ -286,193 +230,6 @@
 				
 					
 						
-						
-						"api-books-books": {
-							"id": "api-books-books",
-							"title": "Books",
-							"category": "api",
-							"description": "",
-		  				"type": "",
-							"url": "http://localhost:8000/#apibooksbooks",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-books-books-add": {
-							"id": "api-books-books-add",
-							"title": "/orders",
-							"category": "api",
-							"description": "Create Book",
-		  				"type": "post",
-							"url": "http://localhost:8000/#apibooksbooks_add",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-books-books-delete": {
-							"id": "api-books-books-delete",
-							"title": "/products/:id",
-							"category": "api",
-							"description": "Deletes a book",
-		  				"type": "delete",
-							"url": "http://localhost:8000/#apibooksbooks_delete",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-books-books-get": {
-							"id": "api-books-books-get",
-							"title": "/products/:id",
-							"category": "api",
-							"description": "Get Book",
-		  				"type": "get",
-							"url": "http://localhost:8000/#apibooksbooks_get",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-books-books-list": {
-							"id": "api-books-books-list",
-							"title": "/orders",
-							"category": "api",
-							"description": "List all orders",
-		  				"type": "get",
-							"url": "http://localhost:8000/#apibooksbooks_list",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-books-books-update": {
-							"id": "api-books-books-update",
-							"title": "/orders/:id",
-							"category": "api",
-							"description": "Update orders",
-		  				"type": "put",
-							"url": "http://localhost:8000/#apibooksbooks_update",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-orders-orders-add": {
-							"id": "api-orders-orders-add",
-							"title": "/orders",
-							"category": "api",
-							"description": "Create Book",
-		  				"type": "post",
-							"url": "http://localhost:8000/#apiordersorders_add",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-orders-orders-delete": {
-							"id": "api-orders-orders-delete",
-							"title": "/orders/:id",
-							"category": "api",
-							"description": "Deletes a book",
-		  				"type": "delete",
-							"url": "http://localhost:8000/#apiordersorders_delete",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-orders-orders-get": {
-							"id": "api-orders-orders-get",
-							"title": "/orders/:id",
-							"category": "api",
-							"description": "Get Book",
-		  				"type": "get",
-							"url": "http://localhost:8000/#apiordersorders_get",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-orders-orders-list": {
-							"id": "api-orders-orders-list",
-							"title": "/orders",
-							"category": "api",
-							"description": "List all orders",
-		  				"type": "get",
-							"url": "http://localhost:8000/#apiordersorders_list",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-orders-orders-update": {
-							"id": "api-orders-orders-update",
-							"title": "/orders/:id",
-							"category": "api",
-							"description": "Update orders",
-		  				"type": "put",
-							"url": "http://localhost:8000/#apiordersorders_update",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
 						
 						"api-products-products": {
 							"id": "api-products-products",
@@ -637,10 +394,10 @@
 						
 						"products-products-add": {
 							"id": "products-products-add",
-							"title": "/products",
+							"title": "/v1/products/:product_id",
 							"category": "products",
-							"description": "Create Product",
-		  				"type": "post",
+							"description": "Save/Update Product",
+		  				"type": "put",
 							"url": "http://localhost:8000/#productsproducts_add",
 							"content": ""
 						}
@@ -654,9 +411,9 @@
 						
 						"products-products-delete": {
 							"id": "products-products-delete",
-							"title": "/products/:id",
+							"title": "/v1/products/:product_id",
 							"category": "products",
-							"description": "Deletes a book",
+							"description": "Delete single product",
 		  				"type": "delete",
 							"url": "http://localhost:8000/#productsproducts_delete",
 							"content": ""
@@ -671,9 +428,9 @@
 						
 						"products-products-get": {
 							"id": "products-products-get",
-							"title": "/products/:id",
+							"title": "/v1/products/merchant-listing",
 							"category": "products",
-							"description": "Get Book",
+							"description": "Get all Products",
 		  				"type": "get",
 							"url": "http://localhost:8000/#productsproducts_get",
 							"content": ""
@@ -686,13 +443,13 @@
 					
 						,
 						
-						"products-products-list": {
-							"id": "products-products-list",
-							"title": "/products",
+						"products-products-get-single": {
+							"id": "products-products-get-single",
+							"title": "/v1/products/:product_id",
 							"category": "products",
-							"description": "List all products",
+							"description": "Get single product",
 		  				"type": "get",
-							"url": "http://localhost:8000/#productsproducts_list",
+							"url": "http://localhost:8000/#productsproducts_get_single",
 							"content": ""
 						}
 						
@@ -703,13 +460,64 @@
 					
 						,
 						
-						"products-products-update": {
-							"id": "products-products-update",
-							"title": "/products/:id",
+						"products-products-pre-create": {
+							"id": "products-products-pre-create",
+							"title": "/v1/products/pre-create",
 							"category": "products",
-							"description": "Update products",
-		  				"type": "put",
-							"url": "http://localhost:8000/#productsproducts_update",
+							"description": "Pre create product",
+		  				"type": "post",
+							"url": "http://localhost:8000/#productsproducts_pre_create",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"products-products-publish-unpublish": {
+							"id": "products-products-publish-unpublish",
+							"title": "/v1/products/status",
+							"category": "products",
+							"description": "Publish or unpublish products, accepts array of product id",
+		  				"type": "post",
+							"url": "http://localhost:8000/#productsproducts_publish_unpublish",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"products-products-quantity": {
+							"id": "products-products-quantity",
+							"title": "/v1/products/stock-quantity?store_id=",
+							"category": "products",
+							"description": "Decrease the product quantity and product variant combination quantity",
+		  				"type": "post",
+							"url": "http://localhost:8000/#productsproducts_quantity",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"products-products-storage": {
+							"id": "products-products-storage",
+							"title": "/v1/products/storage",
+							"category": "products",
+							"description": "Storage breakdown for product usage",
+		  				"type": "get",
+							"url": "http://localhost:8000/#productsproducts_storage",
 							"content": ""
 						}
 						
