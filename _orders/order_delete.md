@@ -21,7 +21,7 @@ left_code_blocks:
         var config = {
         method: 'delete',
         maxBodyLength: Infinity,
-        url: 'https://api.dev.prosperna.ph/v1/orders/6395690183b8967af19222f9?sid=6386ae5dba4bf984402d848e&cid=3945a7bb-b2d9-4b6c-8d41-2db4d56fc4ec'
+        url: 'https://api.prosperna.com/v1/orders/6395690183b8967af19222f9?sid=6386ae5dba4bf984402d848e&cid=3945a7bb-b2d9-4b6c-8d41-2db4d56fc4ec'
         };
 
         axios(config)

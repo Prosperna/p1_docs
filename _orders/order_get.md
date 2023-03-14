@@ -19,7 +19,7 @@ left_code_blocks:
       var config = {
         method: 'get',
       maxBodyLength: Infinity,
-        url: 'https://api.dev.prosperna.ph/v1/orders/store?sid=63dc812b809e8c308d735e72'
+        url: 'https://api.prosperna.com/v1/orders/store?sid=63dc812b809e8c308d735e72'
       };
 
       axios(config)

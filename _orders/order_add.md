@@ -62,7 +62,7 @@ left_code_blocks:
         var config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: 'https://api.dev.prosperna.ph/v1/orders/',
+        url: 'https://api.prosperna.com/v1/orders/',
         headers: { 
             'Content-Type': 'application/json'
         },

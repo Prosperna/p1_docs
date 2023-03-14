@@ -39,7 +39,7 @@ left_code_blocks:
         var config = {
         method: 'patch',
         maxBodyLength: Infinity,
-        url: 'https://api.dev.prosperna.ph/v1/orders/640fc92a2742e57a81038b09?sid=637de5eab94b30555121f36c&cid=453c955e-ae65-4975-8bf1-c8dd98892c60',
+        url: 'https://api.prosperna.com/v1/orders/640fc92a2742e57a81038b09?sid=637de5eab94b30555121f36c&cid=453c955e-ae65-4975-8bf1-c8dd98892c60',
         headers: { 
             'Content-Type': 'application/json'
         },
