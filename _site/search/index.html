@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Search | ProspernaOne</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="Search" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="ProspernaOne API documentation" />
+<meta property="og:description" content="ProspernaOne API documentation" />
+<link rel="canonical" href="http://localhost:4001/p1_docs/search/" />
+<meta property="og:url" content="http://localhost:4001/p1_docs/search/" />
+<meta property="og:site_name" content="ProspernaOne" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Search" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"ProspernaOne API documentation","headline":"Search","url":"http://localhost:4001/p1_docs/search/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+		<link rel="stylesheet" href="./css/style.css">
+		<link rel="icon" type="image/png" href="/favicon.png">
+
+		
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="./js/main.js"></script>
+	</head>
+	<body>
+		<header>
+			<h1>
+				<button type="button" class="open-nav" id="open-nav"></button>
+				<a href="http://localhost:4001/"><img src="./images/prosperna-logo.png" height="40" alt="ProspernaOne logo"></a>
+			</h1>
+
+			<form action="./search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="Search">
+				<input type="submit" value="Search" style="display: none;">
+			</form>
+
+			<div id="sidebar" class="sidebar">
+	
+	
+		
+	
+		
+			<section>
+				<h6>Documentation</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="/#documentationgetting_started">
+								Getting Started
+								
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#documentationauthentication">
+								Authentication
+								
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#documentationerrors">
+								Errors
+								
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>APIs</h6>
+				<ul>
+					
+					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>Products</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="/#productsproducts_get">
+								/v1/products/merchant-listing
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#productsproducts_get_single">
+								/v1/products/:product_id
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#productsproducts_pre_create">
+								/v1/products/pre-create
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#productsproducts_add">
+								/v1/products/:product_id
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#productsproducts_delete">
+								/v1/products/:product_id
+								<span class="endpoint delete"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#productsproducts_storage">
+								/v1/products/storage
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#productsproducts_quantity">
+								/v1/products/stock-quantity?store_id=
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#productsproducts_publish_unpublish">
+								/v1/products/status
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
+</div>
+
+
+			<p class="copyright">
+				<a href="https://cloudcannon.com/">
+					Template by CloudCannon
+				</a>
+			</p>
+		</header>
+		<div class="main">
+			<div class="search-page">
+	<h2>Search Results</h2>
+
+	<p><span id="search-process">Loading</span> results <span id="search-query-container" style="display: none;">for "<strong id="search-query"></strong>"</span></p>
+	<ul id="search-results"></ul>
+</div>
+
+<script>
+	window.data = {
+		
+			
+		
+			
+				
+					
+						
+						
+						"documentation-authentication": {
+							"id": "documentation-authentication",
+							"title": "Authentication",
+							"category": "documentation",
+							"description": "",
+		  				"type": "",
+							"url": "http://localhost:4001/#documentationauthentication",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"documentation-errors": {
+							"id": "documentation-errors",
+							"title": "Errors",
+							"category": "documentation",
+							"description": "",
+		  				"type": "",
+							"url": "http://localhost:4001/#documentationerrors",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"documentation-getting-started": {
+							"id": "documentation-getting-started",
+							"title": "Getting Started",
+							"category": "documentation",
+							"description": "",
+		  				"type": "",
+							"url": "http://localhost:4001/#documentationgetting_started",
+							"content": ""
+						}
+						
+					
+				
+			
+		
+			
+		
+			
+				
+					
+						,
+						
+						"products-products-add": {
+							"id": "products-products-add",
+							"title": "/v1/products/:product_id",
+							"category": "products",
+							"description": "Save/Update Product",
+		  				"type": "put",
+							"url": "http://localhost:4001/#productsproducts_add",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"products-products-delete": {
+							"id": "products-products-delete",
+							"title": "/v1/products/:product_id",
+							"category": "products",
+							"description": "Delete single product",
+		  				"type": "delete",
+							"url": "http://localhost:4001/#productsproducts_delete",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"products-products-get": {
+							"id": "products-products-get",
+							"title": "/v1/products/merchant-listing",
+							"category": "products",
+							"description": "Get all Products",
+		  				"type": "get",
+							"url": "http://localhost:4001/#productsproducts_get",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"products-products-get-single": {
+							"id": "products-products-get-single",
+							"title": "/v1/products/:product_id",
+							"category": "products",
+							"description": "Get single product",
+		  				"type": "get",
+							"url": "http://localhost:4001/#productsproducts_get_single",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"products-products-pre-create": {
+							"id": "products-products-pre-create",
+							"title": "/v1/products/pre-create",
+							"category": "products",
+							"description": "Pre create product",
+		  				"type": "post",
+							"url": "http://localhost:4001/#productsproducts_pre_create",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"products-products-publish-unpublish": {
+							"id": "products-products-publish-unpublish",
+							"title": "/v1/products/status",
+							"category": "products",
+							"description": "Publish or unpublish products, accepts array of product id",
+		  				"type": "post",
+							"url": "http://localhost:4001/#productsproducts_publish_unpublish",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"products-products-quantity": {
+							"id": "products-products-quantity",
+							"title": "/v1/products/stock-quantity?store_id=",
+							"category": "products",
+							"description": "Decrease the product quantity and product variant combination quantity",
+		  				"type": "post",
+							"url": "http://localhost:4001/#productsproducts_quantity",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"products-products-storage": {
+							"id": "products-products-storage",
+							"title": "/v1/products/storage",
+							"category": "products",
+							"description": "Storage breakdown for product usage",
+		  				"type": "get",
+							"url": "http://localhost:4001/#productsproducts_storage",
+							"content": ""
+						}
+						
+					
+				
+			
+		
+	};
+</script>
+<script src="http://localhost:4001/js/lunr.min.js"></script>
+<script src="http://localhost:4001/js/search.js"></script>
+
+		</div>
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>
