@@ -23,6 +23,9 @@ collections:
   products:
     title: Products
     position_number: 3
+  orders:
+    title: Orders
+    position_number: 4
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag

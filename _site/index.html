@@ -179,6 +179,89 @@
 			</section>
 		
 	
+		
+			<section>
+				<h6>Products</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="#productsproducts_list">
+								/products
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#productsproducts_add">
+								/products
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#productsproducts_get">
+								/products/:id
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#productsproducts_delete">
+								/products/:id
+								<span class="endpoint delete"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#productsproducts_update">
+								/products/:id
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>Orders</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="#ordersorder_add">
+								/v1/orders
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#ordersorder_get">
+								/v1/orders/store?sid={store_id}
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#ordersorder_update">
+								/v1/orders/order_id?sid=""&cid=""
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#ordersorder_delete">
+								/order/:id
+								<span class="endpoint delete"></span>
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
 </div>
 
 
@@ -1298,6 +1381,1777 @@
   </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Book doesn't exist"</span><span class="w">
 </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+
+	
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="productsproducts_list">
+						/products
+						
+							<span class="endpoint get"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_products/products_list.md">Edit</a>
+				</h3>
+				
+					<p class="description">List all products</p>
+				
+
+				
+						<h6>Parameters</h6>
+						<dl>
+								
+										<dt>offset</dt>
+										<dd>Offset the results by this amount</dd>
+								
+										<dt>limit</dt>
+										<dd>Limit the number of products returned</dd>
+								
+						</dl>
+				
+
+				<p class="info">This call will return a maximum of 100 products</p>
+
+<p>Lists all the photos you have access to. You can paginate by using the parameters listed above.</p>
+
+
+				
+						
+								
+
+
+<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">http://api.myapp.com/products/</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">token</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">YOUR_APP_KEY</span><span class="dl">"</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+								
+								
+
+
+<div title="Python" class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"http://api.myapp.com/products/"</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="s">"YOUR_APP_KEY"</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">r</span><span class="p">.</span><span class="n">text</span>
+</code></pre></div></div>
+
+								
+								
+
+
+<div title="Node.js" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">request</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">request</span><span class="p">(</span><span class="dl">"</span><span class="s2">http://api.myapp.com/products?token=YOUR_APP_KEY</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">error</span> <span class="o">&amp;&amp;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+								
+								
+
+
+<div title="Curl" class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl http://sampleapi.readme.com/products?key<span class="o">=</span>YOUR_APP_KEY
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Hunger Games"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.5</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dateAdded"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12/12/2013"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Hunger Games"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.7</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dateAdded"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15/12/2013"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid offset"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="productsproducts_add">
+						/products
+						
+							<span class="endpoint post"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_products/products_add.md">Edit</a>
+				</h3>
+				
+					<p class="description">Create Product</p>
+				
+
+				
+
+				<table>
+  <thead>
+    <tr>
+      <th>Parameters</th>
+      <th>Data Type</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>name</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Name of the Product</td>
+    </tr>
+    <tr>
+      <td>slug</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Path of the Product</td>
+    </tr>
+    <tr>
+      <td>description</td>
+      <td>text</td>
+      <td>No</td>
+      <td>Product long description</td>
+    </tr>
+    <tr>
+      <td>short_description</td>
+      <td>text</td>
+      <td>No</td>
+      <td>Product short description</td>
+    </tr>
+    <tr>
+      <td>brand</td>
+      <td>string</td>
+      <td>No</td>
+      <td>Product brand</td>
+    </tr>
+    <tr>
+      <td>product_measurements</td>
+      <td>array</td>
+      <td>No</td>
+      <td>available values: <code class="language-plaintext highlighter-rouge">['cm', 'mm', 'in', 'm' ]</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Adds a products to your inventory.</p>
+
+
+				
+						
+								
+
+
+<div title="NodeJs" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">request</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">username</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">your_username</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">password</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">your_password</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">auth</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Basic </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">Buffer</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nx">username</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">:</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">password</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="dl">'</span><span class="s1">base64</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">http://localhost:4000/v1/products</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">Authorization</span><span class="p">:</span> <span class="nx">auth</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="na">body</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">product_specification</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">another name here</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">slug</span><span class="p">:</span> <span class="dl">'</span><span class="s1">davide_unique_slugl3</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">description</span><span class="p">:</span> <span class="dl">'</span><span class="s1">product_description</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">short_description</span><span class="p">:</span> <span class="dl">'</span><span class="s1">short description</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">brand</span><span class="p">:</span> <span class="dl">'</span><span class="s1">product_brand</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">images</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="na">file_name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">newccc.jpeg</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">image</span><span class="p">:</span> <span class="dl">'</span><span class="s1">data:image/jpeg;base64</span><span class="dl">'</span><span class="p">,</span>
+        <span class="p">},</span>
+      <span class="p">],</span>
+    <span class="p">},</span>
+    <span class="na">product_state</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">is_always_instock</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="na">is_hide_stock</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="na">product_measurements</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">product_size</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">height</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>
+        <span class="na">width</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>
+        <span class="na">length</span><span class="p">:</span> <span class="mi">62</span><span class="p">,</span>
+        <span class="na">unit</span><span class="p">:</span> <span class="dl">'</span><span class="s1">cm</span><span class="dl">'</span><span class="p">,</span>
+      <span class="p">},</span>
+      <span class="na">product_weight</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">weight</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>
+        <span class="na">unit</span><span class="p">:</span> <span class="dl">'</span><span class="s1">l</span><span class="dl">'</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="na">product_variants_combinations</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="na">combination_name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Large Chocolate</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">stock_quantity</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="na">price</span><span class="p">:</span> <span class="mf">12.3</span><span class="p">,</span>
+        <span class="na">variant_combinations</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">{</span>
+            <span class="na">selected_variant_option_id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">6389ec5665561a16ca6c096a</span><span class="dl">'</span><span class="p">,</span>
+            <span class="na">variant_type_id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">6389ec5665561a16ca6c0969</span><span class="dl">'</span><span class="p">,</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="na">selected_variant_option_id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">638997c9f3c4c4080d6d4c15</span><span class="dl">'</span><span class="p">,</span>
+            <span class="na">variant_type_id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">638997c9f3c4c4080d6d4c14</span><span class="dl">'</span><span class="p">,</span>
+          <span class="p">},</span>
+        <span class="p">],</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="na">combination_name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Large Cheese</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">stock_quantity</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="na">price</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="na">variant_combinations</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">{</span>
+            <span class="na">selected_variant_option_id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">6389ec5665561a16ca6c096b</span><span class="dl">'</span><span class="p">,</span>
+            <span class="na">variant_type_id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">6389ec5665561a16ca6c0969</span><span class="dl">'</span><span class="p">,</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="na">selected_variant_option_id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">638997c9f3c4c4080d6d4c15</span><span class="dl">'</span><span class="p">,</span>
+            <span class="na">variant_type_id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">638997c9f3c4c4080d6d4c14</span><span class="dl">'</span><span class="p">,</span>
+          <span class="p">},</span>
+        <span class="p">],</span>
+      <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="na">product_addons</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">addOn_limit</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="na">addOn_list</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">6386a7d04d734f58b587f131</span><span class="dl">'</span><span class="p">],</span>
+    <span class="p">},</span>
+    <span class="na">product_price</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">regular_price</span><span class="p">:</span> <span class="mi">1522</span><span class="p">,</span>
+      <span class="na">sale_price</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="na">price_display</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Buy one take one</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">margin</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>
+      <span class="na">unit_cost</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="na">store_locations</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="na">stock_quantity</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="na">store_location_id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">636bab233ea4455a9486ad5b</span><span class="dl">'</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="na">product_categories</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">6386a2b04d734f58b587f0f8</span><span class="dl">'</span><span class="p">],</span>
+    <span class="na">product_seo</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">primary</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">seo_title</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">description</span><span class="p">:</span> <span class="dl">'</span><span class="s1">seo description</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">http://localhost:3000</span><span class="dl">'</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">},</span>
+  <span class="p">},</span>
+  <span class="na">json</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="nx">rp</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre></div></div>
+
+								
+								
+
+
+<div title="Python" class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">base64</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">username</span> <span class="o">=</span> <span class="s">'your_username'</span>
+<span class="n">password</span> <span class="o">=</span> <span class="s">'your_password'</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">'https://your_api_endpoint.com/v1/products'</span>
+
+<span class="c1"># Encode the username and password in base64
+</span><span class="n">auth_string</span> <span class="o">=</span> <span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s">:</span><span class="si">{</span><span class="n">password</span><span class="si">}</span><span class="s">"</span>
+<span class="n">encoded_auth_string</span> <span class="o">=</span> <span class="n">base64</span><span class="p">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">auth_string</span><span class="p">.</span><span class="n">encode</span><span class="p">()).</span><span class="n">decode</span><span class="p">()</span>
+
+<span class="c1"># Set the Authorization and Content-Type headers
+</span><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'Authorization'</span><span class="p">:</span> <span class="sa">f</span><span class="s">'Basic </span><span class="si">{</span><span class="n">encoded_auth_string</span><span class="si">}</span><span class="s">'</span><span class="p">,</span>
+    <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/json'</span>
+<span class="p">}</span>
+
+<span class="c1"># Define the payload
+</span><span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"product_specification"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">"name"</span><span class="p">:</span> <span class="s">"another name here"</span><span class="p">,</span>
+        <span class="s">"slug"</span><span class="p">:</span> <span class="s">"davide_unique_slugl3"</span><span class="p">,</span>
+        <span class="s">"description"</span><span class="p">:</span> <span class="s">"product_description"</span><span class="p">,</span>
+        <span class="s">"short_description"</span><span class="p">:</span> <span class="s">"short description"</span><span class="p">,</span>
+        <span class="s">"brand"</span><span class="p">:</span> <span class="s">"product_brand"</span><span class="p">,</span>
+        <span class="s">"images"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s">"file_name"</span><span class="p">:</span> <span class="s">"newccc.jpeg"</span><span class="p">,</span>
+                <span class="s">"image"</span><span class="p">:</span> <span class="s">"data:image/jpeg;base64"</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="s">"product_state"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">"is_always_instock"</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+        <span class="s">"is_hide_stock"</span><span class="p">:</span> <span class="bp">True</span>
+    <span class="p">},</span>
+    <span class="s">"product_measurements"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">"product_size"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">"height"</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>
+            <span class="s">"width"</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>
+            <span class="s">"length"</span><span class="p">:</span> <span class="mi">62</span><span class="p">,</span>
+            <span class="s">"unit"</span><span class="p">:</span> <span class="s">"cm"</span>
+        <span class="p">},</span>
+        <span class="s">"product_weight"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">"weight"</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>
+            <span class="s">"unit"</span><span class="p">:</span> <span class="s">"l"</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s">"product_variants_combinations"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s">"combination_name"</span><span class="p">:</span> <span class="s">"Large Chocolate"</span><span class="p">,</span>
+            <span class="s">"stock_quantity"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+            <span class="s">"price"</span><span class="p">:</span> <span class="mf">12.3</span><span class="p">,</span>
+            <span class="s">"variant_combinations"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s">"selected_variant_option_id"</span><span class="p">:</span> <span class="s">"6389ec5665561a16ca6c096a"</span><span class="p">,</span>
+                    <span class="s">"variant_type_id"</span><span class="p">:</span> <span class="s">"6389ec5665561a16ca6c0969"</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s">"selected_variant_option_id"</span><span class="p">:</span> <span class="s">"638997c9f3c4c4080d6d4c15"</span><span class="p">,</span>
+                    <span class="s">"variant_type_id"</span><span class="p">:</span> <span class="s">"638997c9f3c4c4080d6d4c14"</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s">"combination_name"</span><span class="p">:</span> <span class="s">"Large Cheese"</span><span class="p">,</span>
+            <span class="s">"stock_quantity"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+            <span class="s">"price"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+            <span class="s">"variant_combinations"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s">"selected_variant_option_id"</span><span class="p">:</span> <span class="s">"6389ec5665561a16ca6c096b"</span><span class="p">,</span>
+                    <span class="s">"variant_type_id"</span><span class="p">:</span> <span class="s">"6389ec5665561a16ca6c0969"</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s">"selected_variant_option_id"</span><span class="p">:</span> <span class="s">"638997c9f3c4c4080d6d4c15"</span><span class="p">,</span>
+                    <span class="s">"variant_type_id"</span><span class="p">:</span> <span class="s">"638997c9f3c4c4080d6d4c14"</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s">"product_addons"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">"addOn_limit"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s">"addOn_list"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s">"6386a7d04d734f58b587f131"</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="s">"product_price"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">"regular_price"</span><span class="p">:</span> <span class="mi">1522</span><span class="p">,</span>
+        <span class="s">"sale_price"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s">"price_display"</span><span class="p">:</span> <span class="s">"Buy one take one"</span><span class="p">,</span>
+        <span class="s">"margin"</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>
+        <span class="s">"unit_cost"</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">},</span>
+    <span class="s">"store_locations"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s">"stock_quantity"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="s">"store_location_id"</span><span class="p">:</span> <span class="s">"636bab233ea4455a9486ad5b"</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s">"product_categories"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s">"6386a2b04d734f58b587f0f8"</span>
+    <span class="p">],</span>
+    <span class="s">"product_seo"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">"primary"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">"title"</span><span class="p">:</span> <span class="s">"seo_title"</span><span class="p">,</span>
+            <span class="s">"description"</span><span class="p">:</span> <span class="s">"seo description"</span><span class="p">,</span>
+            <span class="s">"url"</span><span class="p">:</span> <span class="s">"http://localhost:3000"</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1"># Convert the payload to a JSON string
+</span><span class="n">json_payload</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+
+<span class="c1"># Make a POST request with the headers and JSON payload
+</span><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">json_payload</span><span class="p">)</span>
+
+<span class="c1"># Print the response
+</span><span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Request" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Product Thief"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.3</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"dateAdded"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5/1/2015"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid score"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid score"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="productsproducts_get">
+						/products/:id
+						
+							<span class="endpoint get"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_products/products_get.md">Edit</a>
+				</h3>
+				
+					<p class="description">Get Book</p>
+				
+
+				
+
+				<p>Returns a specific book from your collection</p>
+
+
+				
+						
+								
+
+
+<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">http://api.myapp.com/products/3</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">token</span><span class="p">:</span> <span class="dl">"</span><span class="s2">YOUR_APP_KEY</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Book Thief"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.3</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"dateAdded"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5/1/2015"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Book doesn't exist"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="productsproducts_delete">
+						/products/:id
+						
+							<span class="endpoint delete"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_products/products_delete.md">Edit</a>
+				</h3>
+				
+					<p class="description">Deletes a book</p>
+				
+
+				
+
+				<p>Deletes a book in your collection.</p>
+
+
+				
+						
+								
+
+
+<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+  <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">http://api.myapp.com/products/3</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">DELETE</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">data</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">token</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">YOUR_APP_KEY</span><span class="dl">"</span>
+  <span class="p">},</span>
+  <span class="dl">"</span><span class="s2">success</span><span class="dl">"</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deleted"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Book doesn't exist"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="productsproducts_update">
+						/products/:id
+						
+							<span class="endpoint put"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_products/products_update.md">Edit</a>
+				</h3>
+				
+					<p class="description">Update products</p>
+				
+
+				
+						<h6>Parameters</h6>
+						<dl>
+								
+										<dt>title</dt>
+										<dd>The title for the book</dd>
+								
+										<dt>score</dt>
+										<dd>The book's score between 0 and 5</dd>
+								
+						</dl>
+				
+
+				<p>Update an existing book in your collection.</p>
+
+
+				
+						
+								
+
+
+<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+  <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">http://api.myapp.com/products/3</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">PUT</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">data</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">token</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">YOUR_APP_KEY</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">score</span><span class="dl">"</span><span class="p">:</span> <span class="mf">5.0</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">title</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">The Book Stealer</span><span class="dl">"</span>
+  <span class="p">},</span>
+  <span class="dl">"</span><span class="s2">success</span><span class="dl">"</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Book Stealer"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"dateAdded"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5/1/2015"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Book doesn't exist"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+
+	
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="ordersorder_add">
+						/v1/orders
+						
+							<span class="endpoint post"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_orders/order_add.md">Edit</a>
+				</h3>
+				
+					<p class="description">Create Order</p>
+				
+
+				
+
+				<table>
+  <thead>
+    <tr>
+      <th>Parameters</th>
+      <th>Data Type</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>store_id</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>ID of the Store</td>
+    </tr>
+    <tr>
+      <td>customer_id</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>ID of the Consumer</td>
+    </tr>
+    <tr>
+      <td>cart_id</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>ID of the Cart of Consumer</td>
+    </tr>
+    <tr>
+      <td>urls</td>
+      <td>object</td>
+      <td>Yes</td>
+      <td>Redirection URLs for Order API result. Possible values: { “success_redirect_url”: “https://www.google.com/search?q=success”, “failure_redirect_url”: “https://www.google.com/search?q=failed”, “cancel_redirect_url”: “https://www.google.com/search?q=cancel” }</td>
+    </tr>
+    <tr>
+      <td>order_information</td>
+      <td>object</td>
+      <td>Yes</td>
+      <td>Possible values: { “fname”: “Juan”, “lname”: “Dela Cruz”, “email_address”: “email@email.com”, “phone”: “639685432321”, “address_line”: “Star Building”, “state”: “METRO-MANILA”, “city”: “BINONDO”, “barangay”: “BARANGAY 287”, “zip_code”: “1234”, “note”: “” }</td>
+    </tr>
+    <tr>
+      <td>shipping_information</td>
+      <td>object</td>
+      <td>Yes</td>
+      <td>Possible values: { “type”: (Possible types: “STANDARD_JNT”, “OWN_BOOKING”, “PICKUP”, “SAMEDAY_SCHED_LALAMOVE”) }</td>
+    </tr>
+    <tr>
+      <td>dimensions</td>
+      <td>object</td>
+      <td>Yes</td>
+      <td>Dimensions of the Ordered Product. Possible values: { “actual_weight”: 12, “volumetric_weight”: 8.0905 }</td>
+    </tr>
+    <tr>
+      <td>payment_information</td>
+      <td>object</td>
+      <td>Yes</td>
+      <td>Possible values: { “type”: (Possible types: “EWALLET”, “OVER_THE_COUNTER”, “COP”, “COD”, “CREDIT_CARD”) }</td>
+    </tr>
+    <tr>
+      <td>fees</td>
+      <td>object</td>
+      <td>Yes</td>
+      <td>Possible values: { “convenience_fee”: 0, “convenience_fee_customer”: 0, “shipping_fee”: 0, “additional_fee”: 0 }</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+						
+								
+
+
+<div title="NodeJs" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+  <span class="dl">"</span><span class="s2">store_id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">637de5eab94b30555121f36c</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">customer_id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">453c955e-ae65-4975-8bf1-c8dd98892c60</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">cart_id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">640ebf13dc76cdcd5c0c0e03</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">urls</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="dl">"</span><span class="s2">success_redirect_url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://starcomputers.prodev.prosperna.ph/checkout/thank-you</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">failure_redirect_url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://starcomputers.prodev.prosperna.ph/products</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">cancel_redirect_url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://starcomputers.prodev.prosperna.ph/products</span><span class="dl">"</span>
+  <span class="p">},</span>
+  <span class="dl">"</span><span class="s2">order_information</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="dl">"</span><span class="s2">fname</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">TEST</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">lname</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ORDER</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">email_address</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ian+637de5eab94b30555121f36c@prosperna.com</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">phone</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">639685432321</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">address_line</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">sdasdasd</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">state</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">METRO-MANILA</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">city</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">BINONDO</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">barangay</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">BARANGAY 287</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">zip_code</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">sdasdasd</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">note</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">PRO1-DISABLE-JNT-56770644-c14b-11ed-afa1-0242ac120002</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">quotation</span><span class="dl">"</span><span class="p">:</span> <span class="p">{}</span>
+  <span class="p">},</span>
+  <span class="dl">"</span><span class="s2">shipping_information</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">STANDARD_JNT</span><span class="dl">"</span>
+  <span class="p">},</span>
+  <span class="dl">"</span><span class="s2">dimensions</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="dl">"</span><span class="s2">actual_weight</span><span class="dl">"</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">volumetric_weight</span><span class="dl">"</span><span class="p">:</span> <span class="mf">8.0905</span>
+  <span class="p">},</span>
+  <span class="dl">"</span><span class="s2">payment_information</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">COD</span><span class="dl">"</span>
+  <span class="p">},</span>
+  <span class="dl">"</span><span class="s2">fees</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="dl">"</span><span class="s2">convenience_fee</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">convenience_fee_customer</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">shipping_fee</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">additional_fee</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span>
+  <span class="p">}</span>
+  <span class="p">});</span>
+
+  <span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">post</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">maxBodyLength</span><span class="p">:</span> <span class="kc">Infinity</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://api.dev.prosperna.ph/v1/orders/</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> 
+      <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span>
+  <span class="p">},</span>
+  <span class="na">data</span> <span class="p">:</span> <span class="nx">data</span>
+  <span class="p">};</span>
+
+  <span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Request" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"637de5eab94b30555121f36c"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"453c955e-ae65-4975-8bf1-c8dd98892c60"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cart_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"640ebf13dc76cdcd5c0c0e03"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"urls"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"success_redirect_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://starcomputers.prodev.prosperna.ph/checkout/thank-you"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"failure_redirect_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://starcomputers.prodev.prosperna.ph/products"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"cancel_redirect_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://starcomputers.prodev.prosperna.ph/products"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"order_information"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"fname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORDER"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ian+637de5eab94b30555121f36c@prosperna.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"639685432321"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"address_line"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sdasdasd"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"METRO-MANILA"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BINONDO"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"barangay"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BARANGAY 287"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"zip_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sdasdasd"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRO1-DISABLE-JNT-56770644-c14b-11ed-afa1-0242ac120002"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quotation"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"shipping_information"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STANDARD_JNT"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"actual_weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"volumetric_weight"</span><span class="p">:</span><span class="w"> </span><span class="mf">8.0905</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payment_information"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COD"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"fees"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"convenience_fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"convenience_fee_customer"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"shipping_fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"additional_fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+      </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"640fc92a2742e57a81038b08"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"637de5eab94b30555121f36c"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"453c955e-ae65-4975-8bf1-c8dd98892c60"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"cart_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="s2">"640fc91d2742e57a81038b05"</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="nl">"ordered_item_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+          </span><span class="nl">"is_trashed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"order_total_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"order_subtotal_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"order_total_qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"order_information"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"fname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"lname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORDER"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"email_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ian+637de5eab94b30555121f36c@prosperna.com"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"639685432321"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"address_line"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sdasdasd"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"METRO-MANILA"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BINONDO"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"barangay"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BARANGAY 287"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"zip_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sdasdasd"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRO1-DISABLE-JNT-56770644-c14b-11ed-afa1-0242ac120002"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Accepted"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"landmark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"N/A"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"payment_information"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COD"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Awaiting Payment"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"gateway"</span><span class="p">:</span><span class="w"> </span><span class="s2">"N/A"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"reference_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"N/A"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"shipping_information"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Standard Delivery"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"shipped_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JNT"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"delivery_information"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"vehicle_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"N/A"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"N/A"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"N/A"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"fees"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"convenience_fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"convenience_fee_customer"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"shipping_fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"payment_gateway_fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"additional_fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"actual_weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"volumetric_weight"</span><span class="p">:</span><span class="w"> </span><span class="mf">8.0905</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"has_been_disbursed_to_merchant"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"requested_for_disbursement"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"disbursement_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACCEPTED"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"disbursement_updated_by"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+          </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-14T01:08:58.387Z"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-14T01:08:58.387Z"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"640fc92a2742e57a81038b09"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"total_order_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"cart_list"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"637de5eab94b30555121f36c"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"product_slug"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"640576472a33e0ca3c940d0c"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"453c955e-ae65-4975-8bf1-c8dd98892c60"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"is_guest"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"cart_quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"item_sub_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"addon_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                  </span><span class="nl">"product_variant_combination_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-14T01:08:45.604Z"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-14T01:08:45.604Z"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"640fc91d2742e57a81038b05"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"dev_ref_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"640fc91d2742e57a81038b05"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"published"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"selected_variant_combination_data"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"product_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                      </span><span class="nl">"product_seo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                          </span><span class="nl">"primary"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                              </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                              </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://starcomputers.prodev.prosperna.ph/product/gaming-package-1"</span><span class="w">
+                          </span><span class="p">}</span><span class="w">
+                      </span><span class="p">},</span><span class="w">
+                      </span><span class="nl">"product_specification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gaming Package 1"</span><span class="p">,</span><span class="w">
+                          </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gaming-package-1"</span><span class="p">,</span><span class="w">
+                          </span><span class="nl">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                          </span><span class="nl">"short_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Entry Level Gaming Rig"</span><span class="p">,</span><span class="w">
+                          </span><span class="nl">"long_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Entry Level Gaming Rig&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+                          </span><span class="nl">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                              </span><span class="p">{</span><span class="w">
+                                  </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://p1-mediaserver.s3.ap-southeast-1.amazonaws.com/business/store/starcomputers/1678079639624-shopping.png"</span><span class="p">,</span><span class="w">
+                                  </span><span class="nl">"original_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shopping.png"</span><span class="p">,</span><span class="w">
+                                  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"images/png"</span><span class="p">,</span><span class="w">
+                                  </span><span class="nl">"name_with_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"business/store/starcomputers/1678079639624-shopping.png"</span><span class="p">,</span><span class="w">
+                                  </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"640576972a33e0ca3c940d27"</span><span class="w">
+                              </span><span class="p">}</span><span class="w">
+                          </span><span class="p">]</span><span class="w">
+                      </span><span class="p">},</span><span class="w">
+                      </span><span class="nl">"product_state"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                          </span><span class="nl">"is_product_has_variants"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                          </span><span class="nl">"is_hide_stock"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                          </span><span class="nl">"is_always_instock"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                          </span><span class="nl">"is_published"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                      </span><span class="p">},</span><span class="w">
+                      </span><span class="nl">"product_measurements"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                          </span><span class="nl">"product_size"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                              </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+                              </span><span class="nl">"length"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+                              </span><span class="nl">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+                              </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"in"</span><span class="w">
+                          </span><span class="p">},</span><span class="w">
+                          </span><span class="nl">"product_weight"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                              </span><span class="nl">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+                              </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kg"</span><span class="w">
+                          </span><span class="p">}</span><span class="w">
+                      </span><span class="p">},</span><span class="w">
+                      </span><span class="nl">"product_price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                          </span><span class="nl">"regular_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+                          </span><span class="nl">"sale_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                          </span><span class="nl">"price_display"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                          </span><span class="nl">"unit_cost"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                          </span><span class="nl">"margin"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                          </span><span class="nl">"stock_quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">981</span><span class="w">
+                      </span><span class="p">},</span><span class="w">
+                      </span><span class="nl">"product_addons"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                          </span><span class="nl">"addOn_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                          </span><span class="nl">"addOn_list"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+                      </span><span class="p">},</span><span class="w">
+                      </span><span class="nl">"product_categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                          </span><span class="p">{</span><span class="w">
+                              </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gaming PC"</span><span class="p">,</span><span class="w">
+                              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63f4221681bfa92d923d45f1"</span><span class="w">
+                          </span><span class="p">}</span><span class="w">
+                      </span><span class="p">],</span><span class="w">
+                      </span><span class="nl">"product_variant_types"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                      </span><span class="nl">"product_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PHYSICAL"</span><span class="p">,</span><span class="w">
+                      </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-06T05:12:39.534Z"</span><span class="p">,</span><span class="w">
+                      </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-13T06:47:16.677Z"</span><span class="p">,</span><span class="w">
+                      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"640576472a33e0ca3c940d0c"</span><span class="p">,</span><span class="w">
+                      </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"637de5eab94b30555121f36c"</span><span class="p">,</span><span class="w">
+                      </span><span class="nl">"product_variants_combinations"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="nl">"selected_addon_data"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="nl">"ordered_items_list"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"640fc92a2742e57a81038b08"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"637de5eab94b30555121f36c"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"product_slug"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"640576472a33e0ca3c940d0c"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"dev_ref_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"640fc92a2742e57a81038b0b"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"453c955e-ae65-4975-8bf1-c8dd98892c60"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"is_guest"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"cart_quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"item_sub_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"addon_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                  </span><span class="nl">"product_variant_combination_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"selected_variant_combination_data"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"product_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                      </span><span class="nl">"product_seo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                          </span><span class="nl">"primary"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                              </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                              </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://starcomputers.prodev.prosperna.ph/product/gaming-package-1"</span><span class="w">
+                          </span><span class="p">}</span><span class="w">
+                      </span><span class="p">},</span><span class="w">
+                      </span><span class="nl">"product_specification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gaming Package 1"</span><span class="p">,</span><span class="w">
+                          </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gaming-package-1"</span><span class="p">,</span><span class="w">
+                          </span><span class="nl">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                          </span><span class="nl">"short_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Entry Level Gaming Rig"</span><span class="p">,</span><span class="w">
+                          </span><span class="nl">"long_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Entry Level Gaming Rig&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+                          </span><span class="nl">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                              </span><span class="p">{</span><span class="w">
+                                  </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://p1-mediaserver.s3.ap-southeast-1.amazonaws.com/business/store/starcomputers/1678079639624-shopping.png"</span><span class="p">,</span><span class="w">
+                                  </span><span class="nl">"original_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shopping.png"</span><span class="p">,</span><span class="w">
+                                  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"images/png"</span><span class="p">,</span><span class="w">
+                                  </span><span class="nl">"name_with_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"business/store/starcomputers/1678079639624-shopping.png"</span><span class="p">,</span><span class="w">
+                                  </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"640576972a33e0ca3c940d27"</span><span class="w">
+                              </span><span class="p">}</span><span class="w">
+                          </span><span class="p">]</span><span class="w">
+                      </span><span class="p">},</span><span class="w">
+                      </span><span class="nl">"product_state"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                          </span><span class="nl">"is_product_has_variants"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                          </span><span class="nl">"is_hide_stock"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                          </span><span class="nl">"is_always_instock"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                          </span><span class="nl">"is_published"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                      </span><span class="p">},</span><span class="w">
+                      </span><span class="nl">"product_measurements"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                          </span><span class="nl">"product_size"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                              </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+                              </span><span class="nl">"length"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+                              </span><span class="nl">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+                              </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"in"</span><span class="w">
+                          </span><span class="p">},</span><span class="w">
+                          </span><span class="nl">"product_weight"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                              </span><span class="nl">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+                              </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kg"</span><span class="w">
+                          </span><span class="p">}</span><span class="w">
+                      </span><span class="p">},</span><span class="w">
+                      </span><span class="nl">"product_price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                          </span><span class="nl">"regular_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+                          </span><span class="nl">"sale_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                          </span><span class="nl">"price_display"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                          </span><span class="nl">"unit_cost"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                          </span><span class="nl">"margin"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                          </span><span class="nl">"stock_quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">981</span><span class="w">
+                      </span><span class="p">},</span><span class="w">
+                      </span><span class="nl">"product_addons"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                          </span><span class="nl">"addOn_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                          </span><span class="nl">"addOn_list"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+                      </span><span class="p">},</span><span class="w">
+                      </span><span class="nl">"product_categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                          </span><span class="p">{</span><span class="w">
+                              </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gaming PC"</span><span class="p">,</span><span class="w">
+                              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63f4221681bfa92d923d45f1"</span><span class="w">
+                          </span><span class="p">}</span><span class="w">
+                      </span><span class="p">],</span><span class="w">
+                      </span><span class="nl">"product_variant_types"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                      </span><span class="nl">"product_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PHYSICAL"</span><span class="p">,</span><span class="w">
+                      </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-06T05:12:39.534Z"</span><span class="p">,</span><span class="w">
+                      </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-13T06:47:16.677Z"</span><span class="p">,</span><span class="w">
+                      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"640576472a33e0ca3c940d0c"</span><span class="p">,</span><span class="w">
+                      </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"637de5eab94b30555121f36c"</span><span class="p">,</span><span class="w">
+                      </span><span class="nl">"product_variants_combinations"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="nl">"selected_addon_data"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-14T01:08:45.604Z"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-14T01:08:45.604Z"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"640fc92a2742e57a81038b0b"</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order created successfully"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Error"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cart data invalid."</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="ordersorder_get">
+						/v1/orders/store?sid={store_id}
+						
+							<span class="endpoint get"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_orders/order_get.md">Edit</a>
+				</h3>
+				
+					<p class="description">Get Store Orders</p>
+				
+
+				
+
+				<table>
+  <thead>
+    <tr>
+      <th>Parameters</th>
+      <th>Data Type</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>store_id</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>ID of the Store</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Returns all orders from your store</p>
+
+
+				
+						
+								
+
+
+<div title="NodeJS" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">get</span><span class="dl">'</span><span class="p">,</span>
+<span class="na">maxBodyLength</span><span class="p">:</span> <span class="kc">Infinity</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://api.dev.prosperna.ph/v1/orders/store?sid=63dc812b809e8c308d735e72</span><span class="dl">'</span>
+<span class="p">};</span>
+
+<span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"sid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63dc812b809e8c308d735e72"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"order_information"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"fname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JOHN ERIC"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"lname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SIGUENZA"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"email_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jsiguenza+63dc812b809e8c308d735e72@prosperna.com"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"639461503583"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"address_line"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Z3"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BOHOL"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BOHOL-ALICIA"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"barangay"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LA HACIENDA"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"zip_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4405"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"landmark"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Completed"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"quotation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"country_region"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"payment_information"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EWALLET"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"gateway"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PH_GCASH"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Paid"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"reference_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ewc_e4778b73-7096-40c7-a9ea-3bcc06174d58"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"shipping_information"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Standard Delivery"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"shipped_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"J&amp;T"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"delivery_information"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"vehicle_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"N/A"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Processing"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"980002480311"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"meta_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"txlogisticid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pros1-63dc8397072db349e8b63bc9"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"mailno"</span><span class="p">:</span><span class="w"> </span><span class="s2">"980002480311"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"sortingcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"380-631091"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"sortingNo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"126"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"fees"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"convenience_fee"</span><span class="p">:</span><span class="w"> </span><span class="mf">10.069700000000001</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"convenience_fee_customer"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.0348500000000005</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"shipping_fee"</span><span class="p">:</span><span class="w"> </span><span class="mf">9.97</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"payment_gateway_fee"</span><span class="p">:</span><span class="w"> </span><span class="mf">25.17425</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"additional_fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"actual_weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"volumetric_weight"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0003</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63dc8397072db349e8b63bc9"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63dc812b809e8c308d735e72"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63dc83508c85c650353ae450"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cart_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"63dc8368072db349e8b63bc5"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"ordered_item_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="nl">"is_trashed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"order_total_amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">1012.5</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"order_subtotal_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">997</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"order_total_qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"has_been_disbursed_to_merchant"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"requested_for_disbursement"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"disbursement_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCEEDED"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"disbursement_updated_by"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-02-03T03:46:31.669Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-02-03T04:01:21.589Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"disbursement_reference_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P1-DISBURSE-3dac01bd-31c3-4d8c-bef9-363f95a1cd91"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63dc8397072db349e8b63bca"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cart_items_list"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="nl">"ordered_items_list"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63dc8397072db349e8b63bc9"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63dc812b809e8c308d735e72"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"product_slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"product1"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"dev_ref_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63dc8399072db349e8b63bcc"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63dc83508c85c650353ae450"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"is_guest"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"cart_quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"item_sub_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">997</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"addon_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                    </span><span class="nl">"product_variant_combination_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"selected_variant_combination_data"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"product_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63dc812b809e8c308d735e72"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63dc812b809e8c308d735e72"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"product_seo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"primary"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://maric100.prodev.prosperna.ph/product/product1"</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="nl">"product_specification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Product1"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"product1"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                                </span><span class="p">{</span><span class="w">
+                                    </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://p1-mediaserver.s3.ap-southeast-1.amazonaws.com/business/store/maric100/1675395507356-concrete-plaster-stone-brick-orange-3d-wall-mural_2.jpg"</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"original_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"concrete-plaster-stone-brick-orange-3d-wall-mural_2.jpg"</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"images/jpeg"</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"name_with_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"business/store/maric100/1675395507356-concrete-plaster-stone-brick-orange-3d-wall-mural_2.jpg"</span><span class="p">,</span><span class="w">
+                                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63dc81b38ea1885610cb94f3"</span><span class="w">
+                                </span><span class="p">}</span><span class="w">
+                            </span><span class="p">],</span><span class="w">
+                            </span><span class="nl">"short_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P1"</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="nl">"product_state"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"is_product_has_variants"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"is_hide_stock"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"is_always_instock"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"is_published"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"is_imported"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"is_trashed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"is_sold"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="nl">"store_locations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="nl">"store_location_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63dc8178809e8c308d735ea0"</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"stock_quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">999</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">],</span><span class="w">
+                        </span><span class="nl">"product_measurements"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"product_size"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                                </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"length"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cm"</span><span class="w">
+                            </span><span class="p">},</span><span class="w">
+                            </span><span class="nl">"product_weight"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                                </span><span class="nl">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kg"</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="nl">"product_price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"regular_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">997</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"sale_price"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"price_display"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"unit_cost"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"margin"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="nl">"product_addons"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"addOn_list"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                            </span><span class="nl">"addOn_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="nl">"promo_codes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                        </span><span class="nl">"product_reviews"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                        </span><span class="nl">"product_variants"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                        </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-02-03T03:38:27.480Z"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-02-03T03:43:20.871Z"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63dc81b38ea1885610cb94f0"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"product_categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="nl">"category_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"main"</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"main"</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://p1-mediaserver.s3.ap-southeast-1.amazonaws.com/business/store/merchant/categories/concrete-plaster-stone-brick-orange-3d-wall-mural_2.jpg"</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"sub_categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                                </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-02-03T03:38:05.221Z"</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-02-03T03:38:05.221Z"</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63dc819d8ea1885610cb94ec"</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">],</span><span class="w">
+                        </span><span class="nl">"product_variant_combinations"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                        </span><span class="nl">"product_variant_type_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"selected_addon_data"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-02-03T03:45:44.370Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-02-03T03:45:44.370Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63dc8399072db349e8b63bcc"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"order_coupons"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="ordersorder_update">
+						/v1/orders/order_id?sid=""&cid=""
+						
+							<span class="endpoint post"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_orders/order_update.md">Edit</a>
+				</h3>
+				
+					<p class="description">Update Order</p>
+				
+
+				
+
+				<table>
+  <thead>
+    <tr>
+      <th>Query Parameters</th>
+      <th>Data Type</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>sid</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>ID of the Store</td>
+    </tr>
+    <tr>
+      <td>cid</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>ID of the Consumer</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Path Variables</th>
+      <th>Data Type</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>order_id</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>ID of the Order</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameters</th>
+      <th>Data Type</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>store_id</td>
+      <td>string</td>
+      <td>No</td>
+      <td>ID of the Store</td>
+    </tr>
+    <tr>
+      <td>customer_id</td>
+      <td>string</td>
+      <td>No</td>
+      <td>ID of the Consumer</td>
+    </tr>
+    <tr>
+      <td>cart_id</td>
+      <td>string</td>
+      <td>No</td>
+      <td>ID of the Cart of Consumer</td>
+    </tr>
+    <tr>
+      <td>urls</td>
+      <td>object</td>
+      <td>No</td>
+      <td>Redirection URLs for Order API result. Possible values: { “success_redirect_url”: “https://www.google.com/search?q=success”, “failure_redirect_url”: “https://www.google.com/search?q=failed”, “cancel_redirect_url”: “https://www.google.com/search?q=cancel” }</td>
+    </tr>
+    <tr>
+      <td>order_information</td>
+      <td>object</td>
+      <td>No</td>
+      <td>Possible values: { “fname”: “Juan”, “lname”: “Dela Cruz”, “email_address”: “email@email.com”, “phone”: “639685432321”, “address_line”: “Star Building”, “state”: “METRO-MANILA”, “city”: “BINONDO”, “barangay”: “BARANGAY 287”, “zip_code”: “1234”, “note”: “” }</td>
+    </tr>
+    <tr>
+      <td>shipping_information</td>
+      <td>object</td>
+      <td>No</td>
+      <td>Possible values: { “type”: (Possible types: “STANDARD_JNT”, “OWN_BOOKING”, “PICKUP”, “SAMEDAY_SCHED_LALAMOVE”) }</td>
+    </tr>
+    <tr>
+      <td>dimensions</td>
+      <td>object</td>
+      <td>No</td>
+      <td>Dimensions of the Ordered Product. Possible values: { “actual_weight”: 12, “volumetric_weight”: 8.0905 }</td>
+    </tr>
+    <tr>
+      <td>payment_information</td>
+      <td>object</td>
+      <td>No</td>
+      <td>Possible values: { “type”: (Possible types: “EWALLET”, “OVER_THE_COUNTER”, “COP”, “COD”, “CREDIT_CARD”) }</td>
+    </tr>
+    <tr>
+      <td>fees</td>
+      <td>object</td>
+      <td>No</td>
+      <td>Possible values: { “convenience_fee”: 0, “convenience_fee_customer”: 0, “shipping_fee”: 0, “additional_fee”: 0 }</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+						
+								
+
+
+<div title="NodeJs" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+<span class="dl">"</span><span class="s2">delivery_information</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">vehicle_type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">N/A</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">status</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">N/A</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">reference_number</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">167180805411</span><span class="dl">"</span>
+<span class="p">}</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+<span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">patch</span><span class="dl">'</span><span class="p">,</span>
+<span class="na">maxBodyLength</span><span class="p">:</span> <span class="kc">Infinity</span><span class="p">,</span>
+<span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://api.dev.prosperna.ph/v1/orders/640fc92a2742e57a81038b09?sid=637de5eab94b30555121f36c&amp;cid=453c955e-ae65-4975-8bf1-c8dd98892c60</span><span class="dl">'</span><span class="p">,</span>
+<span class="na">headers</span><span class="p">:</span> <span class="p">{</span> 
+    <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span>
+<span class="p">},</span>
+<span class="na">data</span> <span class="p">:</span> <span class="nx">data</span>
+<span class="p">};</span>
+
+<span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nl">title</span><span class="p">:</span> <span class="nx">Request</span>
+<span class="nx">language</span><span class="p">:</span> <span class="nx">json</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+      </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"order_information"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"fname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"lname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORDER"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"email_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ian+637de5eab94b30555121f36c@prosperna.com"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"639685432321"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"address_line"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sdasdasd"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"METRO-MANILA"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BINONDO"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"barangay"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BARANGAY 287"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"zip_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sdasdasd"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRO1-DISABLE-JNT-56770644-c14b-11ed-afa1-0242ac120002"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Accepted"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"landmark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"N/A"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"payment_information"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COD"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Awaiting Payment"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"gateway"</span><span class="p">:</span><span class="w"> </span><span class="s2">"N/A"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"reference_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"N/A"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"shipping_information"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Standard Delivery"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"shipped_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JNT"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"delivery_information"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"vehicle_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"N/A"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"N/A"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"167180805411"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"fees"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"convenience_fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"convenience_fee_customer"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"shipping_fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"payment_gateway_fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"additional_fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"actual_weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"volumetric_weight"</span><span class="p">:</span><span class="w"> </span><span class="mf">8.0905</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"640fc92a2742e57a81038b08"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"637de5eab94b30555121f36c"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"453c955e-ae65-4975-8bf1-c8dd98892c60"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"cart_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="s2">"640fc91d2742e57a81038b05"</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="nl">"ordered_item_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+          </span><span class="nl">"is_trashed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"order_total_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"order_subtotal_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"order_total_qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"has_been_disbursed_to_merchant"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"requested_for_disbursement"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"disbursement_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACCEPTED"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"disbursement_updated_by"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+          </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-14T01:08:58.387Z"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-14T01:22:33.305Z"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"640fc92a2742e57a81038b09"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order updated successfully"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Error"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Failed to update order."</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="ordersorder_delete">
+						/order/:id
+						
+							<span class="endpoint delete"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_orders/order_delete.md">Edit</a>
+				</h3>
+				
+					<p class="description">Deletes a Order</p>
+				
+
+				
+
+				<table>
+  <thead>
+    <tr>
+      <th>Query Parameters</th>
+      <th>Data Type</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>sid</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>ID of the Store</td>
+    </tr>
+    <tr>
+      <td>cid</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>ID of the Consumer</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Path Variables</th>
+      <th>Data Type</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>order_id</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>ID of the Order</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Deletes a order in your collection.</p>
+
+
+				
+						
+								
+
+
+<div title="NodeJS" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+<span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">delete</span><span class="dl">'</span><span class="p">,</span>
+<span class="na">maxBodyLength</span><span class="p">:</span> <span class="kc">Infinity</span><span class="p">,</span>
+<span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://api.dev.prosperna.ph/v1/orders/6395690183b8967af19222f9?sid=6386ae5dba4bf984402d848e&amp;cid=3945a7bb-b2d9-4b6c-8d41-2db4d56fc4ec</span><span class="dl">'</span>
+<span class="p">};</span>
+
+<span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+      </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delete successful"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
 						

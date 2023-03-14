@@ -179,6 +179,89 @@
 			</section>
 		
 	
+		
+			<section>
+				<h6>Products</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="/#productsproducts_list">
+								/products
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#productsproducts_add">
+								/products
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#productsproducts_get">
+								/products/:id
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#productsproducts_delete">
+								/products/:id
+								<span class="endpoint delete"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#productsproducts_update">
+								/products/:id
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>Orders</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="/#ordersorder_add">
+								/v1/orders
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#ordersorder_get">
+								/v1/orders/store?sid={store_id}
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#ordersorder_update">
+								/v1/orders/order_id?sid=""&cid=""
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#ordersorder_delete">
+								/order/:id
+								<span class="endpoint delete"></span>
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
 </div>
 
 
@@ -475,6 +558,163 @@
 				
 			
 		
+			
+				
+					
+						,
+						
+						"orders-order-add": {
+							"id": "orders-order-add",
+							"title": "/v1/orders",
+							"category": "orders",
+							"description": "Create Order",
+		  				"type": "post",
+							"url": "http://localhost:8000/#ordersorder_add",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"orders-order-delete": {
+							"id": "orders-order-delete",
+							"title": "/order/:id",
+							"category": "orders",
+							"description": "Deletes a Order",
+		  				"type": "delete",
+							"url": "http://localhost:8000/#ordersorder_delete",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"orders-order-get": {
+							"id": "orders-order-get",
+							"title": "/v1/orders/store?sid={store_id}",
+							"category": "orders",
+							"description": "Get Store Orders",
+		  				"type": "get",
+							"url": "http://localhost:8000/#ordersorder_get",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"orders-order-update": {
+							"id": "orders-order-update",
+							"title": "/v1/orders/order_id?sid=&quot;&quot;&amp;cid=&quot;&quot;",
+							"category": "orders",
+							"description": "Update Order",
+		  				"type": "post",
+							"url": "http://localhost:8000/#ordersorder_update",
+							"content": ""
+						}
+						
+					
+				
+			
+		
+			
+		
+			
+				
+					
+						,
+						
+						"products-products-add": {
+							"id": "products-products-add",
+							"title": "/products",
+							"category": "products",
+							"description": "Create Product",
+		  				"type": "post",
+							"url": "http://localhost:8000/#productsproducts_add",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"products-products-delete": {
+							"id": "products-products-delete",
+							"title": "/products/:id",
+							"category": "products",
+							"description": "Deletes a book",
+		  				"type": "delete",
+							"url": "http://localhost:8000/#productsproducts_delete",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"products-products-get": {
+							"id": "products-products-get",
+							"title": "/products/:id",
+							"category": "products",
+							"description": "Get Book",
+		  				"type": "get",
+							"url": "http://localhost:8000/#productsproducts_get",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"products-products-list": {
+							"id": "products-products-list",
+							"title": "/products",
+							"category": "products",
+							"description": "List all products",
+		  				"type": "get",
+							"url": "http://localhost:8000/#productsproducts_list",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"products-products-update": {
+							"id": "products-products-update",
+							"title": "/products/:id",
+							"category": "products",
+							"description": "Update products",
+		  				"type": "put",
+							"url": "http://localhost:8000/#productsproducts_update",
+							"content": ""
+						}
+						
+					
+				
 			
 		
 	};
