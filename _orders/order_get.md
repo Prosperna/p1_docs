@@ -1,5 +1,5 @@
 ---
-title: /v1/orders/store?sid={store_id}
+title: /store?sid={store_id}
 position_number: 1.2
 type: get
 description: Get Store Orders

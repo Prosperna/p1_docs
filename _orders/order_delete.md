@@ -1,5 +1,5 @@
 ---
-title: /order/:id
+title: /:id
 position_number: 1.3
 type: delete
 description: Deletes a Order
