@@ -162,28 +162,28 @@
 					
 						<li>
 							<a href="/#ordersorder_add">
-								/v1/orders
+								/
 								<span class="endpoint post"></span>
 							</a>
 						</li>
 					
 						<li>
 							<a href="/#ordersorder_get">
-								/v1/orders/store?sid={store_id}
+								/store?sid={store_id}
 								<span class="endpoint get"></span>
 							</a>
 						</li>
 					
 						<li>
 							<a href="/#ordersorder_update">
-								/v1/orders/order_id?sid=""&cid=""
+								/order_id?sid=""&cid=""
 								<span class="endpoint post"></span>
 							</a>
 						</li>
 					
 						<li>
 							<a href="/#ordersorder_delete">
-								/order/:id
+								/:id
 								<span class="endpoint delete"></span>
 							</a>
 						</li>
@@ -274,7 +274,7 @@
 						
 						"orders-order-add": {
 							"id": "orders-order-add",
-							"title": "/v1/orders",
+							"title": "/",
 							"category": "orders",
 							"description": "Create Order",
 		  				"type": "post",
@@ -291,7 +291,7 @@
 						
 						"orders-order-delete": {
 							"id": "orders-order-delete",
-							"title": "/order/:id",
+							"title": "/:id",
 							"category": "orders",
 							"description": "Deletes a Order",
 		  				"type": "delete",
@@ -308,7 +308,7 @@
 						
 						"orders-order-get": {
 							"id": "orders-order-get",
-							"title": "/v1/orders/store?sid={store_id}",
+							"title": "/store?sid={store_id}",
 							"category": "orders",
 							"description": "Get Store Orders",
 		  				"type": "get",
@@ -325,7 +325,7 @@
 						
 						"orders-order-update": {
 							"id": "orders-order-update",
-							"title": "/v1/orders/order_id?sid=&quot;&quot;&amp;cid=&quot;&quot;",
+							"title": "/order_id?sid=&quot;&quot;&amp;cid=&quot;&quot;",
 							"category": "orders",
 							"description": "Update Order",
 		  				"type": "post",

@@ -1,5 +1,5 @@
 ---
-title: /v1/orders
+title: /
 position_number: 1.1
 type: post
 description: Create Order

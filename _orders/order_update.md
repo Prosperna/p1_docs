@@ -1,5 +1,5 @@
 ---
-title: /v1/orders/order_id?sid=""&cid=""
+title: /order_id?sid=""&cid=""
 position_number: 1.3
 type: post
 description: Update Order
