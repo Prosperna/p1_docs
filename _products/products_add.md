@@ -1,279 +1,130 @@
 ---
-title: /products
-position_number: 1.1
-type: post
-description: Create Product
+title: /v1/products/:product_id
+position_number: 1.3
+type: put
+description: Save/Update Product
+
 content_markdown: |-
-  | Parameters         | Data Type | Required | Description                        |
+  | ***Parameters***         | ***Data Type*** | ***Required*** | ***Description***                        |
   |--------------------|-----------|----------|------------------------------------|
-  | name               | string    | Yes      | Name of the Product                |
-  | slug               | string    | Yes      | Path of the Product                |
-  | description        | text      | No       | Product long description           |
-  | short_description  | text      | No       | Product short description          |
-  | brand              | string    | No       | Product brand                      |
-  | product_measurements | array   | No       | available values: `['cm', 'mm', 'in', 'm' ]`                   |
+  | product_id               | string    | Yes      | Product id            |
+  | ***Request Body***         | ***Data Type*** | ***Required*** | ***Description***                        |
+  |--------------------|-----------|----------|------------------------------------|
+  | product_specification.name               | string    | Yes      | Product name            |
+  | product_specification.slug               | string    | Yes      | Product slug (without url)            |
+  | product_specification.short_description               | string    | Yes      | Product short description            |
+  | product_specification.long_description               | string    | Yes      | Product long description            |
+  | product_specification.brand               | string    | No      | Product brand            |
+  | product_specification.images               | array   | Yes      | Product images/thumbnails.            |
+  | product_state.is_always_instock               | boolean   | Yes      | **PAID FEATURE** Boolean value for is always instock feature.          |
+  | product_state.is_hide_stock               | boolean   | Yes      | **PAID FEATURE** Boolean value for is always hiding stock.          |
+  | product_state.is_product_has_variants               | boolean   | Yes      | Boolean value to set if product has variants.          |
+  | product_categories               | array   | Yes      | Array of categories id for a given product.          |
+  | product_variant_types               | array   | Yes, _if is_product_has_variants is set to **true** else_ No.      | Array of product variant types.          |
+  | product_variants_combinations               | array   | Yes, _if is_product_has_variants is set to **true** else_ No.     | Array of variant combinations.          |
+  | product_addons               | object   | No     | **PAID FEATURE** Product addons, object containing the addon limit and array of addons ids.          |
+  | product_price.regular_price               | number   | Yes, _if is_product_has_variants is set to **false** else_ No.     |  Product regular price.         |
+  | product_price.sale_price               | number   | No     |  Product regular price.         |
+  | product_price.stock_quantity               | number   | Yes, _if is_product_has_variants is set to **false** else_ No.     |  Product stock quantity.         |
+  | product_price.margin               | number   | No     |  Product sale price.         |
+  | product_price.unit_cost               | number   | No     |  Product sale price.         |
+  | product_measurements.product_size.height               | number   | Yes, _if is_product_has_variants is set to **false** else_ No.     |  Product height.         |
+  | product_measurements.product_size.width               | number   | Yes, _if is_product_has_variants is set to **false** else_ No.     |  Product width.         |
+  | product_measurements.product_size.length               | number   | Yes, _if is_product_has_variants is set to **false** else_ No.     |  Product length.         |
+  | product_measurements.product_size.unit               | ```['mm', 'cm', 'in', 'm']```   | Yes, _if is_product_has_variants is set to **false** else_ No.     |  Product size unit.         |
+  | product_measurements.product_weight.weight               | number   | Yes, _if is_product_has_variants is set to **false** else_ No.     |  Product weight.         |
+  | product_measurements.product_weight.unit               | ```['g', 'kg', 'lb', 'ml', 'l', 'Oz']```   | Yes, _if is_product_has_variants is set to **false** else_ No.     |  Product weight unit.         |
+  | product_seo.primary.title               | string   | No     | **PAID FEATURE** SEO title.          |
+  | product_seo.primary.description               | string   | No     | **PAID FEATURE** SEO description.          |
+  | product_seo.primary.url               | string   | No     | **PAID FEATURE** SEO url.          |
 
-
-  Adds a products to your inventory.
 left_code_blocks:
   - code_block: |-
-      const request = require('request');
-      const username = 'your_username';
-      const password = 'your_password';
-      const auth = 'Basic ' + Buffer.from(username + ':' + password).toString('base64');
+      var axios = require('axios');
+      var data = JSON.stringify({
+        product_specification: {
+          name: 'product_name',
+          slug: 'product_slug',
+          long_description: 'long description',
+          short_description: 'short description',
+          brand: 'product_brand',
+          images: [
+            {
+              image: 'base64 image',
+              file_name: 'image file name',
+              image_action: 'new', // "delete" | "new" | "ordering_update"
+            },
+          ],
+        },
+        product_state: {
+          is_always_instock: true,
+          is_hide_stock: true,
+          is_product_has_variants: false,
+        },
+        product_price: {
+          regular_price: 900,
+          margin: 56,
+          sale_price: 12,
+          unit_cost: 56,
+          stock_quantity: 56,
+        },
+        product_measurements: {
+          product_size: {
+            height: 100,
+            width: 1235,
+            length: 62,
+            unit: 'cm',
+          },
+          product_weight: {
+            weight: 45,
+            unit: 'l',
+          },
+        },
+        product_variants_combinations: ['63e58292ad7a318363625be4'],
+        product_variant_types: [
+          '63e5810a763ae9c5f788b2e5',
+          '63e5820f763ae9c5f788b2eb',
+        ],
+        product_addons: {
+          addOn_limit: 1,
+          addOn_list: ['63e4f74dbf61b3a5047d9dbe'],
+        },
+        product_categories: ['63e4f6c4bf61b3a5047d9daf'],
+        product_seo: {
+          primary: {
+            title: 'seo_title',
+            description: 'seo description',
+            url: 'http://localhost:3000',
+          },
+        },
+      });
 
-      const options = {
-        method: 'POST',
-        url: 'http://localhost:4000/v1/products',
+      var config = {
+        method: 'put',
+        url: 'api.prosperna.com/v1/products/640c8c4de596bf3e3684bb57',
         headers: {
-          Authorization: auth,
           'Content-Type': 'application/json',
         },
-        body: {
-          product_specification: {
-            name: 'another name here',
-            slug: 'davide_unique_slugl3',
-            description: 'product_description',
-            short_description: 'short description',
-            brand: 'product_brand',
-            images: [
-              {
-                file_name: 'newccc.jpeg',
-                image: 'data:image/jpeg;base64',
-              },
-            ],
-          },
-          product_state: {
-            is_always_instock: true,
-            is_hide_stock: true,
-          },
-          product_measurements: {
-            product_size: {
-              height: 45,
-              width: 45,
-              length: 62,
-              unit: 'cm',
-            },
-            product_weight: {
-              weight: 45,
-              unit: 'l',
-            },
-          },
-          product_variants_combinations: [
-            {
-              combination_name: 'Large Chocolate',
-              stock_quantity: 10,
-              price: 12.3,
-              variant_combinations: [
-                {
-                  selected_variant_option_id: '6389ec5665561a16ca6c096a',
-                  variant_type_id: '6389ec5665561a16ca6c0969',
-                },
-                {
-                  selected_variant_option_id: '638997c9f3c4c4080d6d4c15',
-                  variant_type_id: '638997c9f3c4c4080d6d4c14',
-                },
-              ],
-            },
-            {
-              combination_name: 'Large Cheese',
-              stock_quantity: 10,
-              price: 10,
-              variant_combinations: [
-                {
-                  selected_variant_option_id: '6389ec5665561a16ca6c096b',
-                  variant_type_id: '6389ec5665561a16ca6c0969',
-                },
-                {
-                  selected_variant_option_id: '638997c9f3c4c4080d6d4c15',
-                  variant_type_id: '638997c9f3c4c4080d6d4c14',
-                },
-              ],
-            },
-          ],
-          product_addons: {
-            addOn_limit: 1,
-            addOn_list: ['6386a7d04d734f58b587f131'],
-          },
-          product_price: {
-            regular_price: 1522,
-            sale_price: 0,
-            price_display: 'Buy one take one',
-            margin: 45,
-            unit_cost: 1,
-          },
-          store_locations: [
-            {
-              stock_quantity: 3,
-              store_location_id: '636bab233ea4455a9486ad5b',
-            },
-          ],
-          product_categories: ['6386a2b04d734f58b587f0f8'],
-          product_seo: {
-            primary: {
-              title: 'seo_title',
-              description: 'seo description',
-              url: 'http://localhost:3000',
-            },
-          },
-        },
-        json: true,
+        data: data,
       };
 
-      rp(options)
-        .then((response) => {
-          console.log(response);
+      axios(config)
+        .then(function (response) {
+          console.log(JSON.stringify(response.data));
         })
-        .catch((err) => {
-          console.error(err);
+        .catch(function (error) {
+          console.log(error);
         });
-    title: NodeJs
+    title: NodeJS
     language: javascript
-  - code_block: |-
-      import base64
-      import json
-      import requests
 
-      username = 'your_username'
-      password = 'your_password'
-      url = 'https://your_api_endpoint.com/v1/products'
-
-      # Encode the username and password in base64
-      auth_string = f"{username}:{password}"
-      encoded_auth_string = base64.b64encode(auth_string.encode()).decode()
-
-      # Set the Authorization and Content-Type headers
-      headers = {
-          'Authorization': f'Basic {encoded_auth_string}',
-          'Content-Type': 'application/json'
-      }
-
-      # Define the payload
-      payload = {
-          "product_specification": {
-              "name": "another name here",
-              "slug": "davide_unique_slugl3",
-              "description": "product_description",
-              "short_description": "short description",
-              "brand": "product_brand",
-              "images": [
-                  {
-                      "file_name": "newccc.jpeg",
-                      "image": "data:image/jpeg;base64"
-                  }
-              ]
-          },
-          "product_state": {
-              "is_always_instock": True,
-              "is_hide_stock": True
-          },
-          "product_measurements": {
-              "product_size": {
-                  "height": 45,
-                  "width": 45,
-                  "length": 62,
-                  "unit": "cm"
-              },
-              "product_weight": {
-                  "weight": 45,
-                  "unit": "l"
-              }
-          },
-          "product_variants_combinations": [
-              {
-                  "combination_name": "Large Chocolate",
-                  "stock_quantity": 10,
-                  "price": 12.3,
-                  "variant_combinations": [
-                      {
-                          "selected_variant_option_id": "6389ec5665561a16ca6c096a",
-                          "variant_type_id": "6389ec5665561a16ca6c0969"
-                      },
-                      {
-                          "selected_variant_option_id": "638997c9f3c4c4080d6d4c15",
-                          "variant_type_id": "638997c9f3c4c4080d6d4c14"
-                      }
-                  ]
-              },
-              {
-                  "combination_name": "Large Cheese",
-                  "stock_quantity": 10,
-                  "price": 10,
-                  "variant_combinations": [
-                      {
-                          "selected_variant_option_id": "6389ec5665561a16ca6c096b",
-                          "variant_type_id": "6389ec5665561a16ca6c0969"
-                      },
-                      {
-                          "selected_variant_option_id": "638997c9f3c4c4080d6d4c15",
-                          "variant_type_id": "638997c9f3c4c4080d6d4c14"
-                      }
-                  ]
-              }
-          ],
-          "product_addons": {
-              "addOn_limit": 1,
-              "addOn_list": [
-                  "6386a7d04d734f58b587f131"
-              ]
-          },
-          "product_price": {
-              "regular_price": 1522,
-              "sale_price": 0,
-              "price_display": "Buy one take one",
-              "margin": 45,
-              "unit_cost": 1
-          },
-          "store_locations": [
-              {
-                  "stock_quantity": 3,
-                  "store_location_id": "636bab233ea4455a9486ad5b"
-              }
-          ],
-          "product_categories": [
-              "6386a2b04d734f58b587f0f8"
-          ],
-          "product_seo": {
-              "primary": {
-                  "title": "seo_title",
-                  "description": "seo description",
-                  "url": "http://localhost:3000"
-              }
-          }
-      }
-
-      # Convert the payload to a JSON string
-      json_payload = json.dumps(payload)
-
-      # Make a POST request with the headers and JSON payload
-      response = requests.post(url, headers=headers, data=json_payload)
-
-      # Print the response
-      print(response.text)
-    title: Python
-    language: python
 right_code_blocks:
   - code_block: |-
       {
-        "id": 3,
-        "title": "The Product Thief",
-        "score": 4.3,
-        "dateAdded": "5/1/2015"
-      }
-    title: Request
-    language: json
-  - code_block: |-
-      {
-        "error": true,
-        "message": "Invalid score"
+          "data": null,
+          "message": "Successfully updated product.",
+          "statusCode": 200
       }
     title: Response
-    language: json
-  - code_block: |-
-      {
-        "error": true,
-        "message": "Invalid score"
-      }
-    title: Error
     language: json
 ---

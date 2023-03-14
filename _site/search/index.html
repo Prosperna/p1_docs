@@ -11,33 +11,33 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="ProspernaOne API documentation" />
 <meta property="og:description" content="ProspernaOne API documentation" />
-<link rel="canonical" href="http://localhost:4000/search/" />
-<meta property="og:url" content="http://localhost:4000/search/" />
+<link rel="canonical" href="http://localhost:4001/p1_docs/search/" />
+<meta property="og:url" content="http://localhost:4001/p1_docs/search/" />
 <meta property="og:site_name" content="ProspernaOne" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Search" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"ProspernaOne API documentation","headline":"Search","url":"http://localhost:4000/search/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"ProspernaOne API documentation","headline":"Search","url":"http://localhost:4001/p1_docs/search/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-		<link rel="stylesheet" href="http://localhost:4000/css/style.css">
+		<link rel="stylesheet" href="./css/style.css">
 		<link rel="icon" type="image/png" href="/favicon.png">
 
 		
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-		<script src="http://localhost:4000/js/main.js"></script>
+		<script src="./js/main.js"></script>
 	</head>
 	<body>
 		<header>
 			<h1>
 				<button type="button" class="open-nav" id="open-nav"></button>
-				<a href="http://localhost:4000/"><img src="http://localhost:4000/images/logo.svg" height="40" alt="ProspernaOne logo"></a>
+				<a href="http://localhost:4001/"><img src="./images/prosperna-logo.png" height="40" alt="ProspernaOne logo"></a>
 			</h1>
 
-			<form action="http://localhost:4000/search/" method="get">
+			<form action="./search/" method="get">
 				<input type="text" name="q" id="search-input" placeholder="Search">
 				<input type="submit" value="Search" style="display: none;">
 			</form>
@@ -84,41 +84,6 @@
 				<ul>
 					
 					
-						<li>
-							<a href="/#apiordersorders_list">
-								/orders
-								<span class="endpoint get"></span>
-							</a>
-						</li>
-					
-						<li>
-							<a href="/#apiordersorders_add">
-								/orders
-								<span class="endpoint post"></span>
-							</a>
-						</li>
-					
-						<li>
-							<a href="/#apiordersorders_get">
-								/orders/:id
-								<span class="endpoint get"></span>
-							</a>
-						</li>
-					
-						<li>
-							<a href="/#apiordersorders_update">
-								/orders/:id
-								<span class="endpoint put"></span>
-							</a>
-						</li>
-					
-						<li>
-							<a href="/#apiordersorders_delete">
-								/orders/:id
-								<span class="endpoint delete"></span>
-							</a>
-						</li>
-					
 				</ul>
 			</section>
 		
@@ -130,37 +95,58 @@
 					
 					
 						<li>
-							<a href="/#productsproducts_list">
-								/products
+							<a href="/#productsproducts_get">
+								/v1/products/merchant-listing
 								<span class="endpoint get"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="/#productsproducts_add">
-								/products
+							<a href="/#productsproducts_get_single">
+								/v1/products/:product_id
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#productsproducts_pre_create">
+								/v1/products/pre-create
 								<span class="endpoint post"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="/#productsproducts_get">
-								/products/:id
-								<span class="endpoint get"></span>
+							<a href="/#productsproducts_add">
+								/v1/products/:product_id
+								<span class="endpoint put"></span>
 							</a>
 						</li>
 					
 						<li>
 							<a href="/#productsproducts_delete">
-								/products/:id
+								/v1/products/:product_id
 								<span class="endpoint delete"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="/#productsproducts_update">
-								/products/:id
-								<span class="endpoint put"></span>
+							<a href="/#productsproducts_storage">
+								/v1/products/storage
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#productsproducts_quantity">
+								/v1/products/stock-quantity?store_id=
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#productsproducts_publish_unpublish">
+								/v1/products/status
+								<span class="endpoint post"></span>
 							</a>
 						</li>
 					
@@ -189,96 +175,11 @@
 	window.data = {
 		
 			
-				
-					
-						
-						
-						"api-orders-orders-add": {
-							"id": "api-orders-orders-add",
-							"title": "/orders",
-							"category": "api",
-							"description": "Create Book",
-		  				"type": "post",
-							"url": "http://localhost:4000/#apiordersorders_add",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-orders-orders-delete": {
-							"id": "api-orders-orders-delete",
-							"title": "/orders/:id",
-							"category": "api",
-							"description": "Deletes a book",
-		  				"type": "delete",
-							"url": "http://localhost:4000/#apiordersorders_delete",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-orders-orders-get": {
-							"id": "api-orders-orders-get",
-							"title": "/orders/:id",
-							"category": "api",
-							"description": "Get Book",
-		  				"type": "get",
-							"url": "http://localhost:4000/#apiordersorders_get",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-orders-orders-list": {
-							"id": "api-orders-orders-list",
-							"title": "/orders",
-							"category": "api",
-							"description": "List all orders",
-		  				"type": "get",
-							"url": "http://localhost:4000/#apiordersorders_list",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-orders-orders-update": {
-							"id": "api-orders-orders-update",
-							"title": "/orders/:id",
-							"category": "api",
-							"description": "Update orders",
-		  				"type": "put",
-							"url": "http://localhost:4000/#apiordersorders_update",
-							"content": ""
-						}
-						
-					
-				
-			
 		
 			
 				
 					
-						,
+						
 						
 						"documentation-authentication": {
 							"id": "documentation-authentication",
@@ -286,7 +187,7 @@
 							"category": "documentation",
 							"description": "",
 		  				"type": "",
-							"url": "http://localhost:4000/#documentationauthentication",
+							"url": "http://localhost:4001/#documentationauthentication",
 							"content": ""
 						}
 						
@@ -303,7 +204,7 @@
 							"category": "documentation",
 							"description": "",
 		  				"type": "",
-							"url": "http://localhost:4000/#documentationerrors",
+							"url": "http://localhost:4001/#documentationerrors",
 							"content": ""
 						}
 						
@@ -320,7 +221,7 @@
 							"category": "documentation",
 							"description": "",
 		  				"type": "",
-							"url": "http://localhost:4000/#documentationgetting_started",
+							"url": "http://localhost:4001/#documentationgetting_started",
 							"content": ""
 						}
 						
@@ -337,11 +238,11 @@
 						
 						"products-products-add": {
 							"id": "products-products-add",
-							"title": "/products",
+							"title": "/v1/products/:product_id",
 							"category": "products",
-							"description": "Create Product",
-		  				"type": "post",
-							"url": "http://localhost:4000/#productsproducts_add",
+							"description": "Save/Update Product",
+		  				"type": "put",
+							"url": "http://localhost:4001/#productsproducts_add",
 							"content": ""
 						}
 						
@@ -354,11 +255,11 @@
 						
 						"products-products-delete": {
 							"id": "products-products-delete",
-							"title": "/products/:id",
+							"title": "/v1/products/:product_id",
 							"category": "products",
-							"description": "Deletes a book",
+							"description": "Delete single product",
 		  				"type": "delete",
-							"url": "http://localhost:4000/#productsproducts_delete",
+							"url": "http://localhost:4001/#productsproducts_delete",
 							"content": ""
 						}
 						
@@ -371,11 +272,11 @@
 						
 						"products-products-get": {
 							"id": "products-products-get",
-							"title": "/products/:id",
+							"title": "/v1/products/merchant-listing",
 							"category": "products",
-							"description": "Get Book",
+							"description": "Get all Products",
 		  				"type": "get",
-							"url": "http://localhost:4000/#productsproducts_get",
+							"url": "http://localhost:4001/#productsproducts_get",
 							"content": ""
 						}
 						
@@ -386,13 +287,13 @@
 					
 						,
 						
-						"products-products-list": {
-							"id": "products-products-list",
-							"title": "/products",
+						"products-products-get-single": {
+							"id": "products-products-get-single",
+							"title": "/v1/products/:product_id",
 							"category": "products",
-							"description": "List all products",
+							"description": "Get single product",
 		  				"type": "get",
-							"url": "http://localhost:4000/#productsproducts_list",
+							"url": "http://localhost:4001/#productsproducts_get_single",
 							"content": ""
 						}
 						
@@ -403,13 +304,64 @@
 					
 						,
 						
-						"products-products-update": {
-							"id": "products-products-update",
-							"title": "/products/:id",
+						"products-products-pre-create": {
+							"id": "products-products-pre-create",
+							"title": "/v1/products/pre-create",
 							"category": "products",
-							"description": "Update products",
-		  				"type": "put",
-							"url": "http://localhost:4000/#productsproducts_update",
+							"description": "Pre create product",
+		  				"type": "post",
+							"url": "http://localhost:4001/#productsproducts_pre_create",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"products-products-publish-unpublish": {
+							"id": "products-products-publish-unpublish",
+							"title": "/v1/products/status",
+							"category": "products",
+							"description": "Publish or unpublish products, accepts array of product id",
+		  				"type": "post",
+							"url": "http://localhost:4001/#productsproducts_publish_unpublish",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"products-products-quantity": {
+							"id": "products-products-quantity",
+							"title": "/v1/products/stock-quantity?store_id=",
+							"category": "products",
+							"description": "Decrease the product quantity and product variant combination quantity",
+		  				"type": "post",
+							"url": "http://localhost:4001/#productsproducts_quantity",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"products-products-storage": {
+							"id": "products-products-storage",
+							"title": "/v1/products/storage",
+							"category": "products",
+							"description": "Storage breakdown for product usage",
+		  				"type": "get",
+							"url": "http://localhost:4001/#productsproducts_storage",
 							"content": ""
 						}
 						
@@ -419,8 +371,8 @@
 		
 	};
 </script>
-<script src="http://localhost:4000/js/lunr.min.js"></script>
-<script src="http://localhost:4000/js/search.js"></script>
+<script src="http://localhost:4001/js/lunr.min.js"></script>
+<script src="http://localhost:4001/js/search.js"></script>
 
 		</div>
 		<script>
