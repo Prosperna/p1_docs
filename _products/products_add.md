@@ -8,6 +8,7 @@ content_markdown: |-
   | ***Parameters***         | ***Data Type*** | ***Required*** | ***Description***                        |
   |--------------------|-----------|----------|------------------------------------|
   | product_id               | string    | Yes      | Product id            |
+
   | ***Request Body***         | ***Data Type*** | ***Required*** | ***Description***                        |
   |--------------------|-----------|----------|------------------------------------|
   | product_specification.name               | string    | Yes      | Product name            |
@@ -31,9 +32,9 @@ content_markdown: |-
   | product_measurements.product_size.height               | number   | Yes, _if is_product_has_variants is set to **false** else_ No.     |  Product height.         |
   | product_measurements.product_size.width               | number   | Yes, _if is_product_has_variants is set to **false** else_ No.     |  Product width.         |
   | product_measurements.product_size.length               | number   | Yes, _if is_product_has_variants is set to **false** else_ No.     |  Product length.         |
-  | product_measurements.product_size.unit               | ```['mm', 'cm', 'in', 'm']```   | Yes, _if is_product_has_variants is set to **false** else_ No.     |  Product size unit.         |
+  | product_measurements.product_size.unit               | string   | Yes, _if is_product_has_variants is set to **false** else_ No.     |  Product size unit. ```['mm', 'cm', 'in', 'm']```        |
   | product_measurements.product_weight.weight               | number   | Yes, _if is_product_has_variants is set to **false** else_ No.     |  Product weight.         |
-  | product_measurements.product_weight.unit               | ```['g', 'kg', 'lb', 'ml', 'l', 'Oz']```   | Yes, _if is_product_has_variants is set to **false** else_ No.     |  Product weight unit.         |
+  | product_measurements.product_weight.unit               | string   | Yes, _if is_product_has_variants is set to **false** else_ No.     |  Product weight unit. ```['g', 'kg', 'lb', 'ml', 'l', 'Oz']```         |
   | product_seo.primary.title               | string   | No     | **PAID FEATURE** SEO title.          |
   | product_seo.primary.description               | string   | No     | **PAID FEATURE** SEO description.          |
   | product_seo.primary.url               | string   | No     | **PAID FEATURE** SEO url.          |
