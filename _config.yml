@@ -26,6 +26,9 @@ collections:
   orders:
     title: Orders
     position_number: 4
+  business:
+    title: Business
+    position_number: 5
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
@@ -36,15 +39,15 @@ exclude:
 
 defaults:
   - scope:
-      path: ""
+      path: ''
     values:
       layout: default
   - scope:
-      type: "documentation"
+      type: 'documentation'
     values:
       _hide_content: true
   - scope:
-      type: "api"
+      type: 'api'
     values:
       _hide_content: true
 
