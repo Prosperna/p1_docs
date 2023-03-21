@@ -1,5 +1,5 @@
 ---
-title: /v1/products/storage
+title: /storage
 position_number: 1.5
 type: get
 description: Storage breakdown for product usage

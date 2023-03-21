@@ -96,56 +96,56 @@
 					
 						<li>
 							<a href="/#productsproducts_get">
-								/v1/products/merchant-listing
+								/merchant-listing
 								<span class="endpoint get"></span>
 							</a>
 						</li>
 					
 						<li>
 							<a href="/#productsproducts_get_single">
-								/v1/products/:product_id
+								/:product_id
 								<span class="endpoint get"></span>
 							</a>
 						</li>
 					
 						<li>
 							<a href="/#productsproducts_pre_create">
-								/v1/products/pre-create
+								/pre-create
 								<span class="endpoint post"></span>
 							</a>
 						</li>
 					
 						<li>
 							<a href="/#productsproducts_add">
-								/v1/products/:product_id
+								/:product_id
 								<span class="endpoint put"></span>
 							</a>
 						</li>
 					
 						<li>
 							<a href="/#productsproducts_delete">
-								/v1/products/:product_id
+								/:product_id
 								<span class="endpoint delete"></span>
 							</a>
 						</li>
 					
 						<li>
 							<a href="/#productsproducts_storage">
-								/v1/products/storage
+								/storage
 								<span class="endpoint get"></span>
 							</a>
 						</li>
 					
 						<li>
 							<a href="/#productsproducts_quantity">
-								/v1/products/stock-quantity?store_id=
+								/stock-quantity
 								<span class="endpoint post"></span>
 							</a>
 						</li>
 					
 						<li>
 							<a href="/#productsproducts_publish_unpublish">
-								/v1/products/status
+								/status
 								<span class="endpoint post"></span>
 							</a>
 						</li>
@@ -238,7 +238,7 @@
 						
 						"products-products-add": {
 							"id": "products-products-add",
-							"title": "/v1/products/:product_id",
+							"title": "/:product_id",
 							"category": "products",
 							"description": "Save/Update Product",
 		  				"type": "put",
@@ -255,7 +255,7 @@
 						
 						"products-products-delete": {
 							"id": "products-products-delete",
-							"title": "/v1/products/:product_id",
+							"title": "/:product_id",
 							"category": "products",
 							"description": "Delete single product",
 		  				"type": "delete",
@@ -272,7 +272,7 @@
 						
 						"products-products-get": {
 							"id": "products-products-get",
-							"title": "/v1/products/merchant-listing",
+							"title": "/merchant-listing",
 							"category": "products",
 							"description": "Get all Products",
 		  				"type": "get",
@@ -289,7 +289,7 @@
 						
 						"products-products-get-single": {
 							"id": "products-products-get-single",
-							"title": "/v1/products/:product_id",
+							"title": "/:product_id",
 							"category": "products",
 							"description": "Get single product",
 		  				"type": "get",
@@ -306,7 +306,7 @@
 						
 						"products-products-pre-create": {
 							"id": "products-products-pre-create",
-							"title": "/v1/products/pre-create",
+							"title": "/pre-create",
 							"category": "products",
 							"description": "Pre create product",
 		  				"type": "post",
@@ -323,7 +323,7 @@
 						
 						"products-products-publish-unpublish": {
 							"id": "products-products-publish-unpublish",
-							"title": "/v1/products/status",
+							"title": "/status",
 							"category": "products",
 							"description": "Publish or unpublish products, accepts array of product id",
 		  				"type": "post",
@@ -340,7 +340,7 @@
 						
 						"products-products-quantity": {
 							"id": "products-products-quantity",
-							"title": "/v1/products/stock-quantity?store_id=",
+							"title": "/stock-quantity",
 							"category": "products",
 							"description": "Decrease the product quantity and product variant combination quantity",
 		  				"type": "post",
@@ -357,7 +357,7 @@
 						
 						"products-products-storage": {
 							"id": "products-products-storage",
-							"title": "/v1/products/storage",
+							"title": "/storage",
 							"category": "products",
 							"description": "Storage breakdown for product usage",
 		  				"type": "get",

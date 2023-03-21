@@ -1,5 +1,5 @@
 ---
-title: /v1/products/pre-create
+title: /pre-create
 position_number: 1.2
 type: post
 description: Pre create product

@@ -1,5 +1,5 @@
 ---
-title: /v1/products/merchant-listing
+title: /merchant-listing
 position_number: 1.0
 type: get
 description: Get all Products

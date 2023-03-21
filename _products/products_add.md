@@ -1,5 +1,5 @@
 ---
-title: /v1/products/:product_id
+title: /:product_id
 position_number: 1.3
 type: put
 description: Save/Update Product
