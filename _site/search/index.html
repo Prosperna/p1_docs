@@ -479,6 +479,41 @@
 							</a>
 						</li>
 					
+						<li>
+							<a href="/#storeshippingsettingspickup_address_add">
+								/business-profile/shipping/:store_id
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#storeshippingsettingspickup_address_delete">
+								/business-profile/shipping/:store_id/pickup-address/:pickup_address_id
+								<span class="endpoint delete"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#storeshippingsettingspickup_address_get_all">
+								/business-profile/shipping/:store_id
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#storeshippingsettingspickup_address_get_single">
+								/business-profile/shipping/:store_id?pickup_address_id=
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#storeshippingsettingspickup_address_update">
+								/business-profile/shipping/:store_id/pickup-address/:pickup_address_id
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
 				</ul>
 			</section>
 		
@@ -1283,6 +1318,91 @@
 							"description": "Get shipping setting details",
 		  				"type": "get",
 							"url": "http://localhost:4001/#storeshippingsettingsget_shipping_details",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"storeshippingsettings-pickup-address-add": {
+							"id": "storeshippingsettings-pickup-address-add",
+							"title": "/business-profile/shipping/:store_id",
+							"category": "storeshippingsettings",
+							"description": "Add new pickup address",
+		  				"type": "post",
+							"url": "http://localhost:4001/#storeshippingsettingspickup_address_add",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"storeshippingsettings-pickup-address-delete": {
+							"id": "storeshippingsettings-pickup-address-delete",
+							"title": "/business-profile/shipping/:store_id/pickup-address/:pickup_address_id",
+							"category": "storeshippingsettings",
+							"description": "Delete pickup address",
+		  				"type": "delete",
+							"url": "http://localhost:4001/#storeshippingsettingspickup_address_delete",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"storeshippingsettings-pickup-address-get-all": {
+							"id": "storeshippingsettings-pickup-address-get-all",
+							"title": "/business-profile/shipping/:store_id",
+							"category": "storeshippingsettings",
+							"description": "Get all pickup address per store",
+		  				"type": "get",
+							"url": "http://localhost:4001/#storeshippingsettingspickup_address_get_all",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"storeshippingsettings-pickup-address-get-single": {
+							"id": "storeshippingsettings-pickup-address-get-single",
+							"title": "/business-profile/shipping/:store_id?pickup_address_id=",
+							"category": "storeshippingsettings",
+							"description": "Get all pickup address per store",
+		  				"type": "get",
+							"url": "http://localhost:4001/#storeshippingsettingspickup_address_get_single",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"storeshippingsettings-pickup-address-update": {
+							"id": "storeshippingsettings-pickup-address-update",
+							"title": "/business-profile/shipping/:store_id/pickup-address/:pickup_address_id",
+							"category": "storeshippingsettings",
+							"description": "Add new pickup address",
+		  				"type": "put",
+							"url": "http://localhost:4001/#storeshippingsettingspickup_address_update",
 							"content": ""
 						}
 						
