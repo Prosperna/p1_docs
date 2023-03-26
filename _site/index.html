@@ -278,6 +278,62 @@
 							</a>
 						</li>
 					
+						<li>
+							<a href="#storesettingssave_update_store_fbpixel">
+								/business-profile/store/update/store-pixel
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#storesettingssave_update_store_seo">
+								/business-profile/store/update/store-seo
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#storesettingssave_update_store_cookie_policy">
+								/business-profile/store/update/store-cookie-policy
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#storesettingssave_update_store_google_analytics">
+								/business-profile/store/update/store-google-tracking-code
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#storesettingssave_update_store_location">
+								/business-profile/store/update/store-select-location
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#storesettingssave_update_store_convenience_fee">
+								/business-profile/store/update/convenience-fee
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#storesettingssave_update_store_domain">
+								/business-profile/store/update/store-domain
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#storesettingsget_store_details">
+								/business-profile/store/details
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
 				</ul>
 			</section>
 		
@@ -5070,6 +5126,1192 @@
 <div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Store branding successfully updated."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"store"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"additionalFee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"xenplatform_user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"alreadyAvailedPaidPlan"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63760ee5a3444c4d444c158c"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63760ee35f12fa931cbb3dea"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updated_store_name"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeAlias"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updatedstorename"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeIndustry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"604718297aa0fb376c0fcca9"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeSharingPrefixDesc"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeLogo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"store_logo_url"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storePrimaryColor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#d05353"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeSecondaryColor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#000"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cookiePolicy"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cookiePolicyTheme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dark"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"requireSelectingStoreLocation"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"shouldSaveFbLead"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isGuestCheckoutVerification"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isStoreEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isEnabledOnlinePayment"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isVerifiedBankForOnlinePayment"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"convenienceFeeSeller"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"convenienceFeeBuyer"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"shippingOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"STANDARD"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"SAMEDAY_SCHED"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"OWN_BOOKING"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"PICKUP"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"alreadyAvailedPlusPlan"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"payPlanType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PLUS"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"billingType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NONE"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"billing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"free_visitor_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"paid_visitor_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"p1_users"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"paid_p1_users"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"billingVerificationId"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="nl">"alreadyClaimedFreeTrial"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"redirectToCustomDomain"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"redirectToCustomSubDomain"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"billingCutOffDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"dateCreated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-17T10:37:25.120Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-17T10:37:25.121Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeSlogan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New slogan"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"facebookLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"facebook_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"instagramLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"instagram_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"linkedinLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"linkedin_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"twitterLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"twitter_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"customSubDomain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom_p1_subdomain"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"customDomain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom_domain_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fbPixel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fb_pixel_code"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"googleTrackingCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"google_tracking_code"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"privacyPolicyLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"privacy_policy_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-26T05:57:13.881Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastTransaction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-26T05:57:13.900Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeFavicon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"storefavicon_url"</span><span class="p">,</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="storesettingssave_update_store_fbpixel">
+						/business-profile/store/update/store-pixel
+						
+							<span class="endpoint put"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_storesettings/save_update_store_fbpixel.md">Edit</a>
+				</h3>
+				
+					<p class="description">Save/Update store FB Pixel tracking code</p>
+				
+
+				
+
+				<table>
+  <thead>
+    <tr>
+      <th><strong><em>Request Body</em></strong></th>
+      <th><strong><em>Data Type</em></strong></th>
+      <th><strong><em>Required</em></strong></th>
+      <th><strong><em>Description</em></strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>storeId</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Store id</td>
+    </tr>
+    <tr>
+      <td>storeFbPixel</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td><strong>PAID FEATURE</strong> Updated store FB Pixel tracking code</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+						
+								
+
+
+<div title="NodeJS" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+  <span class="dl">"</span><span class="s2">storeId</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">636f0d682b74aa4017606d52</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">storeFbPixel</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">fb_pixel</span><span class="dl">"</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">put</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">api.prosperna.com/v1/business-profile/store/update/store-pixel</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">data</span> <span class="p">:</span> <span class="nx">data</span>
+<span class="p">};</span>
+
+<span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Facebook Pixel successfully updated."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"store"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"additionalFee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"xenplatform_user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"alreadyAvailedPaidPlan"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63760ee5a3444c4d444c158c"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63760ee35f12fa931cbb3dea"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updated_store_name"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeAlias"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updatedstorename"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeIndustry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"604718297aa0fb376c0fcca9"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeSharingPrefixDesc"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeLogo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"store_logo_url"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storePrimaryColor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#d05353"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeSecondaryColor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#000"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cookiePolicy"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cookiePolicyTheme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dark"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"requireSelectingStoreLocation"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"shouldSaveFbLead"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isGuestCheckoutVerification"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isStoreEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isEnabledOnlinePayment"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isVerifiedBankForOnlinePayment"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"convenienceFeeSeller"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"convenienceFeeBuyer"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"shippingOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"STANDARD"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"SAMEDAY_SCHED"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"OWN_BOOKING"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"PICKUP"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"alreadyAvailedPlusPlan"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"payPlanType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PLUS"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"billingType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NONE"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"billing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"free_visitor_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"paid_visitor_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"p1_users"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"paid_p1_users"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"billingVerificationId"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="nl">"alreadyClaimedFreeTrial"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"redirectToCustomDomain"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"redirectToCustomSubDomain"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"billingCutOffDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"dateCreated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-17T10:37:25.120Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-17T10:37:25.121Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeSlogan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New slogan"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"facebookLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"facebook_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"instagramLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"instagram_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"linkedinLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"linkedin_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"twitterLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"twitter_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"customSubDomain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom_p1_subdomain"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"customDomain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom_domain_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fbPixel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fb_pixel_code"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"googleTrackingCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"google_tracking_code"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"privacyPolicyLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"privacy_policy_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-26T05:57:13.881Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastTransaction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-26T05:57:13.900Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeFavicon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"storefavicon_url"</span><span class="p">,</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="storesettingssave_update_store_seo">
+						/business-profile/store/update/store-seo
+						
+							<span class="endpoint put"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_storesettings/save_update_store_seo.md">Edit</a>
+				</h3>
+				
+					<p class="description">Save/Update store SEO description</p>
+				
+
+				
+
+				<table>
+  <thead>
+    <tr>
+      <th><strong><em>Request Body</em></strong></th>
+      <th><strong><em>Data Type</em></strong></th>
+      <th><strong><em>Required</em></strong></th>
+      <th><strong><em>Description</em></strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>storeId</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Store id</td>
+    </tr>
+    <tr>
+      <td>storeSeo</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td><strong>PAID FEATURE</strong> Updated store SEO description</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+						
+								
+
+
+<div title="NodeJS" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+  <span class="dl">"</span><span class="s2">storeId</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">63760ee5a3444c4d444c158c</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">storeSeo</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">seo_description</span><span class="dl">"</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">put</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">api.dev.prosperna.com/v1/business-profile/store/update/store-seo</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">data</span> <span class="p">:</span> <span class="nx">data</span>
+<span class="p">};</span>
+
+<span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEO successfully updated."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"store"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"additionalFee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"xenplatform_user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"alreadyAvailedPaidPlan"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63760ee5a3444c4d444c158c"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63760ee35f12fa931cbb3dea"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updated_store_name"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeAlias"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updatedstorename"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeIndustry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"604718297aa0fb376c0fcca9"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeSharingPrefixDesc"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeLogo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"store_logo_url"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storePrimaryColor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#d05353"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeSecondaryColor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#000"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cookiePolicy"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cookiePolicyTheme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dark"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"requireSelectingStoreLocation"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"shouldSaveFbLead"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isGuestCheckoutVerification"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isStoreEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isEnabledOnlinePayment"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isVerifiedBankForOnlinePayment"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"convenienceFeeSeller"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"convenienceFeeBuyer"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"shippingOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"STANDARD"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"SAMEDAY_SCHED"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"OWN_BOOKING"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"PICKUP"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"alreadyAvailedPlusPlan"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"payPlanType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PLUS"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"billingType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NONE"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"billing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"free_visitor_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"paid_visitor_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"p1_users"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"paid_p1_users"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"billingVerificationId"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="nl">"alreadyClaimedFreeTrial"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"redirectToCustomDomain"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"redirectToCustomSubDomain"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"billingCutOffDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"dateCreated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-17T10:37:25.120Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-17T10:37:25.121Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeSlogan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New slogan"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"facebookLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"facebook_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"instagramLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"instagram_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"linkedinLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"linkedin_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"twitterLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"twitter_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"customSubDomain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom_p1_subdomain"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"customDomain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom_domain_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fbPixel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fb_pixel_code"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"googleTrackingCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"google_tracking_code"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"privacyPolicyLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"privacy_policy_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-26T05:57:13.881Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastTransaction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-26T05:57:13.900Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeFavicon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"storefavicon_url"</span><span class="p">,</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="storesettingssave_update_store_cookie_policy">
+						/business-profile/store/update/store-cookie-policy
+						
+							<span class="endpoint put"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_storesettings/save_update_store_cookie_policy.md">Edit</a>
+				</h3>
+				
+					<p class="description">Save/Update store cookie policy</p>
+				
+
+				
+
+				<table>
+  <thead>
+    <tr>
+      <th><strong><em>Request Body</em></strong></th>
+      <th><strong><em>Data Type</em></strong></th>
+      <th><strong><em>Required</em></strong></th>
+      <th><strong><em>Description</em></strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>storeId</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Store id</td>
+    </tr>
+    <tr>
+      <td>cookiePolicy</td>
+      <td>boolean</td>
+      <td>Yes</td>
+      <td>Cookie policy flag value</td>
+    </tr>
+    <tr>
+      <td>cookiePolicyTheme</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Cookie policy theme, either <strong>light</strong> or <strong>dark</strong> theme</td>
+    </tr>
+    <tr>
+      <td>privacyPolicyLink</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Cookie privacy policy link</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+						
+								
+
+
+<div title="NodeJS" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+  <span class="dl">"</span><span class="s2">storeId</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">63760ee5a3444c4d444c158c</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">cookiePolicy</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">cookiePolicyTheme</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">dark</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">privacyPolicyLink</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">privacyPolicyLink</span><span class="dl">"</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">put</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">api.prosperna.com/v1/business-profile/store/update/store-cookie-policy</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">data</span> <span class="p">:</span> <span class="nx">data</span>
+<span class="p">};</span>
+
+<span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Settings successfully updated."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"store"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"additionalFee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"xenplatform_user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"alreadyAvailedPaidPlan"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63760ee5a3444c4d444c158c"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63760ee35f12fa931cbb3dea"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updated_store_name"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeAlias"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updatedstorename"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeIndustry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"604718297aa0fb376c0fcca9"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeSharingPrefixDesc"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeLogo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"store_logo_url"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storePrimaryColor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#d05353"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeSecondaryColor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#000"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cookiePolicy"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cookiePolicyTheme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dark"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"requireSelectingStoreLocation"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"shouldSaveFbLead"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isGuestCheckoutVerification"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isStoreEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isEnabledOnlinePayment"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isVerifiedBankForOnlinePayment"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"convenienceFeeSeller"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"convenienceFeeBuyer"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"shippingOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"STANDARD"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"SAMEDAY_SCHED"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"OWN_BOOKING"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"PICKUP"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"alreadyAvailedPlusPlan"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"payPlanType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PLUS"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"billingType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NONE"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"billing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"free_visitor_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"paid_visitor_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"p1_users"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"paid_p1_users"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"billingVerificationId"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="nl">"alreadyClaimedFreeTrial"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"redirectToCustomDomain"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"redirectToCustomSubDomain"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"billingCutOffDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"dateCreated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-17T10:37:25.120Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-17T10:37:25.121Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeSlogan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New slogan"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"facebookLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"facebook_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"instagramLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"instagram_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"linkedinLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"linkedin_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"twitterLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"twitter_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"customSubDomain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom_p1_subdomain"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"customDomain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom_domain_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fbPixel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fb_pixel_code"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"googleTrackingCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"google_tracking_code"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"privacyPolicyLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"privacy_policy_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-26T05:57:13.881Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastTransaction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-26T05:57:13.900Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeFavicon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"storefavicon_url"</span><span class="p">,</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="storesettingssave_update_store_google_analytics">
+						/business-profile/store/update/store-google-tracking-code
+						
+							<span class="endpoint put"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_storesettings/save_update_store_google_analytics.md">Edit</a>
+				</h3>
+				
+					<p class="description">Save/Update store Google tracking code</p>
+				
+
+				
+
+				<table>
+  <thead>
+    <tr>
+      <th><strong><em>Request Body</em></strong></th>
+      <th><strong><em>Data Type</em></strong></th>
+      <th><strong><em>Required</em></strong></th>
+      <th><strong><em>Description</em></strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>storeId</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Store id</td>
+    </tr>
+    <tr>
+      <td>googleTrackingCode</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td><strong>PAID FEATURE</strong> Updated Google tracking code</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+						
+								
+
+
+<div title="NodeJS" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+  <span class="dl">"</span><span class="s2">storeId</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">63760ee5a3444c4d444c158c</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">googleTrackingCode</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">googleTrackingCode</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">put</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">api.prosperna.com/v1/business-profile/store/update/store-google-tracking-code</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">data</span> <span class="p">:</span> <span class="nx">data</span>
+<span class="p">};</span>
+
+<span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Settings successfully updated."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"store"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"additionalFee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"xenplatform_user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"alreadyAvailedPaidPlan"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63760ee5a3444c4d444c158c"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63760ee35f12fa931cbb3dea"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updated_store_name"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeAlias"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updatedstorename"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeIndustry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"604718297aa0fb376c0fcca9"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeSharingPrefixDesc"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeLogo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"store_logo_url"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storePrimaryColor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#d05353"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeSecondaryColor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#000"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cookiePolicy"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cookiePolicyTheme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dark"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"requireSelectingStoreLocation"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"shouldSaveFbLead"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isGuestCheckoutVerification"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isStoreEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isEnabledOnlinePayment"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isVerifiedBankForOnlinePayment"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"convenienceFeeSeller"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"convenienceFeeBuyer"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"shippingOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"STANDARD"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"SAMEDAY_SCHED"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"OWN_BOOKING"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"PICKUP"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"alreadyAvailedPlusPlan"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"payPlanType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PLUS"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"billingType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NONE"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"billing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"free_visitor_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"paid_visitor_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"p1_users"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"paid_p1_users"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"billingVerificationId"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="nl">"alreadyClaimedFreeTrial"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"redirectToCustomDomain"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"redirectToCustomSubDomain"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"billingCutOffDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"dateCreated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-17T10:37:25.120Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-17T10:37:25.121Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeSlogan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New slogan"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"facebookLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"facebook_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"instagramLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"instagram_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"linkedinLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"linkedin_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"twitterLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"twitter_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"customSubDomain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom_p1_subdomain"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"customDomain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom_domain_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fbPixel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fb_pixel_code"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"googleTrackingCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"google_tracking_code"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"privacyPolicyLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"privacy_policy_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-26T05:57:13.881Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastTransaction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-26T05:57:13.900Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeFavicon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"storefavicon_url"</span><span class="p">,</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="storesettingssave_update_store_location">
+						/business-profile/store/update/store-select-location
+						
+							<span class="endpoint put"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_storesettings/save_update_store_location.md">Edit</a>
+				</h3>
+				
+					<p class="description">Save/Update requiring customer to select store location.</p>
+				
+
+				
+
+				<table>
+  <thead>
+    <tr>
+      <th><strong><em>Request Body</em></strong></th>
+      <th><strong><em>Data Type</em></strong></th>
+      <th><strong><em>Required</em></strong></th>
+      <th><strong><em>Description</em></strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>storeId</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Store id</td>
+    </tr>
+    <tr>
+      <td>requireSelectingStoreLocation</td>
+      <td>boolean</td>
+      <td>Yes</td>
+      <td>Flag value to require customer to select store location when purchasing on merchant’s store.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+						
+								
+
+
+<div title="NodeJS" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+  <span class="dl">"</span><span class="s2">storeId</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">63760ee5a3444c4d444c158c</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">googleTrackingCode</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">googleTrackingCode</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">put</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">api.prosperna.com/v1/business-profile/store/update/store-select-location</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">data</span> <span class="p">:</span> <span class="nx">data</span>
+<span class="p">};</span>
+
+<span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Settings successfully updated."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"store"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"additionalFee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"xenplatform_user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"alreadyAvailedPaidPlan"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63760ee5a3444c4d444c158c"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63760ee35f12fa931cbb3dea"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updated_store_name"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeAlias"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updatedstorename"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeIndustry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"604718297aa0fb376c0fcca9"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeSharingPrefixDesc"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeLogo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"store_logo_url"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storePrimaryColor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#d05353"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeSecondaryColor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#000"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cookiePolicy"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cookiePolicyTheme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dark"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"requireSelectingStoreLocation"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"shouldSaveFbLead"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isGuestCheckoutVerification"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isStoreEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isEnabledOnlinePayment"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isVerifiedBankForOnlinePayment"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"convenienceFeeSeller"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"convenienceFeeBuyer"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"shippingOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"STANDARD"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"SAMEDAY_SCHED"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"OWN_BOOKING"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"PICKUP"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"alreadyAvailedPlusPlan"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"payPlanType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PLUS"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"billingType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NONE"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"billing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"free_visitor_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"paid_visitor_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"p1_users"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"paid_p1_users"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"billingVerificationId"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="nl">"alreadyClaimedFreeTrial"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"redirectToCustomDomain"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"redirectToCustomSubDomain"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"billingCutOffDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"dateCreated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-17T10:37:25.120Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-17T10:37:25.121Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeSlogan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New slogan"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"facebookLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"facebook_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"instagramLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"instagram_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"linkedinLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"linkedin_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"twitterLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"twitter_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"customSubDomain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom_p1_subdomain"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"customDomain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom_domain_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fbPixel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fb_pixel_code"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"googleTrackingCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"google_tracking_code"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"privacyPolicyLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"privacy_policy_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-26T05:57:13.881Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastTransaction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-26T05:57:13.900Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeFavicon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"storefavicon_url"</span><span class="p">,</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="storesettingssave_update_store_convenience_fee">
+						/business-profile/store/update/convenience-fee
+						
+							<span class="endpoint put"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_storesettings/save_update_store_convenience_fee.md">Edit</a>
+				</h3>
+				
+					<p class="description">Save/Update store convenience fee</p>
+				
+
+				
+
+				<table>
+  <thead>
+    <tr>
+      <th><strong><em>Request Body</em></strong></th>
+      <th><strong><em>Data Type</em></strong></th>
+      <th><strong><em>Required</em></strong></th>
+      <th><strong><em>Description</em></strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>convenience_fee</td>
+      <td>number</td>
+      <td>Yes</td>
+      <td>Convenience fee value expressed in percentage. Convenience fee is default to 50% upon store creation</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+						
+								
+
+
+<div title="NodeJS" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+  <span class="dl">"</span><span class="s2">convenience_fee</span><span class="dl">"</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">put</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">api.prosperna.com/v1/business-profile/store/update/convenience-fee</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">data</span> <span class="p">:</span> <span class="nx">data</span>
+<span class="p">};</span>
+
+<span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully updated Convenience Fee Percentage."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"store"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"additionalFee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"xenplatform_user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"alreadyAvailedPaidPlan"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63760ee5a3444c4d444c158c"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63760ee35f12fa931cbb3dea"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updated_store_name"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeAlias"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updatedstorename"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeIndustry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"604718297aa0fb376c0fcca9"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeSharingPrefixDesc"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeLogo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"store_logo_url"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storePrimaryColor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#d05353"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeSecondaryColor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#000"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cookiePolicy"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cookiePolicyTheme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dark"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"requireSelectingStoreLocation"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"shouldSaveFbLead"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isGuestCheckoutVerification"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isStoreEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isEnabledOnlinePayment"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isVerifiedBankForOnlinePayment"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"convenienceFeeSeller"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"convenienceFeeBuyer"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"shippingOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"STANDARD"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"SAMEDAY_SCHED"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"OWN_BOOKING"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"PICKUP"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"alreadyAvailedPlusPlan"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"payPlanType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PLUS"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"billingType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NONE"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"billing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"free_visitor_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"paid_visitor_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"p1_users"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"paid_p1_users"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"billingVerificationId"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="nl">"alreadyClaimedFreeTrial"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"redirectToCustomDomain"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"redirectToCustomSubDomain"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"billingCutOffDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"dateCreated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-17T10:37:25.120Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-17T10:37:25.121Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeSlogan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New slogan"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"facebookLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"facebook_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"instagramLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"instagram_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"linkedinLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"linkedin_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"twitterLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"twitter_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"customSubDomain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom_p1_subdomain"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"customDomain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom_domain_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fbPixel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fb_pixel_code"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"googleTrackingCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"google_tracking_code"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"privacyPolicyLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"privacy_policy_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-26T05:57:13.881Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastTransaction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-26T05:57:13.900Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeFavicon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"storefavicon_url"</span><span class="p">,</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="storesettingssave_update_store_domain">
+						/business-profile/store/update/store-domain
+						
+							<span class="endpoint put"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_storesettings/save_update_store_domain.md">Edit</a>
+				</h3>
+				
+					<p class="description">Save/Update store domain</p>
+				
+
+				
+
+				<table>
+  <thead>
+    <tr>
+      <th><strong><em>Request Body</em></strong></th>
+      <th><strong><em>Data Type</em></strong></th>
+      <th><strong><em>Required</em></strong></th>
+      <th><strong><em>Description</em></strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>storeId</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Store id</td>
+    </tr>
+    <tr>
+      <td>domain</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Updated store domain</td>
+    </tr>
+    <tr>
+      <td>domain_type</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Type of domain being supplied, either <strong>own_domain</strong> or <strong>subdomain</strong>. <strong>own_domain</strong> is a <strong>PAID FEATURE</strong>.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+						
+								
+
+
+<div title="NodeJS" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+  <span class="dl">"</span><span class="s2">storeId</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">63760ee5a3444c4d444c158c</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">domain</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">domain_value</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">domain_type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">subdomain</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">put</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">api.prosperna.com/v1/business-profile/store/update/store-domain</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">data</span> <span class="p">:</span> <span class="nx">data</span>
+<span class="p">};</span>
+
+<span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Settings successfully updated."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"store"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"additionalFee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"xenplatform_user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"alreadyAvailedPaidPlan"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63760ee5a3444c4d444c158c"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63760ee35f12fa931cbb3dea"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updated_store_name"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeAlias"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updatedstorename"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeIndustry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"604718297aa0fb376c0fcca9"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeSharingPrefixDesc"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeLogo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"store_logo_url"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storePrimaryColor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#d05353"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeSecondaryColor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#000"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cookiePolicy"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cookiePolicyTheme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dark"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"requireSelectingStoreLocation"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"shouldSaveFbLead"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isGuestCheckoutVerification"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isStoreEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isEnabledOnlinePayment"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isVerifiedBankForOnlinePayment"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"convenienceFeeSeller"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"convenienceFeeBuyer"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"shippingOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"STANDARD"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"SAMEDAY_SCHED"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"OWN_BOOKING"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"PICKUP"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"alreadyAvailedPlusPlan"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"payPlanType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PLUS"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"billingType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NONE"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"billing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"free_visitor_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"paid_visitor_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"p1_users"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"paid_p1_users"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"billingVerificationId"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="nl">"alreadyClaimedFreeTrial"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"redirectToCustomDomain"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"redirectToCustomSubDomain"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"billingCutOffDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"dateCreated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-17T10:37:25.120Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-17T10:37:25.121Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeSlogan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New slogan"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"facebookLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"facebook_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"instagramLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"instagram_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"linkedinLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"linkedin_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"twitterLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"twitter_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"customSubDomain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom_p1_subdomain"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"customDomain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom_domain_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fbPixel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fb_pixel_code"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"googleTrackingCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"google_tracking_code"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"privacyPolicyLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"privacy_policy_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-26T05:57:13.881Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastTransaction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-26T05:57:13.900Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeFavicon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"storefavicon_url"</span><span class="p">,</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="storesettingsget_store_details">
+						/business-profile/store/details
+						
+							<span class="endpoint put"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_storesettings/get_store_details.md">Edit</a>
+				</h3>
+				
+					<p class="description">Get store details</p>
+				
+
+				
+
+				
+
+
+				
+						
+								
+
+
+<div title="NodeJS" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">put</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">api.prosperna.com/v1/business-profile/store/details</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"store"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nl">"additionalFee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
