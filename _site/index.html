@@ -194,23 +194,6 @@
 	
 		
 			<section>
-				<h6>Business</h6>
-				<ul>
-					
-					
-						<li>
-							<a href="#businessproducts_add">
-								/:product_id
-								<span class="endpoint put"></span>
-							</a>
-						</li>
-					
-				</ul>
-			</section>
-		
-	
-		
-			<section>
 				<h6>PH Locales</h6>
 				<ul>
 					
@@ -261,6 +244,37 @@
 							<a href="#phlocalesget_all_banks">
 								/business-profile/banks
 								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>Store Settings</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="#storesettingssave_update_store_info">
+								/business-profile/store/update/store-info
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#storesettingssave_update_store_social_media">
+								/business-profile/store/update/store-social-media
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#storesettingssave_update_store_branding">
+								/business-profile/store/update/store-branding
+								<span class="endpoint put"></span>
 							</a>
 						</li>
 					
@@ -2765,324 +2779,6 @@
 		<section class="doc-content">
 			<section class="left-docs">
 				<h3>
-					<a id="businessproducts_add">
-						/:product_id
-						
-							<span class="endpoint put"></span>
-						
-					</a>
-					<a class="editor-link" href="cloudcannon:collections/_business/products_add.md">Edit</a>
-				</h3>
-				
-					<p class="description">Save/Update Product</p>
-				
-
-				
-
-				<table>
-  <thead>
-    <tr>
-      <th><strong><em>Parameters</em></strong></th>
-      <th><strong><em>Data Type</em></strong></th>
-      <th><strong><em>Required</em></strong></th>
-      <th><strong><em>Description</em></strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>product_id</td>
-      <td>string</td>
-      <td>Yes</td>
-      <td>Product id</td>
-    </tr>
-  </tbody>
-</table>
-
-<table>
-  <thead>
-    <tr>
-      <th><strong><em>Request Body</em></strong></th>
-      <th><strong><em>Data Type</em></strong></th>
-      <th><strong><em>Required</em></strong></th>
-      <th><strong><em>Description</em></strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>product_specification.name</td>
-      <td>string</td>
-      <td>Yes</td>
-      <td>Product name</td>
-    </tr>
-    <tr>
-      <td>product_specification.slug</td>
-      <td>string</td>
-      <td>Yes</td>
-      <td>Product slug (without url)</td>
-    </tr>
-    <tr>
-      <td>product_specification.short_description</td>
-      <td>string</td>
-      <td>Yes</td>
-      <td>Product short description</td>
-    </tr>
-    <tr>
-      <td>product_specification.long_description</td>
-      <td>string</td>
-      <td>Yes</td>
-      <td>Product long description</td>
-    </tr>
-    <tr>
-      <td>product_specification.brand</td>
-      <td>string</td>
-      <td>No</td>
-      <td>Product brand</td>
-    </tr>
-    <tr>
-      <td>product_specification.images</td>
-      <td>array</td>
-      <td>Yes</td>
-      <td>Product images/thumbnails.</td>
-    </tr>
-    <tr>
-      <td>product_state.is_always_instock</td>
-      <td>boolean</td>
-      <td>Yes</td>
-      <td><strong>PAID FEATURE</strong> Boolean value for is always instock feature.</td>
-    </tr>
-    <tr>
-      <td>product_state.is_hide_stock</td>
-      <td>boolean</td>
-      <td>Yes</td>
-      <td><strong>PAID FEATURE</strong> Boolean value for is always hiding stock.</td>
-    </tr>
-    <tr>
-      <td>product_state.is_product_has_variants</td>
-      <td>boolean</td>
-      <td>Yes</td>
-      <td>Boolean value to set if product has variants.</td>
-    </tr>
-    <tr>
-      <td>product_categories</td>
-      <td>array</td>
-      <td>Yes</td>
-      <td>Array of categories id for a given product.</td>
-    </tr>
-    <tr>
-      <td>product_variant_types</td>
-      <td>array</td>
-      <td>Yes, <em>if is_product_has_variants is set to <strong>true</strong> else</em> No.</td>
-      <td>Array of product variant types.</td>
-    </tr>
-    <tr>
-      <td>product_variants_combinations</td>
-      <td>array</td>
-      <td>Yes, <em>if is_product_has_variants is set to <strong>true</strong> else</em> No.</td>
-      <td>Array of variant combinations.</td>
-    </tr>
-    <tr>
-      <td>product_addons</td>
-      <td>object</td>
-      <td>No</td>
-      <td><strong>PAID FEATURE</strong> Product addons, object containing the addon limit and array of addons ids.</td>
-    </tr>
-    <tr>
-      <td>product_price.regular_price</td>
-      <td>number</td>
-      <td>Yes, <em>if is_product_has_variants is set to <strong>false</strong> else</em> No.</td>
-      <td>Product regular price.</td>
-    </tr>
-    <tr>
-      <td>product_price.sale_price</td>
-      <td>number</td>
-      <td>No</td>
-      <td>Product regular price.</td>
-    </tr>
-    <tr>
-      <td>product_price.stock_quantity</td>
-      <td>number</td>
-      <td>Yes, <em>if is_product_has_variants is set to <strong>false</strong> else</em> No.</td>
-      <td>Product stock quantity.</td>
-    </tr>
-    <tr>
-      <td>product_price.margin</td>
-      <td>number</td>
-      <td>No</td>
-      <td>Product sale price.</td>
-    </tr>
-    <tr>
-      <td>product_price.unit_cost</td>
-      <td>number</td>
-      <td>No</td>
-      <td>Product sale price.</td>
-    </tr>
-    <tr>
-      <td>product_measurements.product_size.height</td>
-      <td>number</td>
-      <td>Yes, <em>if is_product_has_variants is set to <strong>false</strong> else</em> No.</td>
-      <td>Product height.</td>
-    </tr>
-    <tr>
-      <td>product_measurements.product_size.width</td>
-      <td>number</td>
-      <td>Yes, <em>if is_product_has_variants is set to <strong>false</strong> else</em> No.</td>
-      <td>Product width.</td>
-    </tr>
-    <tr>
-      <td>product_measurements.product_size.length</td>
-      <td>number</td>
-      <td>Yes, <em>if is_product_has_variants is set to <strong>false</strong> else</em> No.</td>
-      <td>Product length.</td>
-    </tr>
-    <tr>
-      <td>product_measurements.product_size.unit</td>
-      <td>string</td>
-      <td>Yes, <em>if is_product_has_variants is set to <strong>false</strong> else</em> No.</td>
-      <td>Product size unit. <code class="language-plaintext highlighter-rouge">['mm', 'cm', 'in', 'm']</code></td>
-    </tr>
-    <tr>
-      <td>product_measurements.product_weight.weight</td>
-      <td>number</td>
-      <td>Yes, <em>if is_product_has_variants is set to <strong>false</strong> else</em> No.</td>
-      <td>Product weight.</td>
-    </tr>
-    <tr>
-      <td>product_measurements.product_weight.unit</td>
-      <td>string</td>
-      <td>Yes, <em>if is_product_has_variants is set to <strong>false</strong> else</em> No.</td>
-      <td>Product weight unit. <code class="language-plaintext highlighter-rouge">['g', 'kg', 'lb', 'ml', 'l', 'Oz']</code></td>
-    </tr>
-    <tr>
-      <td>product_seo.primary.title</td>
-      <td>string</td>
-      <td>No</td>
-      <td><strong>PAID FEATURE</strong> SEO title.</td>
-    </tr>
-    <tr>
-      <td>product_seo.primary.description</td>
-      <td>string</td>
-      <td>No</td>
-      <td><strong>PAID FEATURE</strong> SEO description.</td>
-    </tr>
-    <tr>
-      <td>product_seo.primary.url</td>
-      <td>string</td>
-      <td>No</td>
-      <td><strong>PAID FEATURE</strong> SEO url.</td>
-    </tr>
-  </tbody>
-</table>
-
-
-				
-						
-								
-
-
-<div title="NodeJS" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-  <span class="na">product_specification</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">product_name</span><span class="dl">'</span><span class="p">,</span>
-    <span class="na">slug</span><span class="p">:</span> <span class="dl">'</span><span class="s1">product_slug</span><span class="dl">'</span><span class="p">,</span>
-    <span class="na">long_description</span><span class="p">:</span> <span class="dl">'</span><span class="s1">long description</span><span class="dl">'</span><span class="p">,</span>
-    <span class="na">short_description</span><span class="p">:</span> <span class="dl">'</span><span class="s1">short description</span><span class="dl">'</span><span class="p">,</span>
-    <span class="na">brand</span><span class="p">:</span> <span class="dl">'</span><span class="s1">product_brand</span><span class="dl">'</span><span class="p">,</span>
-    <span class="na">images</span><span class="p">:</span> <span class="p">[</span>
-      <span class="p">{</span>
-        <span class="na">image</span><span class="p">:</span> <span class="dl">'</span><span class="s1">base64 image</span><span class="dl">'</span><span class="p">,</span>
-        <span class="na">file_name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">image file name</span><span class="dl">'</span><span class="p">,</span>
-        <span class="na">image_action</span><span class="p">:</span> <span class="dl">'</span><span class="s1">new</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// "delete" | "new" | "ordering_update"</span>
-      <span class="p">},</span>
-    <span class="p">],</span>
-  <span class="p">},</span>
-  <span class="na">product_state</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">is_always_instock</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="na">is_hide_stock</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="na">is_product_has_variants</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="na">product_price</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">regular_price</span><span class="p">:</span> <span class="mi">900</span><span class="p">,</span>
-    <span class="na">margin</span><span class="p">:</span> <span class="mi">56</span><span class="p">,</span>
-    <span class="na">sale_price</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
-    <span class="na">unit_cost</span><span class="p">:</span> <span class="mi">56</span><span class="p">,</span>
-    <span class="na">stock_quantity</span><span class="p">:</span> <span class="mi">56</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="na">product_measurements</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">product_size</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">height</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
-      <span class="na">width</span><span class="p">:</span> <span class="mi">1235</span><span class="p">,</span>
-      <span class="na">length</span><span class="p">:</span> <span class="mi">62</span><span class="p">,</span>
-      <span class="na">unit</span><span class="p">:</span> <span class="dl">'</span><span class="s1">cm</span><span class="dl">'</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="na">product_weight</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">weight</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>
-      <span class="na">unit</span><span class="p">:</span> <span class="dl">'</span><span class="s1">l</span><span class="dl">'</span><span class="p">,</span>
-    <span class="p">},</span>
-  <span class="p">},</span>
-  <span class="na">product_variants_combinations</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">63e58292ad7a318363625be4</span><span class="dl">'</span><span class="p">],</span>
-  <span class="na">product_variant_types</span><span class="p">:</span> <span class="p">[</span>
-    <span class="dl">'</span><span class="s1">63e5810a763ae9c5f788b2e5</span><span class="dl">'</span><span class="p">,</span>
-    <span class="dl">'</span><span class="s1">63e5820f763ae9c5f788b2eb</span><span class="dl">'</span><span class="p">,</span>
-  <span class="p">],</span>
-  <span class="na">product_addons</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">addOn_limit</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="na">addOn_list</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">63e4f74dbf61b3a5047d9dbe</span><span class="dl">'</span><span class="p">],</span>
-  <span class="p">},</span>
-  <span class="na">product_categories</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">63e4f6c4bf61b3a5047d9daf</span><span class="dl">'</span><span class="p">],</span>
-  <span class="na">product_seo</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">primary</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">seo_title</span><span class="dl">'</span><span class="p">,</span>
-      <span class="na">description</span><span class="p">:</span> <span class="dl">'</span><span class="s1">seo description</span><span class="dl">'</span><span class="p">,</span>
-      <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">http://localhost:3000</span><span class="dl">'</span><span class="p">,</span>
-    <span class="p">},</span>
-  <span class="p">},</span>
-<span class="p">});</span>
-
-<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">put</span><span class="dl">'</span><span class="p">,</span>
-  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">api.prosperna.com/v1/products/640c8c4de596bf3e3684bb57</span><span class="dl">'</span><span class="p">,</span>
-  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-    <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="na">data</span><span class="p">:</span> <span class="nx">data</span><span class="p">,</span>
-<span class="p">};</span>
-
-<span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
-  <span class="p">})</span>
-  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
-  <span class="p">});</span>
-</code></pre></div></div>
-
-								
-						
-			</section>
-			
-					<section class="right-code">
-						
-								
-
-
-<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully updated product."</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-
-						
-				</section>
-			
-		</section>
-	
-
-	
-	
-		<section class="doc-content">
-			<section class="left-docs">
-				<h3>
 					<a id="phlocalesphlocales_regions_get">
 						/business-profile/ph-locale/regions
 						
@@ -4931,6 +4627,509 @@
                 </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PH"</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+
+	
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="storesettingssave_update_store_info">
+						/business-profile/store/update/store-info
+						
+							<span class="endpoint put"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_storesettings/save_update_store_info.md">Edit</a>
+				</h3>
+				
+					<p class="description">Save/Update store information</p>
+				
+
+				
+
+				<table>
+  <thead>
+    <tr>
+      <th><strong><em>Request Body</em></strong></th>
+      <th><strong><em>Data Type</em></strong></th>
+      <th><strong><em>Required</em></strong></th>
+      <th><strong><em>Description</em></strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>storeId</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Store id</td>
+    </tr>
+    <tr>
+      <td>storeName</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Updated store name</td>
+    </tr>
+    <tr>
+      <td>storeIndustry</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Updated store industry, <em>use the industry id</em></td>
+    </tr>
+    <tr>
+      <td>storeSlogan</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Updated store slogan</td>
+    </tr>
+    <tr>
+      <td>storeSharingPrefixDesc</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Updated sharing prefix description</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+						
+								
+
+
+<div title="NodeJS" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+  <span class="dl">"</span><span class="s2">storeId</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">63760ee5a3444c4d444c158c</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">storeName</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">updated_store_name</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">storeIndustry</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">604718297aa0fb376c0fcca9</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">storeSlogan</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">New slogan</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">storeSharingPrefixDesc</span><span class="dl">"</span><span class="p">:</span> <span class="dl">""</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">put</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">api.prosperna.com/v1/business-profile/store/update/store-info</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">data</span> <span class="p">:</span> <span class="nx">data</span>
+<span class="p">};</span>
+
+<span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Your store has been successfully updated."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"store"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"additionalFee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"xenplatform_user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"alreadyAvailedPaidPlan"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63760ee5a3444c4d444c158c"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63760ee35f12fa931cbb3dea"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updated_store_name"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeAlias"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updatedstorename"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeIndustry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"604718297aa0fb376c0fcca9"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeSharingPrefixDesc"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeLogo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"store_logo_url"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storePrimaryColor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#d05353"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeSecondaryColor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#000"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cookiePolicy"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cookiePolicyTheme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dark"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"requireSelectingStoreLocation"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"shouldSaveFbLead"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isGuestCheckoutVerification"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isStoreEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isEnabledOnlinePayment"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isVerifiedBankForOnlinePayment"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"convenienceFeeSeller"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"convenienceFeeBuyer"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"shippingOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"STANDARD"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"SAMEDAY_SCHED"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"OWN_BOOKING"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"PICKUP"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"alreadyAvailedPlusPlan"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"payPlanType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PLUS"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"billingType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NONE"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"billing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"free_visitor_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"paid_visitor_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"p1_users"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"paid_p1_users"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"billingVerificationId"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="nl">"alreadyClaimedFreeTrial"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"redirectToCustomDomain"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"redirectToCustomSubDomain"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"billingCutOffDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"dateCreated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-17T10:37:25.120Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-17T10:37:25.121Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeSlogan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New slogan"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"facebookLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"facebook_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"instagramLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"instagram_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"linkedinLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"linkedin_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"twitterLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"twitter_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"customSubDomain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom_p1_subdomain"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"customDomain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom_domain_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fbPixel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fb_pixel_code"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"googleTrackingCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"google_tracking_code"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"privacyPolicyLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"privacy_policy_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-26T05:57:13.881Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastTransaction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-26T05:57:13.900Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeFavicon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"storefavicon_url"</span><span class="p">,</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="storesettingssave_update_store_social_media">
+						/business-profile/store/update/store-social-media
+						
+							<span class="endpoint put"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_storesettings/save_update_store_social_media.md">Edit</a>
+				</h3>
+				
+					<p class="description">Save/Update store social media information</p>
+				
+
+				
+
+				<table>
+  <thead>
+    <tr>
+      <th><strong><em>Request Body</em></strong></th>
+      <th><strong><em>Data Type</em></strong></th>
+      <th><strong><em>Required</em></strong></th>
+      <th><strong><em>Description</em></strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>storeId</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Store id</td>
+    </tr>
+    <tr>
+      <td>instagramLink</td>
+      <td>string</td>
+      <td>No</td>
+      <td>Updated store Instagram page</td>
+    </tr>
+    <tr>
+      <td>facebookLink</td>
+      <td>string</td>
+      <td>No</td>
+      <td>Updated store Facebook page</td>
+    </tr>
+    <tr>
+      <td>twitterLink</td>
+      <td>string</td>
+      <td>No</td>
+      <td>Updated store Twitter page</td>
+    </tr>
+    <tr>
+      <td>linkedinLink</td>
+      <td>string</td>
+      <td>No</td>
+      <td>Updated store Linkedin page</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+						
+								
+
+
+<div title="NodeJS" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+  <span class="dl">"</span><span class="s2">storeId</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">63760ee5a3444c4d444c158c</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">instagramLink</span><span class="dl">"</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">facebookLink</span><span class="dl">"</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">twitterLink</span><span class="dl">"</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">linkedinLink</span><span class="dl">"</span><span class="p">:</span> <span class="dl">""</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">put</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">api.prosperna.com/v1/business-profile/store/update/store-social-media</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">data</span> <span class="p">:</span> <span class="nx">data</span>
+<span class="p">};</span>
+
+<span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Social media link successfully updated."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"store"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"additionalFee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"xenplatform_user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"alreadyAvailedPaidPlan"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63760ee5a3444c4d444c158c"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63760ee35f12fa931cbb3dea"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updated_store_name"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeAlias"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updatedstorename"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeIndustry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"604718297aa0fb376c0fcca9"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeSharingPrefixDesc"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeLogo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"store_logo_url"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storePrimaryColor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#d05353"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeSecondaryColor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#000"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cookiePolicy"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cookiePolicyTheme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dark"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"requireSelectingStoreLocation"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"shouldSaveFbLead"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isGuestCheckoutVerification"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isStoreEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isEnabledOnlinePayment"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isVerifiedBankForOnlinePayment"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"convenienceFeeSeller"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"convenienceFeeBuyer"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"shippingOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"STANDARD"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"SAMEDAY_SCHED"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"OWN_BOOKING"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"PICKUP"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"alreadyAvailedPlusPlan"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"payPlanType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PLUS"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"billingType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NONE"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"billing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"free_visitor_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"paid_visitor_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"p1_users"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"paid_p1_users"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"billingVerificationId"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="nl">"alreadyClaimedFreeTrial"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"redirectToCustomDomain"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"redirectToCustomSubDomain"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"billingCutOffDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"dateCreated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-17T10:37:25.120Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-17T10:37:25.121Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeSlogan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New slogan"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"facebookLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"facebook_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"instagramLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"instagram_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"linkedinLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"linkedin_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"twitterLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"twitter_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"customSubDomain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom_p1_subdomain"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"customDomain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom_domain_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fbPixel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fb_pixel_code"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"googleTrackingCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"google_tracking_code"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"privacyPolicyLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"privacy_policy_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-26T05:57:13.881Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastTransaction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-26T05:57:13.900Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeFavicon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"storefavicon_url"</span><span class="p">,</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="storesettingssave_update_store_branding">
+						/business-profile/store/update/store-branding
+						
+							<span class="endpoint put"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_storesettings/save_update_store_branding.md">Edit</a>
+				</h3>
+				
+					<p class="description">Save/Update store branding</p>
+				
+
+				
+
+				<table>
+  <thead>
+    <tr>
+      <th><strong><em>Form Data</em></strong></th>
+      <th><strong><em>Data Type</em></strong></th>
+      <th><strong><em>Required</em></strong></th>
+      <th><strong><em>Description</em></strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>storeId</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Store id</td>
+    </tr>
+    <tr>
+      <td>storeLogo</td>
+      <td>binary</td>
+      <td>No</td>
+      <td>Updated store logo</td>
+    </tr>
+    <tr>
+      <td>storeFavicon</td>
+      <td>binary</td>
+      <td>No</td>
+      <td>Updated store favicon</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+						
+								
+
+
+<div title="NodeJS" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">FormData</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">form-data</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">fs</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormData</span><span class="p">();</span>
+<span class="nx">data</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">'</span><span class="s1">storeId</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">63760ee5a3444c4d444c158c</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">data</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">'</span><span class="s1">storeLogo</span><span class="dl">'</span><span class="p">,</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">createReadStream</span><span class="p">(</span><span class="dl">'</span><span class="s1">storelogo.png</span><span class="dl">'</span><span class="p">));</span>
+<span class="nx">data</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">'</span><span class="s1">storeFavicon</span><span class="dl">'</span><span class="p">,</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">createReadStream</span><span class="p">(</span><span class="dl">'</span><span class="s1">storefavicon.png</span><span class="dl">'</span><span class="p">));</span>
+
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">put</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">api.prosperna.com/v1/business-profile/store/update/store-branding</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">data</span> <span class="p">:</span> <span class="nx">data</span>
+<span class="p">};</span>
+
+<span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Store branding successfully updated."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"store"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"additionalFee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"xenplatform_user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"alreadyAvailedPaidPlan"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63760ee5a3444c4d444c158c"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63760ee35f12fa931cbb3dea"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updated_store_name"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeAlias"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updatedstorename"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeIndustry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"604718297aa0fb376c0fcca9"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeSharingPrefixDesc"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeLogo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"store_logo_url"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storePrimaryColor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#d05353"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeSecondaryColor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#000"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cookiePolicy"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cookiePolicyTheme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dark"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"requireSelectingStoreLocation"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"shouldSaveFbLead"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isGuestCheckoutVerification"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isStoreEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isEnabledOnlinePayment"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isVerifiedBankForOnlinePayment"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"convenienceFeeSeller"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"convenienceFeeBuyer"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"shippingOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"STANDARD"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"SAMEDAY_SCHED"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"OWN_BOOKING"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"PICKUP"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"alreadyAvailedPlusPlan"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"payPlanType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PLUS"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"billingType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NONE"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"billing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"free_visitor_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"paid_visitor_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"p1_users"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"paid_p1_users"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"billingVerificationId"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="nl">"alreadyClaimedFreeTrial"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"redirectToCustomDomain"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"redirectToCustomSubDomain"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"billingCutOffDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"dateCreated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-17T10:37:25.120Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-17T10:37:25.121Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeSlogan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New slogan"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"facebookLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"facebook_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"instagramLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"instagram_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"linkedinLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"linkedin_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"twitterLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"twitter_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"customSubDomain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom_p1_subdomain"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"customDomain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom_domain_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fbPixel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fb_pixel_code"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"googleTrackingCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"google_tracking_code"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"privacyPolicyLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"privacy_policy_link"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-26T05:57:13.881Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastTransaction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-26T05:57:13.900Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"storeFavicon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"storefavicon_url"</span><span class="p">,</span><span class="w">
+        </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>

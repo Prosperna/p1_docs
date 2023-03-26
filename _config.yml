@@ -26,12 +26,13 @@ collections:
   orders:
     title: Orders
     position_number: 4
-  business:
-    title: Business
-    position_number: 5
   phlocales:
     title: PH Locales
+    position_number: 5
+  storesettings:
+    title: Store Settings
     position_number: 6
+
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag

@@ -194,23 +194,6 @@
 	
 		
 			<section>
-				<h6>Business</h6>
-				<ul>
-					
-					
-						<li>
-							<a href="/#businessproducts_add">
-								/:product_id
-								<span class="endpoint put"></span>
-							</a>
-						</li>
-					
-				</ul>
-			</section>
-		
-	
-		
-			<section>
 				<h6>PH Locales</h6>
 				<ul>
 					
@@ -268,6 +251,37 @@
 			</section>
 		
 	
+		
+			<section>
+				<h6>Store Settings</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="/#storesettingssave_update_store_info">
+								/business-profile/store/update/store-info
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#storesettingssave_update_store_social_media">
+								/business-profile/store/update/store-social-media
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#storesettingssave_update_store_branding">
+								/business-profile/store/update/store-branding
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
 </div>
 
 
@@ -294,25 +308,6 @@
 				
 					
 						
-						
-						"business-products-add": {
-							"id": "business-products-add",
-							"title": "/:product_id",
-							"category": "business",
-							"description": "Save/Update Product",
-		  				"type": "put",
-							"url": "http://localhost:4001/#businessproducts_add",
-							"content": ""
-						}
-						
-					
-				
-			
-		
-			
-				
-					
-						,
 						
 						"documentation-authentication": {
 							"id": "documentation-authentication",
@@ -686,6 +681,59 @@
 							"description": "Storage breakdown for product usage",
 		  				"type": "get",
 							"url": "http://localhost:4001/#productsproducts_storage",
+							"content": ""
+						}
+						
+					
+				
+			
+		
+			
+				
+					
+						,
+						
+						"storesettings-save-update-store-branding": {
+							"id": "storesettings-save-update-store-branding",
+							"title": "/business-profile/store/update/store-branding",
+							"category": "storesettings",
+							"description": "Save/Update store branding",
+		  				"type": "put",
+							"url": "http://localhost:4001/#storesettingssave_update_store_branding",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"storesettings-save-update-store-info": {
+							"id": "storesettings-save-update-store-info",
+							"title": "/business-profile/store/update/store-info",
+							"category": "storesettings",
+							"description": "Save/Update store information",
+		  				"type": "put",
+							"url": "http://localhost:4001/#storesettingssave_update_store_info",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"storesettings-save-update-store-social-media": {
+							"id": "storesettings-save-update-store-social-media",
+							"title": "/business-profile/store/update/store-social-media",
+							"category": "storesettings",
+							"description": "Save/Update store social media information",
+		  				"type": "put",
+							"url": "http://localhost:4001/#storesettingssave_update_store_social_media",
 							"content": ""
 						}
 						
