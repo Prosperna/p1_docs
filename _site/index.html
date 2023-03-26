@@ -338,6 +338,51 @@
 			</section>
 		
 	
+		
+			<section>
+				<h6>Store additional fee settings</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="#storeadditionalfeeadditional_fee_add">
+								/business-profile/store/additional-fee
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#storeadditionalfeeadditional_fee_get_all">
+								/business-profile/store/additional-fee
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#storeadditionalfeeadditional_fee_update">
+								/business-profile/store/additional-fee/:additional_fee_id
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#storeadditionalfeeadditional_fee_delete">
+								/business-profile/store/additional-fee/:additional_fee_id
+								<span class="endpoint delete"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#storeadditionalfeeadditional_fee_set_as">
+								/business-profile/store/additional-fee/:additional_fee_id/set
+								<span class="endpoint patch"></span>
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
 </div>
 
 
@@ -6373,6 +6418,425 @@
             </span><span class="nl">"storeFavicon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"storefavicon_url"</span><span class="p">,</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+
+	
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="storeadditionalfeeadditional_fee_add">
+						/business-profile/store/additional-fee
+						
+							<span class="endpoint post"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_storeadditionalfee/additional_fee_add.md">Edit</a>
+				</h3>
+				
+					<p class="description">Add new additional fee</p>
+				
+
+				
+
+				<table>
+  <thead>
+    <tr>
+      <th><strong><em>Request Body</em></strong></th>
+      <th><strong><em>Data Type</em></strong></th>
+      <th><strong><em>Required</em></strong></th>
+      <th><strong><em>Description</em></strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>description</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Description of the additional fee</td>
+    </tr>
+    <tr>
+      <td>price</td>
+      <td>number</td>
+      <td>Yes</td>
+      <td>Additional fee amount</td>
+    </tr>
+    <tr>
+      <td>is_set</td>
+      <td>boolean</td>
+      <td>No</td>
+      <td>Flag used to set as active or not this new additinal fee.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+						
+								
+
+
+<div title="NodeJS" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+  <span class="dl">"</span><span class="s2">description</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Additional fee description</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">price</span><span class="dl">"</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">is_set</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">post</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">api.prosperna.com/v1/business-profile/store/additional-fee</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">data</span> <span class="p">:</span> <span class="nx">data</span>
+<span class="p">};</span>
+
+<span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully created additional fee."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"642000041e840f2c62fcbe73"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Additional fee description"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"is_set"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="storeadditionalfeeadditional_fee_get_all">
+						/business-profile/store/additional-fee
+						
+							<span class="endpoint get"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_storeadditionalfee/additional_fee_get_all.md">Edit</a>
+				</h3>
+				
+					<p class="description">Get all additional fees</p>
+				
+
+				
+
+				
+
+
+				
+						
+								
+
+
+<div title="NodeJS" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">get</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">api.prosperna.com/v1/business-profile/store/additional-fee</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"additional_fees"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"639749a5cb1db88617891bf0"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Additional fee description"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"is_set"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-26T08:19:16.731Z"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-26T08:19:16.731Z"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"642000041e840f2c62fcbe73"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="storeadditionalfeeadditional_fee_update">
+						/business-profile/store/additional-fee/:additional_fee_id
+						
+							<span class="endpoint put"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_storeadditionalfee/additional_fee_update.md">Edit</a>
+				</h3>
+				
+					<p class="description">Update additional fee</p>
+				
+
+				
+
+				<table>
+  <thead>
+    <tr>
+      <th><strong><em>Request Body</em></strong></th>
+      <th><strong><em>Data Type</em></strong></th>
+      <th><strong><em>Required</em></strong></th>
+      <th><strong><em>Description</em></strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>additional_fee_id</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Id of the additional fee to be updated</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+						
+								
+
+
+<div title="NodeJS" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+  <span class="dl">"</span><span class="s2">description</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Updated additional fee description</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">price</span><span class="dl">"</span><span class="p">:</span> <span class="mi">23</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">is_set</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">put</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">api.dev.prosperna.com/v1/business-profile/store/additional-fee/641a7ff47f8d70fb9f757509</span><span class="dl">'</span><span class="p">,</span>
+  
+  <span class="na">data</span> <span class="p">:</span> <span class="nx">data</span>
+<span class="p">};</span>
+
+<span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully updated additional fee."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="storeadditionalfeeadditional_fee_delete">
+						/business-profile/store/additional-fee/:additional_fee_id
+						
+							<span class="endpoint delete"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_storeadditionalfee/additional_fee_delete.md">Edit</a>
+				</h3>
+				
+					<p class="description">Delete additional fee</p>
+				
+
+				
+
+				<table>
+  <thead>
+    <tr>
+      <th><strong><em>Request Body</em></strong></th>
+      <th><strong><em>Data Type</em></strong></th>
+      <th><strong><em>Required</em></strong></th>
+      <th><strong><em>Description</em></strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>additional_fee_id</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Id of the additional fee to be deleted</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+						
+								
+
+
+<div title="NodeJS" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">delete</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">api.dev.prosperna.com/v1/business-profile/store/additional-fee/641a7ff47f8d70fb9f757509</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully deleted additional fee."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="storeadditionalfeeadditional_fee_set_as">
+						/business-profile/store/additional-fee/:additional_fee_id/set
+						
+							<span class="endpoint patch"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_storeadditionalfee/additional_fee_set_as.md">Edit</a>
+				</h3>
+				
+					<p class="description">Set as additional fee</p>
+				
+
+				
+
+				<table>
+  <thead>
+    <tr>
+      <th><strong><em>Request Body</em></strong></th>
+      <th><strong><em>Data Type</em></strong></th>
+      <th><strong><em>Required</em></strong></th>
+      <th><strong><em>Description</em></strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>additional_fee_id</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Id of the additional fee to be set as active</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+						
+								
+
+
+<div title="NodeJS" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">patch</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">api.prosperna.com/v1/business-profile/store/additional-fee/641a7ff47f8d70fb9f757509/set</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully set additional fee."</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
