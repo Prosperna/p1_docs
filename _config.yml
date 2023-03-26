@@ -38,6 +38,9 @@ collections:
   digitalproductsettings:
     title: Store digital product settings
     position_number: 8
+  marketplace:
+    title: Marketplace
+    position_number: 9
 
 plugins:
   - jekyll-sitemap
