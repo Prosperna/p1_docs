@@ -35,6 +35,9 @@ collections:
   storeadditionalfee:
     title: Store additional fee settings
     position_number: 7
+  digitalproductsettings:
+    title: Store digital product settings
+    position_number: 8
 
 plugins:
   - jekyll-sitemap
