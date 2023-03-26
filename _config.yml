@@ -29,6 +29,9 @@ collections:
   business:
     title: Business
     position_number: 5
+  phlocales:
+    title: PH Locales
+    position_number: 6
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag

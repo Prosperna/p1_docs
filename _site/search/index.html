@@ -11,14 +11,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="ProspernaOne API documentation" />
 <meta property="og:description" content="ProspernaOne API documentation" />
-<link rel="canonical" href="http://localhost:8000/p1_docs/search/" />
-<meta property="og:url" content="http://localhost:8000/p1_docs/search/" />
+<link rel="canonical" href="http://localhost:4001/p1_docs/search/" />
+<meta property="og:url" content="http://localhost:4001/p1_docs/search/" />
 <meta property="og:site_name" content="ProspernaOne" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Search" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"ProspernaOne API documentation","headline":"Search","url":"http://localhost:8000/p1_docs/search/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"ProspernaOne API documentation","headline":"Search","url":"http://localhost:4001/p1_docs/search/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -34,7 +34,7 @@
 		<header>
 			<h1>
 				<button type="button" class="open-nav" id="open-nav"></button>
-				<a href="http://localhost:8000/"><img src="./images/logo.svg" height="40" alt="ProspernaOne logo"></a>
+				<a href="http://localhost:4001/"><img src="./images/logo.svg" height="40" alt="ProspernaOne logo"></a>
 			</h1>
 
 			<form action="./search/" method="get">
@@ -175,16 +175,78 @@
 						</li>
 					
 						<li>
+							<a href="/#ordersorder_delete">
+								/:id
+								<span class="endpoint delete"></span>
+							</a>
+						</li>
+					
+						<li>
 							<a href="/#ordersorder_update">
 								/order_id?sid=""&cid=""
 								<span class="endpoint post"></span>
 							</a>
 						</li>
 					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>Business</h6>
+				<ul>
+					
+					
 						<li>
-							<a href="/#ordersorder_delete">
-								/:id
-								<span class="endpoint delete"></span>
+							<a href="/#businessproducts_add">
+								/:product_id
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>PH Locales</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="/#phlocalesphlocales_regions_get">
+								/business-profile/ph-locale/regions
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#phlocalesphlocales_provinces_get">
+								/business-profile/ph-locale/provinces
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#phlocalesphlocales_provinces_via_region_id copy">
+								/business-profile/ph-locale/provinces/:regionId
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#phlocalesphlocales_municipalities_via_province_id">
+								/business-profile/ph-locale/municipalities/:provinceId
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#phlocalesphlocales_barangay_via_municipality_id">
+								/business-profile/ph-locale/barangays/:municipalityId
+								<span class="endpoint get"></span>
 							</a>
 						</li>
 					
@@ -219,13 +281,32 @@
 					
 						
 						
+						"business-products-add": {
+							"id": "business-products-add",
+							"title": "/:product_id",
+							"category": "business",
+							"description": "Save/Update Product",
+		  				"type": "put",
+							"url": "http://localhost:4001/#businessproducts_add",
+							"content": ""
+						}
+						
+					
+				
+			
+		
+			
+				
+					
+						,
+						
 						"documentation-authentication": {
 							"id": "documentation-authentication",
 							"title": "Authentication",
 							"category": "documentation",
 							"description": "",
 		  				"type": "",
-							"url": "http://localhost:8000/#documentationauthentication",
+							"url": "http://localhost:4001/#documentationauthentication",
 							"content": ""
 						}
 						
@@ -242,7 +323,7 @@
 							"category": "documentation",
 							"description": "",
 		  				"type": "",
-							"url": "http://localhost:8000/#documentationerrors",
+							"url": "http://localhost:4001/#documentationerrors",
 							"content": ""
 						}
 						
@@ -259,7 +340,7 @@
 							"category": "documentation",
 							"description": "",
 		  				"type": "",
-							"url": "http://localhost:8000/#documentationgetting_started",
+							"url": "http://localhost:4001/#documentationgetting_started",
 							"content": ""
 						}
 						
@@ -278,7 +359,7 @@
 							"category": "orders",
 							"description": "Create Order",
 		  				"type": "post",
-							"url": "http://localhost:8000/#ordersorder_add",
+							"url": "http://localhost:4001/#ordersorder_add",
 							"content": ""
 						}
 						
@@ -295,7 +376,7 @@
 							"category": "orders",
 							"description": "Deletes a Order",
 		  				"type": "delete",
-							"url": "http://localhost:8000/#ordersorder_delete",
+							"url": "http://localhost:4001/#ordersorder_delete",
 							"content": ""
 						}
 						
@@ -312,7 +393,7 @@
 							"category": "orders",
 							"description": "Get Store Orders",
 		  				"type": "get",
-							"url": "http://localhost:8000/#ordersorder_get",
+							"url": "http://localhost:4001/#ordersorder_get",
 							"content": ""
 						}
 						
@@ -329,7 +410,94 @@
 							"category": "orders",
 							"description": "Update Order",
 		  				"type": "post",
-							"url": "http://localhost:8000/#ordersorder_update",
+							"url": "http://localhost:4001/#ordersorder_update",
+							"content": ""
+						}
+						
+					
+				
+			
+		
+			
+				
+					
+						,
+						
+						"phlocales-phlocales-barangay-via-municipality-id": {
+							"id": "phlocales-phlocales-barangay-via-municipality-id",
+							"title": "/business-profile/ph-locale/barangays/:municipalityId",
+							"category": "phlocales",
+							"description": "Get all Philippine barangay via municipality id",
+		  				"type": "get",
+							"url": "http://localhost:4001/#phlocalesphlocales_barangay_via_municipality_id",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"phlocales-phlocales-municipalities-via-province-id": {
+							"id": "phlocales-phlocales-municipalities-via-province-id",
+							"title": "/business-profile/ph-locale/municipalities/:provinceId",
+							"category": "phlocales",
+							"description": "Get all Philippine municipalities via province id",
+		  				"type": "get",
+							"url": "http://localhost:4001/#phlocalesphlocales_municipalities_via_province_id",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"phlocales-phlocales-provinces-get": {
+							"id": "phlocales-phlocales-provinces-get",
+							"title": "/business-profile/ph-locale/provinces",
+							"category": "phlocales",
+							"description": "Get all Philippine provinces",
+		  				"type": "get",
+							"url": "http://localhost:4001/#phlocalesphlocales_provinces_get",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"phlocales-phlocales-provinces-via-region-id-copy": {
+							"id": "phlocales-phlocales-provinces-via-region-id-copy",
+							"title": "/business-profile/ph-locale/provinces/:regionId",
+							"category": "phlocales",
+							"description": "Get all Philippine provinces via region id",
+		  				"type": "get",
+							"url": "http://localhost:4001/#phlocalesphlocales_provinces_via_region_id copy",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"phlocales-phlocales-regions-get": {
+							"id": "phlocales-phlocales-regions-get",
+							"title": "/business-profile/ph-locale/regions",
+							"category": "phlocales",
+							"description": "Get all Philippine regions",
+		  				"type": "get",
+							"url": "http://localhost:4001/#phlocalesphlocales_regions_get",
 							"content": ""
 						}
 						
@@ -350,7 +518,7 @@
 							"category": "products",
 							"description": "Save/Update Product",
 		  				"type": "put",
-							"url": "http://localhost:8000/#productsproducts_add",
+							"url": "http://localhost:4001/#productsproducts_add",
 							"content": ""
 						}
 						
@@ -367,7 +535,7 @@
 							"category": "products",
 							"description": "Delete single product",
 		  				"type": "delete",
-							"url": "http://localhost:8000/#productsproducts_delete",
+							"url": "http://localhost:4001/#productsproducts_delete",
 							"content": ""
 						}
 						
@@ -384,7 +552,7 @@
 							"category": "products",
 							"description": "Get all Products",
 		  				"type": "get",
-							"url": "http://localhost:8000/#productsproducts_get",
+							"url": "http://localhost:4001/#productsproducts_get",
 							"content": ""
 						}
 						
@@ -401,7 +569,7 @@
 							"category": "products",
 							"description": "Get single product",
 		  				"type": "get",
-							"url": "http://localhost:8000/#productsproducts_get_single",
+							"url": "http://localhost:4001/#productsproducts_get_single",
 							"content": ""
 						}
 						
@@ -418,7 +586,7 @@
 							"category": "products",
 							"description": "Pre create product",
 		  				"type": "post",
-							"url": "http://localhost:8000/#productsproducts_pre_create",
+							"url": "http://localhost:4001/#productsproducts_pre_create",
 							"content": ""
 						}
 						
@@ -435,7 +603,7 @@
 							"category": "products",
 							"description": "Publish or unpublish products, accepts array of product id",
 		  				"type": "post",
-							"url": "http://localhost:8000/#productsproducts_publish_unpublish",
+							"url": "http://localhost:4001/#productsproducts_publish_unpublish",
 							"content": ""
 						}
 						
@@ -452,7 +620,7 @@
 							"category": "products",
 							"description": "Decrease the product quantity and product variant combination quantity",
 		  				"type": "post",
-							"url": "http://localhost:8000/#productsproducts_quantity",
+							"url": "http://localhost:4001/#productsproducts_quantity",
 							"content": ""
 						}
 						
@@ -469,7 +637,7 @@
 							"category": "products",
 							"description": "Storage breakdown for product usage",
 		  				"type": "get",
-							"url": "http://localhost:8000/#productsproducts_storage",
+							"url": "http://localhost:4001/#productsproducts_storage",
 							"content": ""
 						}
 						
@@ -479,8 +647,8 @@
 		
 	};
 </script>
-<script src="http://localhost:8000/js/lunr.min.js"></script>
-<script src="http://localhost:8000/js/search.js"></script>
+<script src="http://localhost:4001/js/lunr.min.js"></script>
+<script src="http://localhost:4001/js/search.js"></script>
 
 		</div>
 		<script>
