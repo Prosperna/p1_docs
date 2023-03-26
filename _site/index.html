@@ -250,6 +250,20 @@
 							</a>
 						</li>
 					
+						<li>
+							<a href="#phlocalesget_all_industries">
+								/business-profile/industries
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#phlocalesget_all_banks">
+								/business-profile/banks
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
 				</ul>
 			</section>
 		
@@ -4608,6 +4622,313 @@
                 </span><span class="nl">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"60530f205d8baa22bcb55922"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"dateCreated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-18T08:28:22.397Z"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-18T08:28:22.397Z"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="phlocalesget_all_industries">
+						/business-profile/industries
+						
+							<span class="endpoint get"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_phlocales/get_all_industries.md">Edit</a>
+				</h3>
+				
+					<p class="description">Get industry list</p>
+				
+
+				
+
+				
+
+
+				
+						
+								
+
+
+<div title="NodeJS" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+<span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">get</span><span class="dl">'</span><span class="p">,</span>
+<span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">api.prosperna.com/v1/business-profile/industries</span><span class="dl">'</span><span class="p">,</span>
+
+<span class="p">};</span>
+
+<span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully retrieve industries."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"industries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63b6eb7b7ed0a8312a834630"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Agency"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Agency"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63b6eb7b7ed0a8312a834631"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Agriculture"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Agriculture"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63b6eb7b7ed0a8312a834632"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Arts &amp; Crafts"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Arts &amp; Crafts"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63b6eb7b7ed0a8312a834633"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Automotive"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Automotive"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63b6eb7b7ed0a8312a834634"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bakery"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bakery"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63b6eb7b7ed0a8312a834635"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beer &amp; Wine"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beer &amp; Wine"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63b6eb7b7ed0a8312a834636"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bike Shop"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bike Shop"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63b6eb7b7ed0a8312a834637"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Coffee Shop"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Coffee Shop"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63b6eb7b7ed0a8312a834638"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Construction"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Construction"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63b6eb7b7ed0a8312a834639"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Digital/Downloadable Products"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Digital/Downloadable Products"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63b6eb7b7ed0a8312a83463a"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Education"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Education"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63b6eb7b7ed0a8312a83463b"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Electronics"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Electronics"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63b6eb7b7ed0a8312a83463c"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fashion &amp; Apparel"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fashion &amp; Apparel"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63b6eb7b7ed0a8312a83463d"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Financial &amp; Insurance Services"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Financial &amp; Insurance Services"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63b6eb7b7ed0a8312a83463e"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Footwear"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Footwear"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63b6eb7b7ed0a8312a83463f"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Grocery"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Grocery"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63b6eb7b7ed0a8312a834640"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Health &amp; Beauty"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Health &amp; Beauty"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63b6eb7b7ed0a8312a834641"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Home Furnishings"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Home Furnishings"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63b6eb7b7ed0a8312a834642"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jewelry"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jewelry"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63b6eb7b7ed0a8312a834643"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Not for Profit"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Not for Profit"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63b6eb7b7ed0a8312a834644"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pet Care &amp; Supply"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pet Care &amp; Supply"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63b6eb7b7ed0a8312a834645"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pharmacy"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pharmacy"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63b6eb7b7ed0a8312a834646"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Printing"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Printing"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63b6eb7b7ed0a8312a834647"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Professional Services"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Professional Services"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63b6eb7b7ed0a8312a834649"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Real Estate"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Real Estate"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63b6eb7b7ed0a8312a834648"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Restaurant"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Restaurant"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63b6eb7b7ed0a8312a83464a"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sporting Goods"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sporting Goods"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63b6eb7b7ed0a8312a83464b"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Travel &amp; Hospitality"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Travel &amp; Hospitality"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63b6eb7b7ed0a8312a83464c"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Venture Capital"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Venture Capital"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63b6eb7b7ed0a8312a83464d"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Other"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"industryLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Other"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="phlocalesget_all_banks">
+						/business-profile/banks
+						
+							<span class="endpoint get"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_phlocales/get_all_banks.md">Edit</a>
+				</h3>
+				
+					<p class="description">Get all supported banks</p>
+				
+
+				
+
+				
+
+
+				
+						
+								
+
+
+<div title="NodeJS" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+<span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">get</span><span class="dl">'</span><span class="p">,</span>
+<span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">api.prosperna.com/v1/business-profile/banks</span><span class="dl">'</span><span class="p">,</span>
+
+<span class="p">};</span>
+
+<span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully retrieve banks."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"banks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"605433499138600528eb767b"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"bankName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UNIONBANK"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"xenditBankChannelCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PH_UBP"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PH"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"605433319138600528eb7679"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"bankName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BDO"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"xenditBankChannelCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PH_BDO"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PH"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"605433439138600528eb767a"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"bankName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BPI"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"xenditBankChannelCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PH_BPI"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PH"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"61483124264faf4dae5f5147"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"bankName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GCASH"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"xenditBankChannelCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PH_GCASH"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PH"</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
