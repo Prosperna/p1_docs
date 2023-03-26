@@ -41,6 +41,9 @@ collections:
   marketplace:
     title: Marketplace
     position_number: 9
+  storeshippingsettings:
+    title: Store shipping settings
+    position_number: 10
 
 plugins:
   - jekyll-sitemap

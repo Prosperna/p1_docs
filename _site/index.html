@@ -438,6 +438,51 @@
 			</section>
 		
 	
+		
+			<section>
+				<h6>Store shipping settings</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="#storeshippingsettingsget_all_activated_shippings">
+								/business-profile/shipping/settings/:store_id
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#storeshippingsettingsget_shipping_details">
+								/business-profile/shipping/settings/:store_id?shipping_type_option=
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#storeshippingsettingssave_update_shipping_setting">
+								/business-profile/shipping/settings/:store_id
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#storeshippingsettingstoggle_shipping_setting">
+								/business-profile/shipping/settings/:store_id/toggle?shipping_type_option=
+								<span class="endpoint patch"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#storeshippingsettingstoggle_guest_checkout_verification">
+								/business-profile/shipping/settings/:store_id/guest-checkout-verification
+								<span class="endpoint patch"></span>
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
 </div>
 
 
@@ -7410,6 +7455,801 @@
             </span><span class="p">}</span><span class="w">
         
     </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+
+	
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="storeshippingsettingsget_all_activated_shippings">
+						/business-profile/shipping/settings/:store_id
+						
+							<span class="endpoint get"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_storeshippingsettings/get_all_activated_shippings.md">Edit</a>
+				</h3>
+				
+					<p class="description">Get all activated shippings for a given store</p>
+				
+
+				
+
+				
+
+
+				
+						
+								
+
+
+<div title="NodeJS" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">get</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">api.prosperna.com/v1/business-profile/store/details</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"shippingDetails"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"pickup_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63908c8b5e8aa33cd37b9e77"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"shipping_option"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PICKUP"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"shipping_option_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PICKUP"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"selected"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"payment_options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"BANK_TRANSFER"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"COD"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"COP"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"E_WALLET"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"CREDIT_CARD"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"OVER_THE_COUNTER"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-08T02:28:16.886Z"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-08T03:01:31.355Z"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63914bc0ae4193caaf9c179d"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"pickup_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63908c8b5e8aa33cd37b9e77"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63861440e2c90910a117e826"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"contact_person"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contact_person"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"contact_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contact_number"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"business_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"business_address"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"save_address_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"save address"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"province"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"province_name"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"province_id"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"barangay"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"barangay_name"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"barangay_id"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"city_name"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"city_id"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-07T12:52:27.162Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-07T12:53:38.519Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"pickup_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63908c8b5e8aa33cd37b9e77"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"shipping_option"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OWN_BOOKING"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"shipping_option_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OWN_BOOKING"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"selected"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"payment_options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"BANK_TRANSFER"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"COD"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"COP"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"E_WALLET"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"CREDIT_CARD"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"OVER_THE_COUNTER"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-08T03:03:58.344Z"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-09T14:33:35.490Z"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6391541e1db2f7242fd1e4ba"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"pickup_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63908c8b5e8aa33cd37b9e77"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63861440e2c90910a117e826"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"contact_person"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contact_person"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"contact_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contact_number"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"business_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"business_address"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"save_address_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"save address"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"province"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"province_name"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"province_id"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"barangay"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"barangay_name"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"barangay_id"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"city_name"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"city_id"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-07T12:52:27.162Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-07T12:53:38.519Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"pickup_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6395af15cb1db8861788ad22"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"shipping_option"</span><span class="p">:</span><span class="w"> </span><span class="s2">"J&amp;T"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"shipping_option_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STANDARD"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"selected"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"payment_options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"BANK_TRANSFER"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"COD"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"COP"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"E_WALLET"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"CREDIT_CARD"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"OVER_THE_COUNTER"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-09T13:49:46.701Z"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-11T10:21:23.770Z"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63933cfa669bf24320a29815"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"pickup_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63908c8b5e8aa33cd37b9e77"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63861440e2c90910a117e826"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"contact_person"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contact_person"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"contact_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contact_number"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"business_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"business_address"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"save_address_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"save address"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"province"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"province_name"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"province_id"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"barangay"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"barangay_name"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"barangay_id"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"city_name"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"city_id"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-07T12:52:27.162Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-07T12:53:38.519Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"pickup_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63908c8b5e8aa33cd37b9e77"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"shipping_option"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LALAMOVE"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"shipping_option_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SAMEDAY_SCHED"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"selected"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"payment_options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"BANK_TRANSFER"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"COD"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"COP"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"E_WALLET"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"CREDIT_CARD"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"OVER_THE_COUNTER"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-09T14:12:12.165Z"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-09T14:12:12.165Z"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6393423cb49cfd9aad9eeb14"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"pickup_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63908c8b5e8aa33cd37b9e77"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63861440e2c90910a117e826"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"contact_person"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contact_person"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"contact_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contact_number"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"business_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"business_address"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"save_address_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"save address"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"province"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"province_name"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"province_id"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"barangay"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"barangay_name"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"barangay_id"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"city_name"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"city_id"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-07T12:52:27.162Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-07T12:53:38.519Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="storeshippingsettingsget_shipping_details">
+						/business-profile/shipping/settings/:store_id?shipping_type_option=
+						
+							<span class="endpoint get"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_storeshippingsettings/get_shipping_details.md">Edit</a>
+				</h3>
+				
+					<p class="description">Get shipping setting details</p>
+				
+
+				
+
+				<table>
+  <thead>
+    <tr>
+      <th><strong><em>Request parameters</em></strong></th>
+      <th><strong><em>Data Type</em></strong></th>
+      <th><strong><em>Required</em></strong></th>
+      <th><strong><em>Description</em></strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>store_id</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Store id</td>
+    </tr>
+    <tr>
+      <td><strong><em>Query Parameters</em></strong></td>
+      <td><strong><em>Data Type</em></strong></td>
+      <td><strong><em>Required</em></strong></td>
+      <td><strong><em>Description</em></strong></td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td>shipping_type_option</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Shipping type option. Values are <strong>OWN_BOOKING</strong>, <strong>SAMEDAY_SCHED</strong>, <strong>STANDARD</strong>, <strong>PICKUP</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+						
+								
+
+
+<div title="NodeJS" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">get</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">api.prosperna.com/v1/business-profile/shipping/settings/63861440e2c90910a117e826?shipping_type_option=STANDARD</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"shippingDetails"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"pickup_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63908c8b5e8aa33cd37b9e77"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"shipping_option"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PICKUP"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"shipping_option_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PICKUP"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"selected"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"payment_options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"BANK_TRANSFER"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"COD"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"COP"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"E_WALLET"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"CREDIT_CARD"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"OVER_THE_COUNTER"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-08T02:28:16.886Z"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-08T03:01:31.355Z"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63914bc0ae4193caaf9c179d"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"pickup_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63908c8b5e8aa33cd37b9e77"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63861440e2c90910a117e826"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"contact_person"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contact_person"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"contact_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contact_number"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"business_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"business_address"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"save_address_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"save address"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"province"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"province_name"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"province_id"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"barangay"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"barangay_name"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"barangay_id"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"city_name"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"city_id"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-07T12:52:27.162Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-07T12:53:38.519Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"pickup_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63908c8b5e8aa33cd37b9e77"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"shipping_option"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OWN_BOOKING"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"shipping_option_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OWN_BOOKING"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"selected"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"payment_options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"BANK_TRANSFER"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"COD"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"COP"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"E_WALLET"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"CREDIT_CARD"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"OVER_THE_COUNTER"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-08T03:03:58.344Z"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-09T14:33:35.490Z"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6391541e1db2f7242fd1e4ba"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"pickup_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63908c8b5e8aa33cd37b9e77"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63861440e2c90910a117e826"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"contact_person"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contact_person"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"contact_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contact_number"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"business_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"business_address"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"save_address_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"save address"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"province"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"province_name"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"province_id"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"barangay"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"barangay_name"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"barangay_id"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"city_name"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"city_id"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-07T12:52:27.162Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-07T12:53:38.519Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"pickup_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6395af15cb1db8861788ad22"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"shipping_option"</span><span class="p">:</span><span class="w"> </span><span class="s2">"J&amp;T"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"shipping_option_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STANDARD"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"selected"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"payment_options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"BANK_TRANSFER"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"COD"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"COP"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"E_WALLET"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"CREDIT_CARD"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"OVER_THE_COUNTER"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-09T13:49:46.701Z"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-11T10:21:23.770Z"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63933cfa669bf24320a29815"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"pickup_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63908c8b5e8aa33cd37b9e77"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63861440e2c90910a117e826"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"contact_person"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contact_person"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"contact_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contact_number"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"business_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"business_address"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"save_address_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"save address"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"province"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"province_name"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"province_id"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"barangay"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"barangay_name"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"barangay_id"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"city_name"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"city_id"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-07T12:52:27.162Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-07T12:53:38.519Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"pickup_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63908c8b5e8aa33cd37b9e77"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"shipping_option"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LALAMOVE"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"shipping_option_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SAMEDAY_SCHED"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"selected"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"payment_options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"BANK_TRANSFER"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"COD"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"COP"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"E_WALLET"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"CREDIT_CARD"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"OVER_THE_COUNTER"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-09T14:12:12.165Z"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-09T14:12:12.165Z"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6393423cb49cfd9aad9eeb14"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"pickup_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63908c8b5e8aa33cd37b9e77"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63861440e2c90910a117e826"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"contact_person"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contact_person"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"contact_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contact_number"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"business_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"business_address"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"save_address_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"save address"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"province"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"province_name"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"province_id"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"barangay"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"barangay_name"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"barangay_id"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"city_name"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"city_id"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-07T12:52:27.162Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-07T12:53:38.519Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="storeshippingsettingssave_update_shipping_setting">
+						/business-profile/shipping/settings/:store_id
+						
+							<span class="endpoint put"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_storeshippingsettings/save_update_shipping_setting.md">Edit</a>
+				</h3>
+				
+					<p class="description">Save/update shipping setting of a given store</p>
+				
+
+				
+
+				<table>
+  <thead>
+    <tr>
+      <th><strong><em>Request parameters</em></strong></th>
+      <th><strong><em>Data Type</em></strong></th>
+      <th><strong><em>Required</em></strong></th>
+      <th><strong><em>Description</em></strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>store_id</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Store id</td>
+    </tr>
+    <tr>
+      <td><strong><em>Request Body</em></strong></td>
+      <td><strong><em>Data Type</em></strong></td>
+      <td><strong><em>Required</em></strong></td>
+      <td><strong><em>Description</em></strong></td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td>shipping_option</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Shipping provider. Values are <strong>OWN_BOOKING</strong>, <strong>LALAMOVE</strong>, <strong>LBC</strong>, <strong>PICKUP</strong>, <strong>J&amp;T</strong></td>
+    </tr>
+    <tr>
+      <td>payment_options.BANK_TRANSFER</td>
+      <td>boolean</td>
+      <td>Yes</td>
+      <td>Determines if bank transfer is enabled for a given shipping option.</td>
+    </tr>
+    <tr>
+      <td>payment_options.COD</td>
+      <td>boolean</td>
+      <td>Yes</td>
+      <td>Determines if cash-on-delivery is enabled for a given shipping option.</td>
+    </tr>
+    <tr>
+      <td>payment_options.E_WALLET</td>
+      <td>boolean</td>
+      <td>Yes</td>
+      <td>Determines if e-wallet payment is enabled for a given shipping option.</td>
+    </tr>
+    <tr>
+      <td>payment_options.CREDIT_CARD</td>
+      <td>boolean</td>
+      <td>Yes</td>
+      <td>Determines if credit card payment is enabled for a given shipping option.</td>
+    </tr>
+    <tr>
+      <td>payment_options.OVER_THE_COUNTER</td>
+      <td>boolean</td>
+      <td>Yes</td>
+      <td>Determines if over-the-counter payment is enabled for a given shipping option.</td>
+    </tr>
+    <tr>
+      <td>pickup_address</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Pickup address id.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+						
+								
+
+
+<div title="NodeJS" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+<span class="dl">"</span><span class="s2">shipping_option</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">LBC</span><span class="dl">"</span><span class="p">,</span>
+<span class="dl">"</span><span class="s2">payment_options</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">BANK_TRANSFER</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">COD</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">COP</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">E_WALLET</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">CREDIT_CARD</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">OVER_THE_COUNTER</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span>
+<span class="dl">"</span><span class="s2">pickup_address</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">63989075f681e6a270814754</span><span class="dl">"</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+<span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">put</span><span class="dl">'</span><span class="p">,</span>
+<span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">api.prosperna.com/v1/business-profile/shipping/settings/6386ae5dba4bf984402d848e</span><span class="dl">'</span><span class="p">,</span>
+<span class="na">data</span> <span class="p">:</span> <span class="nx">data</span>
+<span class="p">};</span>
+
+<span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully updated shipping settings."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="storeshippingsettingstoggle_shipping_setting">
+						/business-profile/shipping/settings/:store_id/toggle?shipping_type_option=
+						
+							<span class="endpoint patch"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_storeshippingsettings/toggle_shipping_setting.md">Edit</a>
+				</h3>
+				
+					<p class="description">Toggle on and off shipping setting</p>
+				
+
+				
+
+				<table>
+  <thead>
+    <tr>
+      <th><strong><em>Request parameters</em></strong></th>
+      <th><strong><em>Data Type</em></strong></th>
+      <th><strong><em>Required</em></strong></th>
+      <th><strong><em>Description</em></strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>store_id</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Store id</td>
+    </tr>
+    <tr>
+      <td><strong><em>Query Parameters</em></strong></td>
+      <td><strong><em>Data Type</em></strong></td>
+      <td><strong><em>Required</em></strong></td>
+      <td><strong><em>Description</em></strong></td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td>shipping_type_option</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Shipping type option. Values are <strong>OWN_BOOKING</strong>, <strong>SAMEDAY_SCHED</strong>, <strong>STANDARD</strong>, <strong>PICKUP</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+						
+								
+
+
+<div title="NodeJS" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">patch</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">api.prosperna.com/v1/business-profile/shipping/settings/63861440e2c90910a117e826/toggle?shipping_type_option=SAMEDAY_SCHED</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully updated shipping settings."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="storeshippingsettingstoggle_guest_checkout_verification">
+						/business-profile/shipping/settings/:store_id/guest-checkout-verification
+						
+							<span class="endpoint patch"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_storeshippingsettings/toggle_guest_checkout_verification.md">Edit</a>
+				</h3>
+				
+					<p class="description">Toggle on and off guest checkout verification</p>
+				
+
+				
+
+				<table>
+  <thead>
+    <tr>
+      <th><strong><em>Request parameters</em></strong></th>
+      <th><strong><em>Data Type</em></strong></th>
+      <th><strong><em>Required</em></strong></th>
+      <th><strong><em>Description</em></strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>store_id</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Store id</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+						
+								
+
+
+<div title="NodeJS" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">patch</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">api.prosperna.com/v1/business-profile/shipping/settings/63861440e2c90910a117e826/guest-checkout-verification</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully updated shipping settings."</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 

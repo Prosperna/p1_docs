@@ -438,6 +438,51 @@
 			</section>
 		
 	
+		
+			<section>
+				<h6>Store shipping settings</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="/#storeshippingsettingsget_all_activated_shippings">
+								/business-profile/shipping/settings/:store_id
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#storeshippingsettingsget_shipping_details">
+								/business-profile/shipping/settings/:store_id?shipping_type_option=
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#storeshippingsettingssave_update_shipping_setting">
+								/business-profile/shipping/settings/:store_id
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#storeshippingsettingstoggle_shipping_setting">
+								/business-profile/shipping/settings/:store_id/toggle?shipping_type_option=
+								<span class="endpoint patch"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#storeshippingsettingstoggle_guest_checkout_verification">
+								/business-profile/shipping/settings/:store_id/guest-checkout-verification
+								<span class="endpoint patch"></span>
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
 </div>
 
 
@@ -1202,6 +1247,93 @@
 							"description": "Save/Update store social media information",
 		  				"type": "put",
 							"url": "http://localhost:4001/#storesettingssave_update_store_social_media",
+							"content": ""
+						}
+						
+					
+				
+			
+		
+			
+				
+					
+						,
+						
+						"storeshippingsettings-get-all-activated-shippings": {
+							"id": "storeshippingsettings-get-all-activated-shippings",
+							"title": "/business-profile/shipping/settings/:store_id",
+							"category": "storeshippingsettings",
+							"description": "Get all activated shippings for a given store",
+		  				"type": "get",
+							"url": "http://localhost:4001/#storeshippingsettingsget_all_activated_shippings",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"storeshippingsettings-get-shipping-details": {
+							"id": "storeshippingsettings-get-shipping-details",
+							"title": "/business-profile/shipping/settings/:store_id?shipping_type_option=",
+							"category": "storeshippingsettings",
+							"description": "Get shipping setting details",
+		  				"type": "get",
+							"url": "http://localhost:4001/#storeshippingsettingsget_shipping_details",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"storeshippingsettings-save-update-shipping-setting": {
+							"id": "storeshippingsettings-save-update-shipping-setting",
+							"title": "/business-profile/shipping/settings/:store_id",
+							"category": "storeshippingsettings",
+							"description": "Save/update shipping setting of a given store",
+		  				"type": "put",
+							"url": "http://localhost:4001/#storeshippingsettingssave_update_shipping_setting",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"storeshippingsettings-toggle-guest-checkout-verification": {
+							"id": "storeshippingsettings-toggle-guest-checkout-verification",
+							"title": "/business-profile/shipping/settings/:store_id/guest-checkout-verification",
+							"category": "storeshippingsettings",
+							"description": "Toggle on and off guest checkout verification",
+		  				"type": "patch",
+							"url": "http://localhost:4001/#storeshippingsettingstoggle_guest_checkout_verification",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"storeshippingsettings-toggle-shipping-setting": {
+							"id": "storeshippingsettings-toggle-shipping-setting",
+							"title": "/business-profile/shipping/settings/:store_id/toggle?shipping_type_option=",
+							"category": "storeshippingsettings",
+							"description": "Toggle on and off shipping setting",
+		  				"type": "patch",
+							"url": "http://localhost:4001/#storeshippingsettingstoggle_shipping_setting",
 							"content": ""
 						}
 						
