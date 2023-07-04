@@ -1,5 +1,5 @@
 ---
-title: /v1/products/status
+title: /status
 position_number: 1.7
 type: post
 description: Publish or unpublish products, accepts array of product id

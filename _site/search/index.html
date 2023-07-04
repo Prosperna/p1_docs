@@ -11,14 +11,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="ProspernaOne API documentation" />
 <meta property="og:description" content="ProspernaOne API documentation" />
-<link rel="canonical" href="http://localhost:8000/p1_docs/search/" />
-<meta property="og:url" content="http://localhost:8000/p1_docs/search/" />
+<link rel="canonical" href="http://localhost:4001/p1_docs/search/" />
+<meta property="og:url" content="http://localhost:4001/p1_docs/search/" />
 <meta property="og:site_name" content="ProspernaOne" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Search" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"ProspernaOne API documentation","headline":"Search","url":"http://localhost:8000/p1_docs/search/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"ProspernaOne API documentation","headline":"Search","url":"http://localhost:4001/p1_docs/search/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -34,7 +34,7 @@
 		<header>
 			<h1>
 				<button type="button" class="open-nav" id="open-nav"></button>
-				<a href="http://localhost:8000/"><img src="./images/logo.svg" height="40" alt="ProspernaOne logo"></a>
+				<a href="http://localhost:4001/"><img src="./images/logo.svg" height="40" alt="ProspernaOne logo"></a>
 			</h1>
 
 			<form action="./search/" method="get">
@@ -96,56 +96,56 @@
 					
 						<li>
 							<a href="/#productsproducts_get">
-								/v1/products/merchant-listing
+								/merchant-listing
 								<span class="endpoint get"></span>
 							</a>
 						</li>
 					
 						<li>
 							<a href="/#productsproducts_get_single">
-								/v1/products/:product_id
+								/:product_id
 								<span class="endpoint get"></span>
 							</a>
 						</li>
 					
 						<li>
 							<a href="/#productsproducts_pre_create">
-								/v1/products/pre-create
+								/pre-create
 								<span class="endpoint post"></span>
 							</a>
 						</li>
 					
 						<li>
 							<a href="/#productsproducts_add">
-								/v1/products/:product_id
+								/:product_id
 								<span class="endpoint put"></span>
 							</a>
 						</li>
 					
 						<li>
 							<a href="/#productsproducts_delete">
-								/v1/products/:product_id
+								/:product_id
 								<span class="endpoint delete"></span>
 							</a>
 						</li>
 					
 						<li>
 							<a href="/#productsproducts_storage">
-								/v1/products/storage
+								/storage
 								<span class="endpoint get"></span>
 							</a>
 						</li>
 					
 						<li>
 							<a href="/#productsproducts_quantity">
-								/v1/products/stock-quantity?store_id=
+								/stock-quantity
 								<span class="endpoint post"></span>
 							</a>
 						</li>
 					
 						<li>
 							<a href="/#productsproducts_publish_unpublish">
-								/v1/products/status
+								/status
 								<span class="endpoint post"></span>
 							</a>
 						</li>
@@ -175,16 +175,342 @@
 						</li>
 					
 						<li>
+							<a href="/#ordersorder_delete">
+								/:id
+								<span class="endpoint delete"></span>
+							</a>
+						</li>
+					
+						<li>
 							<a href="/#ordersorder_update">
 								/order_id?sid=""&cid=""
 								<span class="endpoint post"></span>
 							</a>
 						</li>
 					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>PH Locales</h6>
+				<ul>
+					
+					
 						<li>
-							<a href="/#ordersorder_delete">
-								/:id
+							<a href="/#phlocalesphlocales_regions_get">
+								/business-profile/ph-locale/regions
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#phlocalesphlocales_provinces_get">
+								/business-profile/ph-locale/provinces
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#phlocalesphlocales_provinces_via_region_id copy">
+								/business-profile/ph-locale/provinces/:regionId
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#phlocalesphlocales_municipalities_via_province_id">
+								/business-profile/ph-locale/municipalities/:provinceId
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#phlocalesphlocales_barangay_via_municipality_id">
+								/business-profile/ph-locale/barangays/:municipalityId
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#phlocalesget_all_industries">
+								/business-profile/industries
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#phlocalesget_all_banks">
+								/business-profile/banks
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>Store Settings</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="/#storesettingssave_update_store_info">
+								/business-profile/store/update/store-info
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#storesettingssave_update_store_social_media">
+								/business-profile/store/update/store-social-media
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#storesettingssave_update_store_branding">
+								/business-profile/store/update/store-branding
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#storesettingssave_update_store_fbpixel">
+								/business-profile/store/update/store-pixel
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#storesettingssave_update_store_seo">
+								/business-profile/store/update/store-seo
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#storesettingssave_update_store_cookie_policy">
+								/business-profile/store/update/store-cookie-policy
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#storesettingssave_update_store_google_analytics">
+								/business-profile/store/update/store-google-tracking-code
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#storesettingssave_update_store_location">
+								/business-profile/store/update/store-select-location
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#storesettingssave_update_store_convenience_fee">
+								/business-profile/store/update/convenience-fee
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#storesettingssave_update_store_domain">
+								/business-profile/store/update/store-domain
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#storesettingsget_store_details">
+								/business-profile/store/details
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>Store additional fee settings</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="/#storeadditionalfeeadditional_fee_add">
+								/business-profile/store/additional-fee
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#storeadditionalfeeadditional_fee_get_all">
+								/business-profile/store/additional-fee
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#storeadditionalfeeadditional_fee_update">
+								/business-profile/store/additional-fee/:additional_fee_id
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#storeadditionalfeeadditional_fee_delete">
+								/business-profile/store/additional-fee/:additional_fee_id
 								<span class="endpoint delete"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#storeadditionalfeeadditional_fee_set_as">
+								/business-profile/store/additional-fee/:additional_fee_id/set
+								<span class="endpoint patch"></span>
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>Store digital product settings</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="/#digitalproductsettingssave_update_digital_products_settings">
+								/business-profile/store/digital-products/payment-settings
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>Marketplace</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="/#marketplacemarketplace_get_all_apps">
+								/business-profile/marketplace/apps
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#marketplacemarketplace_activate_app">
+								/business-profile/marketplace/my-apps/:app_key/activate
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#marketplacemarketplace_get_all_activated_apps">
+								/business-profile/marketplace/my-apps
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#marketplacemarketplace_get_single">
+								/business-profile/marketplace/apps/:app_key
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>Store shipping settings</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="/#storeshippingsettingsget_all_activated_shippings">
+								/business-profile/shipping/settings/:store_id
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#storeshippingsettingsget_shipping_details">
+								/business-profile/shipping/settings/:store_id?shipping_type_option=
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#storeshippingsettingssave_update_shipping_setting">
+								/business-profile/shipping/settings/:store_id
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#storeshippingsettingstoggle_shipping_setting">
+								/business-profile/shipping/settings/:store_id/toggle?shipping_type_option=
+								<span class="endpoint patch"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#storeshippingsettingstoggle_guest_checkout_verification">
+								/business-profile/shipping/settings/:store_id/guest-checkout-verification
+								<span class="endpoint patch"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#storeshippingsettingspickup_address_add">
+								/business-profile/shipping/:store_id
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#storeshippingsettingspickup_address_delete">
+								/business-profile/shipping/:store_id/pickup-address/:pickup_address_id
+								<span class="endpoint delete"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#storeshippingsettingspickup_address_get_all">
+								/business-profile/shipping/:store_id
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#storeshippingsettingspickup_address_get_single">
+								/business-profile/shipping/:store_id?pickup_address_id=
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#storeshippingsettingspickup_address_update">
+								/business-profile/shipping/:store_id/pickup-address/:pickup_address_id
+								<span class="endpoint put"></span>
 							</a>
 						</li>
 					
@@ -219,13 +545,32 @@
 					
 						
 						
+						"digitalproductsettings-save-update-digital-products-settings": {
+							"id": "digitalproductsettings-save-update-digital-products-settings",
+							"title": "/business-profile/store/digital-products/payment-settings",
+							"category": "digitalproductsettings",
+							"description": "Save and update digital product payment settings",
+		  				"type": "put",
+							"url": "http://localhost:4001/#digitalproductsettingssave_update_digital_products_settings",
+							"content": ""
+						}
+						
+					
+				
+			
+		
+			
+				
+					
+						,
+						
 						"documentation-authentication": {
 							"id": "documentation-authentication",
 							"title": "Authentication",
 							"category": "documentation",
 							"description": "",
 		  				"type": "",
-							"url": "http://localhost:8000/#documentationauthentication",
+							"url": "http://localhost:4001/#documentationauthentication",
 							"content": ""
 						}
 						
@@ -242,7 +587,7 @@
 							"category": "documentation",
 							"description": "",
 		  				"type": "",
-							"url": "http://localhost:8000/#documentationerrors",
+							"url": "http://localhost:4001/#documentationerrors",
 							"content": ""
 						}
 						
@@ -259,7 +604,77 @@
 							"category": "documentation",
 							"description": "",
 		  				"type": "",
-							"url": "http://localhost:8000/#documentationgetting_started",
+							"url": "http://localhost:4001/#documentationgetting_started",
+							"content": ""
+						}
+						
+					
+				
+			
+		
+			
+				
+					
+						,
+						
+						"marketplace-marketplace-activate-app": {
+							"id": "marketplace-marketplace-activate-app",
+							"title": "/business-profile/marketplace/my-apps/:app_key/activate",
+							"category": "marketplace",
+							"description": "Activate/Install an app to your store",
+		  				"type": "get",
+							"url": "http://localhost:4001/#marketplacemarketplace_activate_app",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"marketplace-marketplace-get-all-activated-apps": {
+							"id": "marketplace-marketplace-get-all-activated-apps",
+							"title": "/business-profile/marketplace/my-apps",
+							"category": "marketplace",
+							"description": "Get all activated/installed apps on your store",
+		  				"type": "get",
+							"url": "http://localhost:4001/#marketplacemarketplace_get_all_activated_apps",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"marketplace-marketplace-get-all-apps": {
+							"id": "marketplace-marketplace-get-all-apps",
+							"title": "/business-profile/marketplace/apps",
+							"category": "marketplace",
+							"description": "Get all marketplace apps on P1 platform",
+		  				"type": "get",
+							"url": "http://localhost:4001/#marketplacemarketplace_get_all_apps",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"marketplace-marketplace-get-single": {
+							"id": "marketplace-marketplace-get-single",
+							"title": "/business-profile/marketplace/apps/:app_key",
+							"category": "marketplace",
+							"description": "Get single marketplace app on P1 platform",
+		  				"type": "get",
+							"url": "http://localhost:4001/#marketplacemarketplace_get_single",
 							"content": ""
 						}
 						
@@ -278,7 +693,7 @@
 							"category": "orders",
 							"description": "Create Order",
 		  				"type": "post",
-							"url": "http://localhost:8000/#ordersorder_add",
+							"url": "http://localhost:4001/#ordersorder_add",
 							"content": ""
 						}
 						
@@ -295,7 +710,7 @@
 							"category": "orders",
 							"description": "Deletes a Order",
 		  				"type": "delete",
-							"url": "http://localhost:8000/#ordersorder_delete",
+							"url": "http://localhost:4001/#ordersorder_delete",
 							"content": ""
 						}
 						
@@ -312,7 +727,7 @@
 							"category": "orders",
 							"description": "Get Store Orders",
 		  				"type": "get",
-							"url": "http://localhost:8000/#ordersorder_get",
+							"url": "http://localhost:4001/#ordersorder_get",
 							"content": ""
 						}
 						
@@ -329,7 +744,128 @@
 							"category": "orders",
 							"description": "Update Order",
 		  				"type": "post",
-							"url": "http://localhost:8000/#ordersorder_update",
+							"url": "http://localhost:4001/#ordersorder_update",
+							"content": ""
+						}
+						
+					
+				
+			
+		
+			
+				
+					
+						,
+						
+						"phlocales-get-all-banks": {
+							"id": "phlocales-get-all-banks",
+							"title": "/business-profile/banks",
+							"category": "phlocales",
+							"description": "Get all supported banks",
+		  				"type": "get",
+							"url": "http://localhost:4001/#phlocalesget_all_banks",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"phlocales-get-all-industries": {
+							"id": "phlocales-get-all-industries",
+							"title": "/business-profile/industries",
+							"category": "phlocales",
+							"description": "Get industry list",
+		  				"type": "get",
+							"url": "http://localhost:4001/#phlocalesget_all_industries",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"phlocales-phlocales-barangay-via-municipality-id": {
+							"id": "phlocales-phlocales-barangay-via-municipality-id",
+							"title": "/business-profile/ph-locale/barangays/:municipalityId",
+							"category": "phlocales",
+							"description": "Get all Philippine barangay via municipality id",
+		  				"type": "get",
+							"url": "http://localhost:4001/#phlocalesphlocales_barangay_via_municipality_id",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"phlocales-phlocales-municipalities-via-province-id": {
+							"id": "phlocales-phlocales-municipalities-via-province-id",
+							"title": "/business-profile/ph-locale/municipalities/:provinceId",
+							"category": "phlocales",
+							"description": "Get all Philippine municipalities via province id",
+		  				"type": "get",
+							"url": "http://localhost:4001/#phlocalesphlocales_municipalities_via_province_id",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"phlocales-phlocales-provinces-get": {
+							"id": "phlocales-phlocales-provinces-get",
+							"title": "/business-profile/ph-locale/provinces",
+							"category": "phlocales",
+							"description": "Get all Philippine provinces",
+		  				"type": "get",
+							"url": "http://localhost:4001/#phlocalesphlocales_provinces_get",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"phlocales-phlocales-provinces-via-region-id-copy": {
+							"id": "phlocales-phlocales-provinces-via-region-id-copy",
+							"title": "/business-profile/ph-locale/provinces/:regionId",
+							"category": "phlocales",
+							"description": "Get all Philippine provinces via region id",
+		  				"type": "get",
+							"url": "http://localhost:4001/#phlocalesphlocales_provinces_via_region_id copy",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"phlocales-phlocales-regions-get": {
+							"id": "phlocales-phlocales-regions-get",
+							"title": "/business-profile/ph-locale/regions",
+							"category": "phlocales",
+							"description": "Get all Philippine regions",
+		  				"type": "get",
+							"url": "http://localhost:4001/#phlocalesphlocales_regions_get",
 							"content": ""
 						}
 						
@@ -346,11 +882,11 @@
 						
 						"products-products-add": {
 							"id": "products-products-add",
-							"title": "/v1/products/:product_id",
+							"title": "/:product_id",
 							"category": "products",
 							"description": "Save/Update Product",
 		  				"type": "put",
-							"url": "http://localhost:8000/#productsproducts_add",
+							"url": "http://localhost:4001/#productsproducts_add",
 							"content": ""
 						}
 						
@@ -363,11 +899,11 @@
 						
 						"products-products-delete": {
 							"id": "products-products-delete",
-							"title": "/v1/products/:product_id",
+							"title": "/:product_id",
 							"category": "products",
 							"description": "Delete single product",
 		  				"type": "delete",
-							"url": "http://localhost:8000/#productsproducts_delete",
+							"url": "http://localhost:4001/#productsproducts_delete",
 							"content": ""
 						}
 						
@@ -380,11 +916,11 @@
 						
 						"products-products-get": {
 							"id": "products-products-get",
-							"title": "/v1/products/merchant-listing",
+							"title": "/merchant-listing",
 							"category": "products",
 							"description": "Get all Products",
 		  				"type": "get",
-							"url": "http://localhost:8000/#productsproducts_get",
+							"url": "http://localhost:4001/#productsproducts_get",
 							"content": ""
 						}
 						
@@ -397,11 +933,11 @@
 						
 						"products-products-get-single": {
 							"id": "products-products-get-single",
-							"title": "/v1/products/:product_id",
+							"title": "/:product_id",
 							"category": "products",
 							"description": "Get single product",
 		  				"type": "get",
-							"url": "http://localhost:8000/#productsproducts_get_single",
+							"url": "http://localhost:4001/#productsproducts_get_single",
 							"content": ""
 						}
 						
@@ -414,11 +950,11 @@
 						
 						"products-products-pre-create": {
 							"id": "products-products-pre-create",
-							"title": "/v1/products/pre-create",
+							"title": "/pre-create",
 							"category": "products",
 							"description": "Pre create product",
 		  				"type": "post",
-							"url": "http://localhost:8000/#productsproducts_pre_create",
+							"url": "http://localhost:4001/#productsproducts_pre_create",
 							"content": ""
 						}
 						
@@ -431,11 +967,11 @@
 						
 						"products-products-publish-unpublish": {
 							"id": "products-products-publish-unpublish",
-							"title": "/v1/products/status",
+							"title": "/status",
 							"category": "products",
 							"description": "Publish or unpublish products, accepts array of product id",
 		  				"type": "post",
-							"url": "http://localhost:8000/#productsproducts_publish_unpublish",
+							"url": "http://localhost:4001/#productsproducts_publish_unpublish",
 							"content": ""
 						}
 						
@@ -448,11 +984,11 @@
 						
 						"products-products-quantity": {
 							"id": "products-products-quantity",
-							"title": "/v1/products/stock-quantity?store_id=",
+							"title": "/stock-quantity",
 							"category": "products",
 							"description": "Decrease the product quantity and product variant combination quantity",
 		  				"type": "post",
-							"url": "http://localhost:8000/#productsproducts_quantity",
+							"url": "http://localhost:4001/#productsproducts_quantity",
 							"content": ""
 						}
 						
@@ -465,11 +1001,459 @@
 						
 						"products-products-storage": {
 							"id": "products-products-storage",
-							"title": "/v1/products/storage",
+							"title": "/storage",
 							"category": "products",
 							"description": "Storage breakdown for product usage",
 		  				"type": "get",
-							"url": "http://localhost:8000/#productsproducts_storage",
+							"url": "http://localhost:4001/#productsproducts_storage",
+							"content": ""
+						}
+						
+					
+				
+			
+		
+			
+				
+					
+						,
+						
+						"storeadditionalfee-additional-fee-add": {
+							"id": "storeadditionalfee-additional-fee-add",
+							"title": "/business-profile/store/additional-fee",
+							"category": "storeadditionalfee",
+							"description": "Add new additional fee",
+		  				"type": "post",
+							"url": "http://localhost:4001/#storeadditionalfeeadditional_fee_add",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"storeadditionalfee-additional-fee-delete": {
+							"id": "storeadditionalfee-additional-fee-delete",
+							"title": "/business-profile/store/additional-fee/:additional_fee_id",
+							"category": "storeadditionalfee",
+							"description": "Delete additional fee",
+		  				"type": "delete",
+							"url": "http://localhost:4001/#storeadditionalfeeadditional_fee_delete",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"storeadditionalfee-additional-fee-get-all": {
+							"id": "storeadditionalfee-additional-fee-get-all",
+							"title": "/business-profile/store/additional-fee",
+							"category": "storeadditionalfee",
+							"description": "Get all additional fees",
+		  				"type": "get",
+							"url": "http://localhost:4001/#storeadditionalfeeadditional_fee_get_all",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"storeadditionalfee-additional-fee-set-as": {
+							"id": "storeadditionalfee-additional-fee-set-as",
+							"title": "/business-profile/store/additional-fee/:additional_fee_id/set",
+							"category": "storeadditionalfee",
+							"description": "Set as additional fee",
+		  				"type": "patch",
+							"url": "http://localhost:4001/#storeadditionalfeeadditional_fee_set_as",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"storeadditionalfee-additional-fee-update": {
+							"id": "storeadditionalfee-additional-fee-update",
+							"title": "/business-profile/store/additional-fee/:additional_fee_id",
+							"category": "storeadditionalfee",
+							"description": "Update additional fee",
+		  				"type": "put",
+							"url": "http://localhost:4001/#storeadditionalfeeadditional_fee_update",
+							"content": ""
+						}
+						
+					
+				
+			
+		
+			
+				
+					
+						,
+						
+						"storesettings-get-store-details": {
+							"id": "storesettings-get-store-details",
+							"title": "/business-profile/store/details",
+							"category": "storesettings",
+							"description": "Get store details",
+		  				"type": "put",
+							"url": "http://localhost:4001/#storesettingsget_store_details",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"storesettings-save-update-store-branding": {
+							"id": "storesettings-save-update-store-branding",
+							"title": "/business-profile/store/update/store-branding",
+							"category": "storesettings",
+							"description": "Save/Update store branding",
+		  				"type": "put",
+							"url": "http://localhost:4001/#storesettingssave_update_store_branding",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"storesettings-save-update-store-convenience-fee": {
+							"id": "storesettings-save-update-store-convenience-fee",
+							"title": "/business-profile/store/update/convenience-fee",
+							"category": "storesettings",
+							"description": "Save/Update store convenience fee",
+		  				"type": "put",
+							"url": "http://localhost:4001/#storesettingssave_update_store_convenience_fee",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"storesettings-save-update-store-cookie-policy": {
+							"id": "storesettings-save-update-store-cookie-policy",
+							"title": "/business-profile/store/update/store-cookie-policy",
+							"category": "storesettings",
+							"description": "Save/Update store cookie policy",
+		  				"type": "put",
+							"url": "http://localhost:4001/#storesettingssave_update_store_cookie_policy",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"storesettings-save-update-store-domain": {
+							"id": "storesettings-save-update-store-domain",
+							"title": "/business-profile/store/update/store-domain",
+							"category": "storesettings",
+							"description": "Save/Update store domain",
+		  				"type": "put",
+							"url": "http://localhost:4001/#storesettingssave_update_store_domain",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"storesettings-save-update-store-fbpixel": {
+							"id": "storesettings-save-update-store-fbpixel",
+							"title": "/business-profile/store/update/store-pixel",
+							"category": "storesettings",
+							"description": "Save/Update store FB Pixel tracking code",
+		  				"type": "put",
+							"url": "http://localhost:4001/#storesettingssave_update_store_fbpixel",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"storesettings-save-update-store-google-analytics": {
+							"id": "storesettings-save-update-store-google-analytics",
+							"title": "/business-profile/store/update/store-google-tracking-code",
+							"category": "storesettings",
+							"description": "Save/Update store Google tracking code",
+		  				"type": "put",
+							"url": "http://localhost:4001/#storesettingssave_update_store_google_analytics",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"storesettings-save-update-store-info": {
+							"id": "storesettings-save-update-store-info",
+							"title": "/business-profile/store/update/store-info",
+							"category": "storesettings",
+							"description": "Save/Update store information",
+		  				"type": "put",
+							"url": "http://localhost:4001/#storesettingssave_update_store_info",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"storesettings-save-update-store-location": {
+							"id": "storesettings-save-update-store-location",
+							"title": "/business-profile/store/update/store-select-location",
+							"category": "storesettings",
+							"description": "Save/Update requiring customer to select store location.",
+		  				"type": "put",
+							"url": "http://localhost:4001/#storesettingssave_update_store_location",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"storesettings-save-update-store-seo": {
+							"id": "storesettings-save-update-store-seo",
+							"title": "/business-profile/store/update/store-seo",
+							"category": "storesettings",
+							"description": "Save/Update store SEO description",
+		  				"type": "put",
+							"url": "http://localhost:4001/#storesettingssave_update_store_seo",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"storesettings-save-update-store-social-media": {
+							"id": "storesettings-save-update-store-social-media",
+							"title": "/business-profile/store/update/store-social-media",
+							"category": "storesettings",
+							"description": "Save/Update store social media information",
+		  				"type": "put",
+							"url": "http://localhost:4001/#storesettingssave_update_store_social_media",
+							"content": ""
+						}
+						
+					
+				
+			
+		
+			
+				
+					
+						,
+						
+						"storeshippingsettings-get-all-activated-shippings": {
+							"id": "storeshippingsettings-get-all-activated-shippings",
+							"title": "/business-profile/shipping/settings/:store_id",
+							"category": "storeshippingsettings",
+							"description": "Get all activated shippings for a given store",
+		  				"type": "get",
+							"url": "http://localhost:4001/#storeshippingsettingsget_all_activated_shippings",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"storeshippingsettings-get-shipping-details": {
+							"id": "storeshippingsettings-get-shipping-details",
+							"title": "/business-profile/shipping/settings/:store_id?shipping_type_option=",
+							"category": "storeshippingsettings",
+							"description": "Get shipping setting details",
+		  				"type": "get",
+							"url": "http://localhost:4001/#storeshippingsettingsget_shipping_details",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"storeshippingsettings-pickup-address-add": {
+							"id": "storeshippingsettings-pickup-address-add",
+							"title": "/business-profile/shipping/:store_id",
+							"category": "storeshippingsettings",
+							"description": "Add new pickup address",
+		  				"type": "post",
+							"url": "http://localhost:4001/#storeshippingsettingspickup_address_add",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"storeshippingsettings-pickup-address-delete": {
+							"id": "storeshippingsettings-pickup-address-delete",
+							"title": "/business-profile/shipping/:store_id/pickup-address/:pickup_address_id",
+							"category": "storeshippingsettings",
+							"description": "Delete pickup address",
+		  				"type": "delete",
+							"url": "http://localhost:4001/#storeshippingsettingspickup_address_delete",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"storeshippingsettings-pickup-address-get-all": {
+							"id": "storeshippingsettings-pickup-address-get-all",
+							"title": "/business-profile/shipping/:store_id",
+							"category": "storeshippingsettings",
+							"description": "Get all pickup address per store",
+		  				"type": "get",
+							"url": "http://localhost:4001/#storeshippingsettingspickup_address_get_all",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"storeshippingsettings-pickup-address-get-single": {
+							"id": "storeshippingsettings-pickup-address-get-single",
+							"title": "/business-profile/shipping/:store_id?pickup_address_id=",
+							"category": "storeshippingsettings",
+							"description": "Get all pickup address per store",
+		  				"type": "get",
+							"url": "http://localhost:4001/#storeshippingsettingspickup_address_get_single",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"storeshippingsettings-pickup-address-update": {
+							"id": "storeshippingsettings-pickup-address-update",
+							"title": "/business-profile/shipping/:store_id/pickup-address/:pickup_address_id",
+							"category": "storeshippingsettings",
+							"description": "Add new pickup address",
+		  				"type": "put",
+							"url": "http://localhost:4001/#storeshippingsettingspickup_address_update",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"storeshippingsettings-save-update-shipping-setting": {
+							"id": "storeshippingsettings-save-update-shipping-setting",
+							"title": "/business-profile/shipping/settings/:store_id",
+							"category": "storeshippingsettings",
+							"description": "Save/update shipping setting of a given store",
+		  				"type": "put",
+							"url": "http://localhost:4001/#storeshippingsettingssave_update_shipping_setting",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"storeshippingsettings-toggle-guest-checkout-verification": {
+							"id": "storeshippingsettings-toggle-guest-checkout-verification",
+							"title": "/business-profile/shipping/settings/:store_id/guest-checkout-verification",
+							"category": "storeshippingsettings",
+							"description": "Toggle on and off guest checkout verification",
+		  				"type": "patch",
+							"url": "http://localhost:4001/#storeshippingsettingstoggle_guest_checkout_verification",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"storeshippingsettings-toggle-shipping-setting": {
+							"id": "storeshippingsettings-toggle-shipping-setting",
+							"title": "/business-profile/shipping/settings/:store_id/toggle?shipping_type_option=",
+							"category": "storeshippingsettings",
+							"description": "Toggle on and off shipping setting",
+		  				"type": "patch",
+							"url": "http://localhost:4001/#storeshippingsettingstoggle_shipping_setting",
 							"content": ""
 						}
 						
@@ -479,8 +1463,8 @@
 		
 	};
 </script>
-<script src="http://localhost:8000/js/lunr.min.js"></script>
-<script src="http://localhost:8000/js/search.js"></script>
+<script src="http://localhost:4001/js/lunr.min.js"></script>
+<script src="http://localhost:4001/js/search.js"></script>
 
 		</div>
 		<script>

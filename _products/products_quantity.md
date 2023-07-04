@@ -1,5 +1,5 @@
 ---
-title: /v1/products/stock-quantity?store_id=
+title: /stock-quantity
 position_number: 1.6
 type: post
 description: Decrease the product quantity and product variant combination quantity

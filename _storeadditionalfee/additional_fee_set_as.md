@@ -1,21 +1,21 @@
 ---
-title: /:product_id
+title: /business-profile/store/additional-fee/:additional_fee_id/set
 position_number: 1.4
-type: delete
-description: Delete single product
+type: patch
+description: Set as additional fee
+
 content_markdown: |-
-  | Parameters         | Data Type | Required | Description                        |
+  | ***Request Body***         | ***Data Type*** | ***Required*** | ***Description*** |
   |--------------------|-----------|----------|------------------------------------|
-  | product_id               | string    | Yes      | Product id                |
+  | additional_fee_id               | string    | Yes      | Id of the additional fee to be set as active |
 
 left_code_blocks:
   - code_block: |-
       var axios = require('axios');
-      var data = '';
 
       var config = {
-        method: 'delete',
-        url: 'api.prosperna.com/v1/products/:product_id'
+        method: 'patch',
+        url: 'api.prosperna.com/v1/business-profile/store/additional-fee/641a7ff47f8d70fb9f757509/set',
       };
 
       axios(config)
@@ -25,14 +25,15 @@ left_code_blocks:
       .catch(function (error) {
         console.log(error);
       });
+
     title: NodeJS
     language: javascript
+
 right_code_blocks:
   - code_block: |-
       {
-          "data": null,
-          "message": "Successfully updated product.",
-          "statusCode": 200
+          "success": true,
+          "message": "Successfully set additional fee."
       }
     title: Response
     language: json
