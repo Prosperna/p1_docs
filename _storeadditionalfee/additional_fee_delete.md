@@ -15,7 +15,7 @@ left_code_blocks:
 
       var config = {
         method: 'delete',
-        url: 'api.dev.prosperna.com/v1/business-profile/store/additional-fee/641a7ff47f8d70fb9f757509',
+        url: 'api.prosperna.com/v1/business-profile/store/additional-fee/641a7ff47f8d70fb9f757509',
       };
 
       axios(config)

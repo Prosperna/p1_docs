@@ -21,7 +21,7 @@ left_code_blocks:
 
       var config = {
         method: 'put',
-        url: 'api.dev.prosperna.com/v1/business-profile/store/update/store-seo',
+        url: 'api.prosperna.com/v1/business-profile/store/update/store-seo',
         data : data
       };
 
