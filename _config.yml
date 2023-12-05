@@ -44,6 +44,9 @@ collections:
   storeshippingsettings:
     title: Store shipping settings
     position_number: 10
+  email:
+    title: Email
+    position_number: 11
 
 plugins:
   - jekyll-sitemap
