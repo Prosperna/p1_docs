@@ -330,6 +330,13 @@
 						<li>
 							<a href="/#storesettingsget_store_details">
 								/business-profile/store/details
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#storesettingssave_update_store_business_operations">
+								/business-profile/store/update/store-business-operations
 								<span class="endpoint put"></span>
 							</a>
 						</li>
@@ -1170,7 +1177,7 @@
 							"title": "/business-profile/store/details",
 							"category": "storesettings",
 							"description": "Get store details",
-		  				"type": "put",
+		  				"type": "get",
 							"url": "http://localhost:4001/#storesettingsget_store_details",
 							"content": ""
 						}
@@ -1189,6 +1196,23 @@
 							"description": "Save/Update store branding",
 		  				"type": "put",
 							"url": "http://localhost:4001/#storesettingssave_update_store_branding",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"storesettings-save-update-store-business-operations": {
+							"id": "storesettings-save-update-store-business-operations",
+							"title": "/business-profile/store/update/store-business-operations",
+							"category": "storesettings",
+							"description": "Save/update business operations settings",
+		  				"type": "put",
+							"url": "http://localhost:4001/#storesettingssave_update_store_business_operations",
 							"content": ""
 						}
 						
