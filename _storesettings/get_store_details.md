@@ -1,7 +1,7 @@
 ---
 title: /business-profile/store/details
 position_number: 2.1
-type: put
+type: get
 description: Get store details
 
 left_code_blocks:
@@ -9,7 +9,7 @@ left_code_blocks:
       var axios = require('axios');
 
       var config = {
-        method: 'put',
+        method: 'get',
         url: 'api.prosperna.com/v1/business-profile/store/details',
       };
 
