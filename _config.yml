@@ -47,6 +47,9 @@ collections:
   email:
     title: Email
     position_number: 11
+  balances:
+    title: Balances
+    position_number: 12
 
 plugins:
   - jekyll-sitemap
