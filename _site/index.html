@@ -549,6 +549,51 @@
 			</section>
 		
 	
+		
+			<section>
+				<h6>Balances</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="#balancessend_otp">
+								payments/balances/merchants/send-otp
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#balanceswithdraw_balances">
+								payments/balances/merchants/withdraw
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#balancesget_balances_cards">
+								payments/balances/merchants
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#balancesget_order_breakdown">
+								payments/balances/merchants/order-breakdowns
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#balancesget_withdrawal_histories">
+								payments/balances/merchants/withdrawal-history
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
 </div>
 
 
@@ -9415,6 +9460,511 @@
   </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">          
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+
+	
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="balancessend_otp">
+						payments/balances/merchants/send-otp
+						
+							<span class="endpoint put"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_balances/send_otp.md">Edit</a>
+				</h3>
+				
+					<p class="description">Send OTP</p>
+				
+
+				
+
+				
+
+
+				
+						
+								
+
+
+<div title="NodeJS" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">put</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">api.prosperna.com/v1/payments/balances/merchants/send-otp</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully sent otp code."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"valid_until:"</span><span class="mi">2023-12-31</span><span class="err">T</span><span class="mi">23</span><span class="err">:</span><span class="mi">59</span><span class="err">:</span><span class="mf">59.999</span><span class="err">Z</span><span class="s2">",
+    "</span><span class="err">mobile_number</span><span class="s2">": "</span><span class="err">+</span><span class="mi">639658745878</span><span class="s2">"
+    "</span><span class="err">is_valid_otp</span><span class="s2">": true,
+    "</span><span class="err">remaining_otp_resends</span><span class="s2">": 2
+  }          
+}
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="balanceswithdraw_balances">
+						payments/balances/merchants/withdraw
+						
+							<span class="endpoint post"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_balances/withdraw_balances.md">Edit</a>
+				</h3>
+				
+					<p class="description">Withdraw balances</p>
+				
+
+				
+
+				<table>
+  <thead>
+    <tr>
+      <th><strong>Request Body</strong></th>
+      <th><strong><em>Data Type</em></strong></th>
+      <th><strong><em>Required</em></strong></th>
+      <th><strong><em>Description</em></strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>amount</td>
+      <td>number</td>
+      <td>Yes</td>
+      <td>Withdrawal amount, limits to Php250 minimum and Php50000 maximum per transaction.</td>
+    </tr>
+    <tr>
+      <td>otp_code</td>
+      <td>number</td>
+      <td>Yes</td>
+      <td>Valid OTP code sent to merchant’s mobile number.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+						
+								
+
+
+<div title="NodeJS" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">post</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">api.prosperna.com/v1/payments/balances/merchants/withdraw</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">amount</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">otp_code</span><span class="dl">"</span><span class="p">:</span> <span class="mi">123456</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Your available balance of PhP 1000.00 has been withdrawn. The funds may reflect in your account in "</span><span class="err">real-time</span><span class="s2">" or within 3 business days, depending on the financial institution you have chosen for settlement."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"withdrawal_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">970</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"admin_fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"expected_arrival:"</span><span class="mi">2023-12-31</span><span class="err">T</span><span class="mi">23</span><span class="err">:</span><span class="mi">59</span><span class="err">:</span><span class="mf">59.999</span><span class="err">Z</span><span class="s2">"
+  }          
+}
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="balancesget_balances_cards">
+						payments/balances/merchants
+						
+							<span class="endpoint get"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_balances/get_balances_cards.md">Edit</a>
+				</h3>
+				
+					<p class="description">Get balances breakdown</p>
+				
+
+				
+
+				
+
+
+				
+						
+								
+
+
+<div title="NodeJS" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">get</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">api.prosperna.com/v1/payments/balances/merchants</span><span class="dl">'</span>
+<span class="p">};</span>
+
+<span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"available_balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"pending_balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lifetime_orders"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"total_withdrawal_history: 0
+  }          
+}
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="balancesget_order_breakdown">
+						payments/balances/merchants/order-breakdowns
+						
+							<span class="endpoint get"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_balances/get_order_breakdown.md">Edit</a>
+				</h3>
+				
+					<p class="description">Get payment order breakdowns</p>
+				
+
+				
+
+				<table>
+  <thead>
+    <tr>
+      <th>Query Parameters</th>
+      <th>Data Type</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>balance_type</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Type of balance to be queried, values must be either ‘pending_order’ or ‘lifetime_orders’</td>
+    </tr>
+    <tr>
+      <td>min_date</td>
+      <td>Date</td>
+      <td>No</td>
+      <td>Minimum date filter.</td>
+    </tr>
+    <tr>
+      <td>max_date</td>
+      <td>Date</td>
+      <td>No</td>
+      <td>Maximum date filter.</td>
+    </tr>
+    <tr>
+      <td>search</td>
+      <td>string</td>
+      <td>No</td>
+      <td>Search filter for order id.</td>
+    </tr>
+    <tr>
+      <td>page</td>
+      <td>number</td>
+      <td>No</td>
+      <td>Page for pagination.</td>
+    </tr>
+    <tr>
+      <td>limit</td>
+      <td>number</td>
+      <td>No</td>
+      <td>Number of records per page.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+						
+								
+
+
+<div title="NodeJS" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">get</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">api.prosperna.comv1/payments/balances/merchants/order-breakdowns?balance_type=pending_orders&amp;min_date=2023-06-17&amp;max_date=2023-06-17&amp;search=&amp;page=1&amp;limit=10</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"order_breakdowns"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"65241f47500c18505c900333"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"639749a5cb1db88617891333"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"customer_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Merchant name"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"payment_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDIT_CARD"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"shipping_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Same Day"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">268.45</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"order_payment_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-10-09T15:42:00.865Z"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"totalDocs"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"totalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pagingCounter"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hasPrevPage"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hasNextPage"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"prevPage"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"nextPage"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">          
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="balancesget_withdrawal_histories">
+						payments/balances/merchants/withdrawal-history
+						
+							<span class="endpoint get"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_balances/get_withdrawal_histories.md">Edit</a>
+				</h3>
+				
+					<p class="description">Get merchant withdrawal histories</p>
+				
+
+				
+
+				<table>
+  <thead>
+    <tr>
+      <th>Query Parameters</th>
+      <th>Data Type</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>min_date</td>
+      <td>Date</td>
+      <td>No</td>
+      <td>Minimum date filter.</td>
+    </tr>
+    <tr>
+      <td>max_date</td>
+      <td>Date</td>
+      <td>No</td>
+      <td>Maximum date filter.</td>
+    </tr>
+    <tr>
+      <td>search</td>
+      <td>string</td>
+      <td>No</td>
+      <td>Search filter for amount, bank name, transaction id, reference id and status.</td>
+    </tr>
+    <tr>
+      <td>bank</td>
+      <td>string</td>
+      <td>No</td>
+      <td>Filter by bank. Valid bank names are ‘UNIONBANK’, ‘BDO’, ‘BPI’, and ‘GCASH’.</td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td>string</td>
+      <td>No</td>
+      <td>Filter by status. Valid status are ‘Completed’, ‘Pending’, ‘Cancelled’, ‘Failed’, ‘Disputed’.</td>
+    </tr>
+    <tr>
+      <td>page</td>
+      <td>number</td>
+      <td>No</td>
+      <td>Page for pagination.</td>
+    </tr>
+    <tr>
+      <td>limit</td>
+      <td>number</td>
+      <td>No</td>
+      <td>Number of records per page.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+						
+								
+
+
+<div title="NodeJS" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">get</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">api.prosperna.com/v1/payments/balances/merchants/withdrawal-history?page=2&amp;limit=56&amp;search=&amp;min_date=2023-04-23&amp;max_date=2023-04-26&amp;status=Completed&amp;bank=BPI</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"withdrawal_history"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"transaction_counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"transaction_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"disb-5e718a53-3f02-4d7c-80f8-33333333333"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"reference_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P1-DISBURSE-602c3afd-7929-4885-a22f-33333333333"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"withdrawal_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-09-01T05:09:10.437Z"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"expected_arrival"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-09-04T05:09:10.437Z"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"withdrawal_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"bank_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UNIONBANK"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"account_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6**************2"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Completed"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"64f171f63ce0beff8705b333"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"639749a5cb1db88617891333"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"totalDocs"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"totalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pagingCounter"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hasPrevPage"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hasNextPage"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"prevPage"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"nextPage"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">          
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
